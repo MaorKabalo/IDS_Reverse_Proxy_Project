@@ -2,6 +2,7 @@
 #ifndef EBPF_RUNNER_H
 #define EBPF_RUNNER_H
 
+#include <iostream>
 #include <string>
 
 class EBPF_Runner {

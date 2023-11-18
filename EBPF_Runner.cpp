@@ -1,8 +1,6 @@
 // ebpf_runner.cpp
 #include "EBPF_Runner.h"
 #include <cstdlib>
-#include <sys/stat.h>
-#include <dirent.h>
 #include <vector>
 using namespace std;
 
@@ -86,20 +84,27 @@ bool EBPF_Runner::clean()
 
 bool EBPF_Runner::isAlreadyRunning()
 {
-    const std::string folderPath = "/sys/fs/bpf";
-    DIR* dir = opendir(folderPath.c_str());
+    // Construct the bpftool command
+    std::string bpftoolCommand = "sudo bpftool prog show name " + ebpfProgramPath;
 
-    if (dir == nullptr) {
-        perror("opendir");
-        return false;  // Unable to open the directory
+    // Open a pipe to execute the command and read its output
+    FILE* pipe = popen(bpftoolCommand.c_str(), "r");
+    if (!pipe) {
+        std::cerr << "Error: Unable to open pipe for bpftool command." << std::endl;
+        return false;
     }
 
-    struct dirent* entry = readdir(dir);  // Read the first entry
+    // Read the command output into a string
+    char buffer[128];
+    std::string result = "";
+    while (!feof(pipe)) {
+        if (fgets(buffer, 128, pipe) != nullptr)
+            result += buffer;
+    }
 
-    bool isEmpty = (entry == nullptr);
+    // Close the pipe
+    pclose(pipe);
 
-    closedir(dir);
-
-    return isEmpty;
-
+    // Check if the output contains information about the specified program name
+    return result.find(ebpfProgramPath) != std::string::npos;
 }

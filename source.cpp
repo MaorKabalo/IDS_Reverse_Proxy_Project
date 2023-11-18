@@ -10,29 +10,27 @@ int main() {
     
     EBPF_Runner ebpfRunner(ebpfProgramPath);
 
-    ebpfRunner.clean();
 
-
-    //TODO: clean the program if it allready running in background
-
-    // if(ebpfRunner.isAlreadyRunning())
-    // {
-    //     std::cout << "ALLREADY RUNNING!!!" << std::endl;
-    //     ebpfRunner.clean();
-    // }
-
-
-
-    if(ebpfRunner.compileAndRunEBPFProgram())
+    if(ebpfRunner.isAlreadyRunning())
     {
-        std::cout << "RUNNING!!!" << std::endl;
-        std::this_thread::sleep_for(std::chrono::seconds(10));
+        std::cout << "ALLREADY RUNNING!!!, DELETING PROGRAM!" << std::endl;
         ebpfRunner.clean();
     }
     else
     {
-        std::cout << "NOT RUNNING!!!" << std::endl;
+        if(ebpfRunner.compileAndRunEBPFProgram())
+        {
+            std::cout << "RUNNING!!!" << std::endl;
+        }
+        else
+        {
+            std::cout << "NOT RUNNING!!!" << std::endl;
+        }
     }
+
+
+
+
 
     return 0;
 }
