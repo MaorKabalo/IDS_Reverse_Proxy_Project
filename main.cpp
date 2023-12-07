@@ -1,13 +1,14 @@
 
 #include <iostream>
-#include "EBPF_Runner.cpp"
 #include <thread>
 #include <chrono>
+#include "EBPF_Runner.h"
 
 int main() {
 
+
     std::string ebpfProgramPath = "hello";
-    
+
     EBPF_Runner ebpfRunner(ebpfProgramPath);
 
 
@@ -18,6 +19,8 @@ int main() {
     }
     else
     {
+
+
         if(ebpfRunner.compileAndRunEBPFProgram())
         {
             std::cout << "RUNNING!!!" << std::endl;
@@ -28,9 +31,7 @@ int main() {
         }
     }
 
-
-
-
-
     return 0;
+
+
 }

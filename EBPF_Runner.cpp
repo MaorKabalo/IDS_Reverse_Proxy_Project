@@ -1,4 +1,7 @@
-// ebpf_runner.cpp
+//
+// Created by kali on 12/7/23.
+//
+
 #include "EBPF_Runner.h"
 #include <cstdlib>
 #include <vector>
@@ -9,7 +12,7 @@ EBPF_Runner::EBPF_Runner(const std::string& ebpfProgramPath) : ebpfProgramPath(e
     system(command.c_str());
 }
 
-EBPF_Runner::~EBPF_Runner() {}
+EBPF_Runner::~EBPF_Runner() = default;
 
 bool EBPF_Runner::compileAndRunEBPFProgram() {
 
@@ -19,11 +22,11 @@ bool EBPF_Runner::compileAndRunEBPFProgram() {
     {
         int loadResult = loadEBPFProgram();
 
-        if(loadResult == 0) 
+        if(loadResult == 0)
         {
             return true;
-        } 
-    } 
+        }
+    }
 
     return false;
 
@@ -31,7 +34,7 @@ bool EBPF_Runner::compileAndRunEBPFProgram() {
 
 int EBPF_Runner::compileEBPFProgram() {
     // Build the command to compile the eBPF program
-    std::string command = "sudo clang -target bpf -D __BPF_TRACING__ -I/usr/include/$(uname -m)-linux-gnu -Wall -O2 -o " + ebpfProgramPath + ".bpf.o -c " + ebpfProgramPath + ".bpf.c";
+    std::string command = "clang -target bpf -D __BPF_TRACING__ -I/usr/include/$(uname -m)-linux-gnu -Wall -O2 -o " + ebpfProgramPath + ".bpf.o -c " + ebpfProgramPath + ".bpf.c";
 
     // Execute the command using system()
     int result = system(command.c_str());
@@ -54,7 +57,7 @@ int EBPF_Runner::loadEBPFProgram() {
         result = system(str.c_str());
         if(result == 1) {return 1;}
     }
-    
+
     return result;
 }
 
@@ -69,7 +72,7 @@ bool EBPF_Runner::clean()
         "sudo rm -rf /sys/fs/bpf/tc",
         "sudo rm -f /sys/fs/bpf/xdp",
         "sudo rm vmlinux.h",
-        "rm source"
+        "sudo rm Project"
     };
 
     for (std::string& str : commands)
@@ -77,7 +80,7 @@ bool EBPF_Runner::clean()
         result = system(str.c_str());
         if(result == 1) {return 1;}
     }
-    
+
     return result;
 
 }
