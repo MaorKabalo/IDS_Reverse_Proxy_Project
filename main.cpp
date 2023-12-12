@@ -6,9 +6,12 @@
 
 int main() {
 
-    std::string ebpfProgramPath = "hello";
+    std::string ebpfProgramPath = "http_filter";
 
     EBPF_Runner ebpfRunner(ebpfProgramPath);
+
+
+
 
     if(ebpfRunner.isAlreadyRunning())
     {
@@ -17,15 +20,15 @@ int main() {
     }
     else
     {
-
-
         if(ebpfRunner.compileAndRunEBPFProgram())
         {
             std::cout << "RUNNING!!!" << std::endl;
+            ebpfRunner.printLogOfProgram();
         }
         else
         {
             std::cout << "NOT RUNNING!!!" << std::endl;
+            ebpfRunner.clean();
         }
     }
 

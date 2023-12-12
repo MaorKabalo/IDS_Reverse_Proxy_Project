@@ -7,4 +7,5 @@ add_executable(Project main.cpp
         cmake-build-debug/hello.bpf.c
         EBPF_Runner.cpp
         EBPF_Runner.h
+        cmake-build-debug/http_filter.bpf.c
 )

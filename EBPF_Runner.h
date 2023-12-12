@@ -17,6 +17,7 @@ public:
     bool compileAndRunEBPFProgram() const;
     bool clean() const;
     bool isAlreadyRunning() const;
+    bool printLogOfProgram() const;
 
 
 private:

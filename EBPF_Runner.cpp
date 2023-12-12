@@ -37,7 +37,6 @@ int EBPF_Runner::loadEBPFProgram() const{
         "sudo rm -f /sys/fs/bpf/" + ebpfProgramPath,
         "sudo ip link set dev eth0 xdp off",
         "sudo ip link set dev eth0 xdp obj " + ebpfProgramPath + ".bpf.o section xdp",
-        "cat /sys/kernel/tracing/trace_pipe"
     };
 
     for (std::string& str : commands)
@@ -99,3 +98,11 @@ bool EBPF_Runner::isAlreadyRunning() const
     // Check if the output contains information about the specified program name
     return result.find(ebpfProgramPath) != std::string::npos;
 }
+
+bool EBPF_Runner::printLogOfProgram() const {
+    std::string command = "cat /sys/kernel/tracing/trace_pipe";
+
+    return !(system(command.c_str()));
+
+}
+

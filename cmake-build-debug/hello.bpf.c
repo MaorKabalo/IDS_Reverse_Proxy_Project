@@ -14,4 +14,4 @@ int hello(struct xdp_md *ctx) {
     return XDP_PASS;
 }
 
-char LICENSE[] SEC("license") = "Dual BSD/GPL";
+char HELLO_LICENSE[] SEC("license") = "Dual BSD/GPL";
