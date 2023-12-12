@@ -11,20 +11,20 @@
 
 class EBPF_Runner {
 public:
-    EBPF_Runner(const std::string& ebpfProgramPath); //"program.c.bpf" => "program"
+    explicit EBPF_Runner(std::string  ebpfProgramPath); //"program.c.bpf" => "program"
     ~EBPF_Runner();
 
-    bool compileAndRunEBPFProgram();
-    bool clean();
-    bool isAlreadyRunning();
+    bool compileAndRunEBPFProgram() const;
+    bool clean() const;
+    bool isAlreadyRunning() const;
 
 
 private:
     std::string ebpfProgramPath;
     std::string interfaceName;
 
-    int compileEBPFProgram();
-    int loadEBPFProgram();
+    int compileEBPFProgram() const;
+    int loadEBPFProgram() const;
 
 
 };

@@ -6,11 +6,9 @@
 
 int main() {
 
-
     std::string ebpfProgramPath = "hello";
 
     EBPF_Runner ebpfRunner(ebpfProgramPath);
-
 
     if(ebpfRunner.isAlreadyRunning())
     {
