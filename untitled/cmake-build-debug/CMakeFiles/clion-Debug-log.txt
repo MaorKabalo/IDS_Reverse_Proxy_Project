@@ -1,0 +1,4 @@
+/home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/ninja/linux/x64/ninja -G Ninja -S /home/kali/project/haifa-01-proxysaver/untitled -B /home/kali/project/haifa-01-proxysaver/untitled/cmake-build-debug
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/kali/project/haifa-01-proxysaver/untitled/cmake-build-debug
