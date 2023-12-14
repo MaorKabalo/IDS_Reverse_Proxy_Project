@@ -1,38 +1,17 @@
-
 #include <iostream>
-#include <thread>
-#include <chrono>
-#include "EBPF_Runner.h"
+#include  "ReverseProxy.h"
 
-int main() {
-
-    std::string ebpfProgramPath = "http_filter";
-
-    EBPF_Runner ebpfRunner(ebpfProgramPath);
-
-
-
-
-    if(ebpfRunner.isAlreadyRunning())
-    {
-        std::cout << "ALLREADY RUNNING!!!, DELETING PROGRAM!" << std::endl;
-        ebpfRunner.clean();
-    }
-    else
-    {
-        if(ebpfRunner.compileAndRunEBPFProgram())
-        {
-            std::cout << "RUNNING!!!" << std::endl;
-            ebpfRunner.printLogOfProgram();
-        }
-        else
-        {
-            std::cout << "NOT RUNNING!!!" << std::endl;
-            ebpfRunner.clean();
-        }
-    }
-
+int main()
+{
+    boost::asio::io_context io_context;
+    short int server_port, proxy_port;
+    std::string ip;
+    std::cout<<"enter server ip";
+    std::cin>>ip;
+    std::cout<<"enter server port";
+    std::cin>>server_port;
+    std::cout<<"enter proxy port";
+    std::cin>>proxy_port;
+    ReverseProxy reverse_proxy(io_context, proxy_port, ip, server_port);
     return 0;
-
-
 }
