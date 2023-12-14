@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/kali/project/haifa-01-proxysaver/untitled/cmake-build-debug",
-		"source" : "/home/kali/project/haifa-01-proxysaver/untitled"
+		"build" : "/home/kali/project/haifa-01-proxysaver/cmake-build-debug",
+		"source" : "/home/kali/project/haifa-01-proxysaver"
 	},
 	"version" : 
 	{
