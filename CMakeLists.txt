@@ -1,8 +1,20 @@
 cmake_minimum_required(VERSION 3.27)
-project(untitled)
+project(IDS_Project)
+
+add_definitions(-DPROJECT_NAME="IDS_Project")
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(untitled main.cpp
+set(SOURCE_FILES main.cpp
         ReverseProxy.cpp
-        ReverseProxy.cpp)
+        EBPF_Runner.cpp)
+
+set(HEADER_FILES ReverseProxy.h
+                 EBPF_Runner.h)
+
+set(PYTHON_FILES server.py
+        client.py)
+
+add_executable(IDS_Project main.cpp
+        ${SOURCE_FILES}
+        ${HEADER_FILES})

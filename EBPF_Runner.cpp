@@ -16,6 +16,12 @@ EBPF_Runner::EBPF_Runner(std::string  ebpfProgramPath) : ebpfProgramPath(std::mo
 EBPF_Runner::~EBPF_Runner() = default;
 
 bool EBPF_Runner::compileAndRunEBPFProgram() const {
+
+    if(isAlreadyRunning()) {
+        std::cout << "\"" << ebpfProgramPath << "\"" << " is already a running eBPF program! deleting ebpf for safety!" << std::endl;
+        return !clean();
+    }
+
     return  compileEBPFProgram() && loadEBPFProgram();
 }
 
@@ -59,7 +65,7 @@ bool EBPF_Runner::clean() const
         "sudo rm -rf /sys/fs/bpf/tc",
         "sudo rm -f /sys/fs/bpf/xdp",
         "sudo rm vmlinux.h",
-        "sudo rm Project"
+        "sudo rm " + std::string(PROJECT_NAME)
     };
 
     for (std::string& str : commands)
