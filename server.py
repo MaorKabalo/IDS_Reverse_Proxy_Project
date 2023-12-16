@@ -1,29 +1,24 @@
 import socket
 
-LISTEN_PORT = 8888
-REVERSE_PROXY_IP = "localhost"
-REVERSE_PROXY_PORT = 9090
-
 
 def main():
-    with socket.socket() as listening_sock:
-        listening_sock.bind(('', LISTEN_PORT))
-        listening_sock.listen(1)
-        openPorts()
-        client_soc, client_address = listening_sock.accept()
-        with socket.socket(client_soc, client_address) as client_soc:
-            server_msg = socket.recv(1024)
-            server_msg = server_msg.decode()
-            print(server_msg)
-            client_soc.sendall(server_msg)
 
+    host = '127.0.0.1'  # Change to the IP address of your proxy server
+    port = 8888  # Change to the port your server will listen on
 
-def openPorts():
-    with socket.socket():
-        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        server_address = (REVERSE_PROXY_IP, REVERSE_PROXY_PORT)
-        sock.connect(server_address)
-        sock.sendall(LISTEN_PORT + "")
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server_socket:
+        server_socket.bind((host, port))
+        server_socket.listen()
+
+        print(f"Server listening on {host}:{port}")
+
+        while True:
+            client_socket, client_address = server_socket.accept()
+            print(f"Accepted connection from {client_address}")
+
+            with client_socket:
+                message = client_socket.recv(1024).decode()
+                print(f"Received message: {message}")
 
 
 if __name__ == "__main__":
