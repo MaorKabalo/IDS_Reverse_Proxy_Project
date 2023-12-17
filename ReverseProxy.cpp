@@ -1,5 +1,6 @@
 #include "ReverseProxy.h"
 #include <iostream>
+#include <string>
 #include <boost/asio.hpp>
 
 using boost::asio::ip::tcp;
@@ -9,6 +10,7 @@ ReverseProxy::ReverseProxy(boost::asio::io_context& io_context, short proxy_port
     socket_(io_context),
     server_ip_(server_ip),
     server_port_(server_port) {
+    std::cout << "Proxy listening on " + server_ip_ + ":" + std::to_string(proxy_port) << std::endl;
     StartAccept();
 }
 
