@@ -9,14 +9,16 @@
 int main()
 {
 
-    boost::asio::io_context io_context;
-    // EBPF_Runner bandwidth_limiter("bandwidth_limiting");
-    //
-    // if(bandwidth_limiter.compileAndRunEBPFProgram()) {
-    //
-    // }
-    ReverseProxy reverse_proxy(io_context, PROXY_PORT, IP, SERVER_PORT);
-    io_context.run();
+    //boost::asio::io_context io_context;
+
+    EBPF_Runner bandwidth_limiter("bandwidth_limiting");
+
+    if(bandwidth_limiter.compileAndRunEBPFProgram()) {
+        bandwidth_limiter.printLogOfProgram();
+    }
+
+    // ReverseProxy reverse_proxy(io_context, PROXY_PORT, IP, SERVER_PORT);
+    // io_context.run();
 
     return 0;
 }

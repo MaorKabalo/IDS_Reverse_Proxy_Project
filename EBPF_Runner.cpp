@@ -41,8 +41,8 @@ int EBPF_Runner::loadEBPFProgram() const{
 
     vector<std::string> commands = {
         "sudo rm -f /sys/fs/bpf/" + ebpfProgramPath,
-        "sudo ip link set dev eth0 xdp off",
-        "sudo ip link set dev eth0 xdp obj " + ebpfProgramPath + ".bpf.o section xdp",
+        "sudo ip link set dev lo xdp off",
+        "sudo ip link set dev lo xdp obj " + ebpfProgramPath + ".bpf.o section xdp",
     };
 
     for (std::string& str : commands)
@@ -58,7 +58,7 @@ bool EBPF_Runner::clean() const
 {
     int result = 0;
     vector<std::string> commands = {
-        "sudo ip link set dev eth0 xdp off",
+        "sudo ip link set dev lo xdp off",
         "sudo rm -f /sys/fs/bpf/" + ebpfProgramPath,
         "sudo rm " + ebpfProgramPath + ".bpf.o",
         "sudo rm -f /sys/fs/bpf/ip",
