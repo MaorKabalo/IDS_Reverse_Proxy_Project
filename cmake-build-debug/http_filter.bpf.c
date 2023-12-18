@@ -129,11 +129,15 @@ SEC("xdp")
 int http_filter(struct xdp_md *ctx) {
 
     long protocol = get_packet_protocol(ctx);
-    long port = get_packet_dest_port(ctx);
+
 
     if (protocol == IPPROTO_TCP) // TCP
     {
-         bpf_printk("HELLO HTTP!!! %ld", port);
+        if(is_packet_http(ctx))
+        {
+            bpf_printk("HELLO HTTP!!!");
+        }
+
     }
     else
     {
