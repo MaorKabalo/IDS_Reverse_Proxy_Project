@@ -1,8 +1,28 @@
-#ifndef REVERSE_PROXY_H
-#define REVERSE_PROXY_H
+// ReverseProxy.h
 
-#include <string>
+#pragma once
+
 #include <boost/asio.hpp>
+#include <memory>
+
+
+
+class ReverseProxyConnection : public std::enable_shared_from_this<ReverseProxyConnection> {
+public:
+    ReverseProxyConnection(boost::asio::io_context& io_context, const std::string& server_ip, short server_port, boost::asio::ip::tcp::socket* sock);
+    void Start();
+
+private:
+    void StartRead();
+    void ForwardToServer(const std::string& message);
+    void close();
+
+    boost::asio::ip::tcp::socket* client_socket_;
+    boost::asio::ip::tcp::socket* server_socket_;
+    boost::asio::streambuf input_buffer_;
+    std::string server_ip_;
+    short server_port_;
+};
 
 class ReverseProxy {
 public:
@@ -10,16 +30,8 @@ public:
 
 private:
     void StartAccept();
-    void StartRead();
-    void ForwardToServer(const std::string& message);
-    //void connect();
-    //void handle_client(std::shared_ptr<boost::asio::ip::tcp::socket> socket);
 
     boost::asio::ip::tcp::acceptor acceptor_;
-    boost::asio::ip::tcp::socket socket_;
-    boost::asio::streambuf input_buffer_;
     std::string server_ip_;
     short server_port_;
 };
-
-#endif // REVERSE_PROXY_H
