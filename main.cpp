@@ -8,18 +8,17 @@
 
 int main()
 {
-    boost::asio::io_context io_context;
 
-    // short int server_port, proxy_port;
-    // std::string ip;
-    // std::cout<<"enter server ip";
-    // std::cin>>ip;
-    // std::cout<<"enter server port";
-    // std::cin>>server_port;
-    // std::cout<<"enter proxy port";
-    // std::cin>>proxy_port;
+    //boost::asio::io_context io_context;
 
-    ReverseProxy reverse_proxy(io_context, PROXY_PORT, IP, SERVER_PORT);
-    io_context.run();
+    EBPF_Runner bandwidth_limiter("bandwidth_limiting");
+
+    if(bandwidth_limiter.compileAndRunEBPFProgram()) {
+        bandwidth_limiter.printLogOfProgram();
+    }
+
+    // ReverseProxy reverse_proxy(io_context, PROXY_PORT, IP, SERVER_PORT);
+    // io_context.run();
+
     return 0;
 }

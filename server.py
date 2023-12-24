@@ -1,25 +1,33 @@
 import socket
 
-
 def main():
+    server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    server_socket.bind(('127.0.0.1', 8888))
+    server_socket.listen(5)  # Allow up to 5 queued connections
 
-    host = '127.0.0.1'  # Change to the IP address of your proxy server
-    port = 8888  # Change to the port your server will listen on
+    print("Server listening on 127.0.0.1:8888")
 
-    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server_socket:
-        server_socket.bind((host, port))
-        server_socket.listen()
+    while True:
+        try:
+            client_socket, addr = server_socket.accept()
+            print(f"Accepted connection from {addr}")
 
-        print(f"Server listening on {host}:{port}")
+            while True:
+                data = client_socket.recv(1024)
+                if not data:
+                    break  # Break the loop if no more data
 
-        while True:
-            client_socket, client_address = server_socket.accept()
-            print(f"Accepted connection from {client_address}")
+                print(f"Received data: {data}")
 
-            with client_socket:
-                message = client_socket.recv(1024).decode()
-                print(f"Received message: {message}")
+        except ConnectionResetError:
+            print("Connection reset by peer")
 
+        except Exception as e:
+            print(f"Error: {e}")
+
+        finally:
+            if 'client_socket' in locals():
+                client_socket.close()
 
 if __name__ == "__main__":
     main()

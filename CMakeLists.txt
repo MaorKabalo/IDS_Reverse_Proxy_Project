@@ -15,6 +15,10 @@ set(HEADER_FILES ReverseProxy.h
 set(PYTHON_FILES server.py
         client.py)
 
+set(EBPF_FILES
+        cmake-build-debug/bandwidth_limiting.bpf.c)
+
 add_executable(IDS_Project main.cpp
         ${SOURCE_FILES}
-        ${HEADER_FILES})
+        ${HEADER_FILES}
+        ${EBPF_FILES})

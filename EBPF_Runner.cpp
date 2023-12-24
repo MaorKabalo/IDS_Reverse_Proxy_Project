@@ -22,7 +22,7 @@ bool EBPF_Runner::compileAndRunEBPFProgram() const {
         return !clean();
     }
 
-    return  compileEBPFProgram() && loadEBPFProgram();
+    return compileEBPFProgram() && loadEBPFProgram();
 }
 
 int EBPF_Runner::compileEBPFProgram() const{
@@ -41,8 +41,8 @@ int EBPF_Runner::loadEBPFProgram() const{
 
     vector<std::string> commands = {
         "sudo rm -f /sys/fs/bpf/" + ebpfProgramPath,
-        "sudo ip link set dev eth0 xdp off",
-        "sudo ip link set dev eth0 xdp obj " + ebpfProgramPath + ".bpf.o section xdp",
+        "sudo ip link set dev lo xdp off",
+        "sudo ip link set dev lo xdp obj " + ebpfProgramPath + ".bpf.o section xdp",
     };
 
     for (std::string& str : commands)
@@ -58,7 +58,7 @@ bool EBPF_Runner::clean() const
 {
     int result = 0;
     vector<std::string> commands = {
-        "sudo ip link set dev eth0 xdp off",
+        "sudo ip link set dev lo xdp off",
         "sudo rm -f /sys/fs/bpf/" + ebpfProgramPath,
         "sudo rm " + ebpfProgramPath + ".bpf.o",
         "sudo rm -f /sys/fs/bpf/ip",
@@ -80,8 +80,11 @@ bool EBPF_Runner::clean() const
 
 bool EBPF_Runner::isAlreadyRunning() const
 {
+
+    std::string bpftoolEbpfName = ebpfProgramPath.substr(0,15); //bpftool saves name for 15 characters max
+
     // Construct the bpftool command
-    std::string bpftoolCommand = "sudo bpftool prog show name " + ebpfProgramPath;
+    std::string bpftoolCommand = "sudo bpftool prog show name " + bpftoolEbpfName;
 
     // Open a pipe to execute the command and read its output
     FILE* pipe = popen(bpftoolCommand.c_str(), "r");
@@ -102,13 +105,11 @@ bool EBPF_Runner::isAlreadyRunning() const
     pclose(pipe);
 
     // Check if the output contains information about the specified program name
-    return result.find(ebpfProgramPath) != std::string::npos;
+    return result.find(bpftoolEbpfName) != std::string::npos;
 }
 
 bool EBPF_Runner::printLogOfProgram() const {
     std::string command = "cat /sys/kernel/tracing/trace_pipe";
-
     return !(system(command.c_str()));
-
 }
 
