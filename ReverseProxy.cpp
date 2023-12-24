@@ -1,106 +1,102 @@
+// ReverseProxy.cpp
+
 #include "ReverseProxy.h"
 #include <iostream>
-#include <boost/asio.hpp>
 
-using boost::asio::ip::tcp;
+#include "SockLimiting.h"
+
+ReverseProxyConnection::ReverseProxyConnection(boost::asio::io_context& io_context, const std::string& server_ip, short server_port, boost::asio::ip::tcp::socket* sock)
+    : client_socket_(sock),
+      server_socket_(sock),
+      server_ip_(server_ip),
+server_port_(server_port) {}
+
+void ReverseProxyConnection::Start() {
+    std::cout << "New connection" << std::endl;
+    StartRead();
+}
+
+void ReverseProxyConnection::StartRead() {
+    try
+    {
+        auto self = shared_from_this();
+        boost::asio::async_read_until((*client_socket_), input_buffer_, '\n',
+            [self](boost::system::error_code ec, std::size_t length) {
+                if (!ec) {
+                    std::istream is(&self->input_buffer_);
+                    std::string message;
+                    std::getline(is, message);
+                    std::cout << "Received: " << message << std::endl;
+
+                    self->ForwardToServer(message);
+                    if(self->client_socket_->is_open())
+                    {self->StartRead();}
+                }
+                else
+                {
+                    std::cout <<"error: "<< ec.message() << std::endl;
+                }
+            });
+    }catch (const std::exception& e)
+    {
+        std::cout<<"dsg"<<std::endl;
+    }
+}
+
+void ReverseProxyConnection::ForwardToServer(const std::string& message) {
+    try {
+        boost::asio::ip::tcp::resolver resolver(client_socket_->get_executor());
+        auto endpoints = resolver.resolve(server_ip_, std::to_string(server_port_));
+        auto self = shared_from_this();
+        boost::asio::async_connect((*server_socket_), endpoints,
+            [self, message](boost::system::error_code ec, boost::asio::ip::tcp::endpoint) {
+                if (!ec) {
+                    boost::asio::async_write(*(self->server_socket_), boost::asio::buffer(message),
+                        [self](boost::system::error_code ec, std::size_t /*length*/) {
+                            if (!ec) {
+                                std::cout << "Forwarded message to server" << std::endl;
+                            } else {
+                                std::cout << "Failed to forward message to server: " << ec.message() << std::endl;
+                            }
+                        });
+                } else {
+                    std::cout << "Failed to connect to server: " << ec.message() << std::endl;
+                }
+            });
+    } catch (const std::exception& e) {
+        std::cout << "Exception while forwarding to server: " << e.what() << std::endl;
+    }
+}
+
+void ReverseProxyConnection::close()
+{
+    this->client_socket_->close();
+    this->server_socket_->close();
+}
 
 ReverseProxy::ReverseProxy(boost::asio::io_context& io_context, short proxy_port, const std::string& server_ip, short server_port)
-    : acceptor_(io_context, tcp::endpoint(tcp::v4(), proxy_port)),
-    socket_(io_context),
-    server_ip_(server_ip),
-    server_port_(server_port) {
+    : acceptor_(io_context, boost::asio::ip::tcp::endpoint(boost::asio::ip::tcp::v4(), proxy_port)),
+      server_ip_(server_ip),
+      server_port_(server_port) {
     StartAccept();
 }
 
 void ReverseProxy::StartAccept() {
-    acceptor_.async_accept(socket_,
-        [this](boost::system::error_code ec) {
-            if (!ec) {
-                std::cout << "Received a connection" << std::endl;
-                StartRead();
+    acceptor_.async_accept(
+        [this](boost::system::error_code ec, boost::asio::ip::tcp::socket socket) {
+            if (!ec&&SockLimiting::add(socket.remote_endpoint().address().to_string())) {
+                //boost::asio::ip::tcp::socket* sock = (boost::asio::ip::tcp::socket* )malloc(sizeof(socket));
+                //sock->assign(boost::asio::ip::tcp::v4(), socket.native_handle());
+                boost::asio::io_context& io_context1 = static_cast<boost::asio::io_context&>(socket.get_executor().context());
+                auto connection = std::make_shared<ReverseProxyConnection>(io_context1, server_ip_, server_port_, &socket);
+                connection->Start();
+                //io_context1.run_one();
+                io_context1.run_for(std::chrono::seconds(2));
+                //io_context1.run_one();
+            }
+            {
+                std::cout <<"error: "<< ec.message() << std::endl;
             }
             StartAccept();
         });
 }
-
-void ReverseProxy::StartRead() {
-    boost::asio::async_read_until(socket_, input_buffer_, '\n',
-        [this](boost::system::error_code ec, std::size_t length) {
-            if (!ec) {
-                std::istream is(&input_buffer_);
-                std::string message;
-                std::getline(is, message);
-                std::cout << "Received: " << message << std::endl;
-
-                ForwardToServer(message);
-
-                StartRead();
-            }
-        });
-}
-
-void ReverseProxy::ForwardToServer(const std::string& message) {
-    boost::asio::io_context io_context;
-    tcp::socket server_socket(io_context);
-    tcp::resolver resolver(io_context);
-
-    try {
-        tcp::resolver::results_type endpoints = resolver.resolve(server_ip_, std::to_string(server_port_));
-        boost::asio::connect(server_socket, endpoints);
-
-        boost::asio::write(server_socket, boost::asio::buffer(message));
-        std::cout << "Forwarded message to server" << std::endl;
-    }
-    catch (const std::exception& e) {
-        std::cout << "Server is not available: " << e.what() << std::endl;
-    }
-}
-
-/*void connect()
-{
-    const unsigned short port = 9090;
-    // Create a Boost.Asio io_context object
-    boost::asio::io_context io_context;
-
-    // Create an acceptor that listens on the specified port
-    boost::asio::ip::tcp::acceptor acceptor(io_context, boost::asio::ip::tcp::endpoint(boost::asio::ip::tcp::v4(), port));
-
-    std::cout << "Server listening on port " << port << std::endl;
-
-    while (true) {
-        // Create a socket for an incoming connection
-        std::shared_ptr<boost::asio::ip::tcp::socket> socket = std::make_shared<boost::asio::ip::tcp::socket>(io_context);
-
-        // Wait for and accept an incoming connection
-        boost::asio::ip::tcp::acceptor.accept(*socket);
-
-        // Spawn a new thread to handle the connection
-        std::thread(handle_client, socket).detach();
-    }
-}
-
-void handle_client(std::shared_ptr<boost::asio::ip::tcp::socket> socket) {
-    try {
-        // Get the remote endpoint information (IP address and port)
-        boost::asio::ip::tcp::endpoint remote_endpoint = socket->remote_endpoint();
-        std::cout << "Connected to: " << remote_endpoint.address().to_string() << ":" << remote_endpoint.port() << std::endl;
-
-        // Read data from the client and save it into a string
-        std::string data;
-        char buffer[1024];
-        size_t length;
-        do {
-            length = socket->read_some(buffer, boost::system::error_code());
-            data.append(buffer, length);
-        } while (length > 0);
-        // Print and save the received data
-        std::cout << "Received: " << data << std::endl;
-
-        //if(data.)
-
-        // Close the socket
-        socket->close();
-    } catch (std::exception& e) {
-        std::cerr << "Exception in thread: " << e.what() << std::endl;
-    }
-}*/

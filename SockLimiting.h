@@ -13,7 +13,7 @@
 
 class SockLimiting {
 public:
-    //static bool isMaxSock() const;
+    static bool isMaxSock();
     static bool add(std::string ip);
 private:
     static int _count;
