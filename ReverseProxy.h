@@ -27,7 +27,6 @@ private:
 class ReverseProxy {
 public:
     ReverseProxy(boost::asio::io_context& io_context, short proxy_port, const std::string& server_ip, short server_port);
-
 private:
     void StartAccept();
 

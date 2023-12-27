@@ -19,7 +19,7 @@ void ReverseProxyConnection::Start() {
 void ReverseProxyConnection::StartRead() {
     try {
         auto self = shared_from_this();
-        constexpr std::size_t maxBytesToRead = 256;  // Adjust as needed
+        constexpr std::size_t maxBytesToRead = 1024;  // Adjust as needed
         boost::asio::async_read(
             (*client_socket_), input_buffer_, boost::asio::transfer_at_least(1),
             [self, maxBytesToRead](boost::system::error_code ec, std::size_t length) {
@@ -95,14 +95,18 @@ void ReverseProxy::StartAccept() {
     acceptor_.async_accept(
         [this](boost::system::error_code ec, boost::asio::ip::tcp::socket socket) {
             if (!ec&&SockLimiting::add(socket.remote_endpoint().address().to_string())) {
+
                 //boost::asio::ip::tcp::socket* sock = (boost::asio::ip::tcp::socket* )malloc(sizeof(socket));
                 //sock->assign(boost::asio::ip::tcp::v4(), socket.native_handle());
+
                 boost::asio::io_context& io_context1 = static_cast<boost::asio::io_context&>(socket.get_executor().context());
                 auto connection = std::make_shared<ReverseProxyConnection>(io_context1, server_ip_, server_port_, &socket);
                 connection->Start();
                 //io_context1.run_one();
-                io_context1.run_for(std::chrono::seconds(2));
+
+                io_context1.run_for(std::chrono::milliseconds(60));
                 //io_context1.run_one();
+
             }
             {
                 //std::cout <<"error: "<< ec.message() << std::endl;
