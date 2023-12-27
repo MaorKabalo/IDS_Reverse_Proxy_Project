@@ -7,9 +7,10 @@
 
 #include <map>
 #include <iostream>
+#include <limits>
 //numbers are not importent can be change base on statistic of the server
-#define MAX_SOCK 1000
-#define MAX_PER_SOCK 5
+#define MAX_SOCK std::numeric_limits<int>::max()  //1000
+#define MAX_PER_SOCK std::numeric_limits<int>::max() //5
 
 class SockLimiting {
 public:

@@ -17,31 +17,41 @@ void ReverseProxyConnection::Start() {
 }
 
 void ReverseProxyConnection::StartRead() {
-    try
-    {
+    try {
         auto self = shared_from_this();
-        boost::asio::async_read_until((*client_socket_), input_buffer_, '\n',
-            [self](boost::system::error_code ec, std::size_t length) {
+        constexpr std::size_t maxBytesToRead = 256;  // Adjust as needed
+        boost::asio::async_read(
+            (*client_socket_), input_buffer_, boost::asio::transfer_at_least(1),
+            [self, maxBytesToRead](boost::system::error_code ec, std::size_t length) {
                 if (!ec) {
                     std::istream is(&self->input_buffer_);
                     std::string message;
-                    std::getline(is, message);
-                    std::cout << "Received: " << message << std::endl;
+                    message.resize(std::min(length, maxBytesToRead));
+                    is.read(&message[0], static_cast<std::streamsize>(length));
+
+                    std::cout << "Received: " << message;
+
+
 
                     self->ForwardToServer(message);
-                    if(self->client_socket_->is_open())
-                    {self->StartRead();}
+
+                    // Check if the client socket is still open before starting another read
+                    if (self->client_socket_->is_open()) {
+                        self->StartRead();
+                    }
+                } else if (ec != boost::asio::error::operation_aborted) {
+                    std::cout << "Error in StartRead: " << ec.message() << std::endl;
                 }
-                else
-                {
-                    std::cout <<"error: "<< ec.message() << std::endl;
-                }
-            });
-    }catch (const std::exception& e)
-    {
-        std::cout<<"dsg"<<std::endl;
+            }
+        );
+    } catch (const std::exception& e) {
+        std::cout << "Exception in StartRead: " << e.what() << std::endl;
     }
 }
+
+
+
+
 
 void ReverseProxyConnection::ForwardToServer(const std::string& message) {
     try {
@@ -100,3 +110,4 @@ void ReverseProxy::StartAccept() {
             StartAccept();
         });
 }
+

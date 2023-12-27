@@ -1,13 +1,16 @@
 #include <iostream>
 #include  "ReverseProxy.h"
 
+#define IP "127.0.0.1"
+#define PROXY_PORT 9090
+#define SERVER_PORT 8888
+
+
 int main()
 {
     boost::asio::io_context io_context;
-    short int server_port=8888, proxy_port=9090;
-    std::string ip = "127.0.0.1";
     boost::asio::ip::tcp::socket socket(io_context);
-    ReverseProxy reverse_proxy(io_context, proxy_port, ip, server_port);
+    ReverseProxy reverse_proxy(io_context, PROXY_PORT, IP, SERVER_PORT);
     io_context.run();
     /*while (true)
     {

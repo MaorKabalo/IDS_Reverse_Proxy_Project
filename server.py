@@ -1,5 +1,6 @@
 import socket
 
+
 def main():
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server_socket.bind(('127.0.0.1', 8888))
@@ -17,6 +18,7 @@ def main():
                 if not data:
                     break  # Break the loop if no more data
 
+                data = data[:-1]
                 print(f"Received data: {data}")
 
         except ConnectionResetError:
@@ -28,6 +30,7 @@ def main():
         finally:
             if 'client_socket' in locals():
                 client_socket.close()
+
 
 if __name__ == "__main__":
     main()
