@@ -3,6 +3,8 @@
 #include "ReverseProxy.h"
 #include <iostream>
 
+#include "SockLimiting.h"
+
 ReverseProxyConnection::ReverseProxyConnection(boost::asio::io_context& io_context, const std::string& server_ip, short server_port, boost::asio::ip::tcp::socket* sock)
     : client_socket_(sock),
       server_socket_(sock),
@@ -15,31 +17,41 @@ void ReverseProxyConnection::Start() {
 }
 
 void ReverseProxyConnection::StartRead() {
-    try
-    {
+    try {
         auto self = shared_from_this();
-        boost::asio::async_read_until((*client_socket_), input_buffer_, '\n',
-            [self](boost::system::error_code ec, std::size_t length) {
+        constexpr std::size_t maxBytesToRead = 1024;  // Adjust as needed
+        boost::asio::async_read(
+            (*client_socket_), input_buffer_, boost::asio::transfer_at_least(1),
+            [self, maxBytesToRead](boost::system::error_code ec, std::size_t length) {
                 if (!ec) {
                     std::istream is(&self->input_buffer_);
                     std::string message;
-                    std::getline(is, message);
-                    std::cout << "Received: " << message << std::endl;
+                    message.resize(std::min(length, maxBytesToRead));
+                    is.read(&message[0], static_cast<std::streamsize>(length));
+
+                    std::cout << "Received: " << message;
+
+
 
                     self->ForwardToServer(message);
-                    if(self->client_socket_->is_open())
-                    {self->StartRead();}
+
+                    // Check if the client socket is still open before starting another read
+                    if (self->client_socket_->is_open()) {
+                        self->StartRead();
+                    }
+                } else if (ec != boost::asio::error::operation_aborted) {
+                    std::cout << "Error in StartRead: " << ec.message() << std::endl;
                 }
-                else
-                {
-                    std::cout <<"error: "<< ec.message() << std::endl;
-                }
-            });
-    }catch (const std::exception& e)
-    {
-        std::cout<<"dsg"<<std::endl;
+            }
+        );
+    } catch (const std::exception& e) {
+        std::cout << "Exception in StartRead: " << e.what() << std::endl;
     }
 }
+
+
+
+
 
 void ReverseProxyConnection::ForwardToServer(const std::string& message) {
     try {
@@ -82,19 +94,24 @@ ReverseProxy::ReverseProxy(boost::asio::io_context& io_context, short proxy_port
 void ReverseProxy::StartAccept() {
     acceptor_.async_accept(
         [this](boost::system::error_code ec, boost::asio::ip::tcp::socket socket) {
-            if (!ec) {
+            if (!ec&&SockLimiting::add(socket.remote_endpoint().address().to_string())) {
+
                 //boost::asio::ip::tcp::socket* sock = (boost::asio::ip::tcp::socket* )malloc(sizeof(socket));
                 //sock->assign(boost::asio::ip::tcp::v4(), socket.native_handle());
+
                 boost::asio::io_context& io_context1 = static_cast<boost::asio::io_context&>(socket.get_executor().context());
                 auto connection = std::make_shared<ReverseProxyConnection>(io_context1, server_ip_, server_port_, &socket);
                 connection->Start();
                 //io_context1.run_one();
-                io_context1.run_for(std::chrono::seconds(2));
+
+                io_context1.run_for(std::chrono::milliseconds(60));
                 //io_context1.run_one();
+
             }
             {
-                std::cout <<"error: "<< ec.message() << std::endl;
+                //std::cout <<"error: "<< ec.message() << std::endl;
             }
             StartAccept();
         });
 }
+
