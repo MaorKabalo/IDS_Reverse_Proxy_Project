@@ -1,4 +1,4 @@
-# Install script for directory: /home/kali/Desktop/haifa-01-proxysaver
+# Install script for directory: /home/kali/project/haifa-01-proxysaver
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/kali/project/haifa-01-proxysaver/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

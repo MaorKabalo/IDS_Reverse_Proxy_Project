@@ -36,9 +36,9 @@ void ReverseProxyConnection::StartRead() {
                     self->ForwardToServer(message);
 
                     // Check if the client socket is still open before starting another read
-                    if (self->client_socket_->is_open()) {
+                    //if (self->client_socket_->is_open()) {
                         self->StartRead();
-                    }
+                    //}
                 } else if (ec != boost::asio::error::operation_aborted) {
                     std::cout << "Error in StartRead: " << ec.message() << std::endl;
                 }
@@ -65,6 +65,7 @@ void ReverseProxyConnection::ForwardToServer(const std::string& message) {
                         [self](boost::system::error_code ec, std::size_t /*length*/) {
                             if (!ec) {
                                 std::cout << "Forwarded message to server" << std::endl;
+                                //self->StartRead();
                             } else {
                                 std::cout << "Failed to forward message to server: " << ec.message() << std::endl;
                             }
@@ -80,8 +81,8 @@ void ReverseProxyConnection::ForwardToServer(const std::string& message) {
 
 void ReverseProxyConnection::close()
 {
-    this->client_socket_->close();
-    this->server_socket_->close();
+    //this->client_socket_->close();
+    //this->server_socket_->close();
 }
 
 ReverseProxy::ReverseProxy(boost::asio::io_context& io_context, short proxy_port, const std::string& server_ip, short server_port)
@@ -103,9 +104,8 @@ void ReverseProxy::StartAccept() {
                 auto connection = std::make_shared<ReverseProxyConnection>(io_context1, server_ip_, server_port_, &socket);
                 connection->Start();
                 //io_context1.run_one();
-
-                io_context1.run_for(std::chrono::milliseconds(60));
-                //io_context1.run_one();
+                io_context1.run_for(std::chrono::seconds(6));
+                //io_context1.run();
 
             }
             {
