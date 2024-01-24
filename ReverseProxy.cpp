@@ -64,7 +64,7 @@ void ReverseProxyConnection::ForwardToServer(const std::string& message) {
                     boost::asio::async_write(*(self->server_socket_), boost::asio::buffer(message),
                         [self](boost::system::error_code ec, std::size_t /*length*/) {
                             if (!ec) {
-                                std::cout << "Forwarded message to server" << std::endl;
+                                std::cout << "\nForwarded message to server" << std::endl;
                             } else {
                                 std::cout << "Failed to forward message to server: " << ec.message() << std::endl;
                             }
@@ -88,30 +88,36 @@ ReverseProxy::ReverseProxy(boost::asio::io_context& io_context, short proxy_port
     : acceptor_(io_context, boost::asio::ip::tcp::endpoint(boost::asio::ip::tcp::v4(), proxy_port)),
       server_ip_(server_ip),
       server_port_(server_port) {
+    std::cout << "Proxy Initiallized, Listening On Port " << proxy_port << "..." << std::endl;
     StartAccept();
 }
 
-void ReverseProxy::StartAccept() {
+void ReverseProxy::StartAccept() {   //Function OK
     acceptor_.async_accept(
-        [this](boost::system::error_code ec, boost::asio::ip::tcp::socket socket) {
-            if (!ec&&SockLimiting::add(socket.remote_endpoint().address().to_string())) {
-
-                //boost::asio::ip::tcp::socket* sock = (boost::asio::ip::tcp::socket* )malloc(sizeof(socket));
-                //sock->assign(boost::asio::ip::tcp::v4(), socket.native_handle());
-
+        [this](const boost::system::error_code& ec, boost::asio::ip::tcp::socket socket) {
+            // Check for errors and if the connection limit is reached
+            if (!ec && SockLimiting::add(socket.remote_endpoint().address().to_string())) {
+                // Use shared_ptr to manage the lifetime of socket and ReverseProxyConnection
+                std::cout << "New Client Incoming..." << std::endl;
+                // Get the io_context associated with the socket
                 boost::asio::io_context& io_context1 = static_cast<boost::asio::io_context&>(socket.get_executor().context());
+
+                // Create a ReverseProxyConnection with the accepted socket
                 auto connection = std::make_shared<ReverseProxyConnection>(io_context1, server_ip_, server_port_, &socket);
+
+                // Start the connection
                 connection->Start();
-                //io_context1.run_one();
 
+                // Run the io_context for a limited duration (timeout)
                 io_context1.run_for(std::chrono::milliseconds(60));
-                //io_context1.run_one();
+            }
 
-            }
-            {
-                //std::cout <<"error: "<< ec.message() << std::endl;
-            }
+            // Start the next asynchronous accept operation
             StartAccept();
         });
 }
+
+
+
+
 

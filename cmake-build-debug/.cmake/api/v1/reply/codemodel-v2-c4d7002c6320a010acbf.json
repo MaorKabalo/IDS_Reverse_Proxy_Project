@@ -27,7 +27,7 @@
 					[
 						0
 					],
-					"name" : "untitled",
+					"name" : "IDS_Project",
 					"targetIndexes" : 
 					[
 						0
@@ -38,9 +38,9 @@
 			[
 				{
 					"directoryIndex" : 0,
-					"id" : "untitled::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-untitled-Debug-e8ac8852750287d4b8c1.json",
-					"name" : "untitled",
+					"id" : "IDS_Project::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-IDS_Project-Debug-7940cbb927efc3936a18.json",
+					"name" : "IDS_Project",
 					"projectIndex" : 0
 				}
 			]
@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/kali/project/haifa-01-proxysaver/cmake-build-debug",
-		"source" : "/home/kali/project/haifa-01-proxysaver"
+		"build" : "/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug",
+		"source" : "/home/kali/Desktop/haifa-01-proxysaver"
 	},
 	"version" : 
 	{

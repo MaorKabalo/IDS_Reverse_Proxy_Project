@@ -18,8 +18,12 @@ def main():
                 if not data:
                     break  # Break the loop if no more data
 
-                data = data[:-1]
-                print(f"Received data: {data}")
+                dataStr = data.decode('utf-8')
+
+                if dataStr[-1] == '\n':
+                    dataStr = dataStr[:-1]
+
+                print(f"Received data: {dataStr}")
 
         except ConnectionResetError:
             print("Connection reset by peer")
