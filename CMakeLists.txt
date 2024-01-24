@@ -21,5 +21,4 @@ set(EBPF_FILES cmake-build-debug/bandwidth_limiting.bpf.c
 add_executable(IDS_Project main.cpp
         ${SOURCE_FILES}
         ${HEADER_FILES}
-        ${PYTHON_FILES}
-        ${EBPF_FILES})
+        ${PYTHON_FILES})

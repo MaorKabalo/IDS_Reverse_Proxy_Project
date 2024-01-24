@@ -67,27 +67,6 @@
 				1,
 				2
 			]
-		},
-		{
-			"compileCommandFragments" : 
-			[
-				{
-					"fragment" : "-g -fdiagnostics-color=always"
-				}
-			],
-			"defines" : 
-			[
-				{
-					"backtrace" : 2,
-					"define" : "PROJECT_NAME=\"IDS_Project\""
-				}
-			],
-			"language" : "C",
-			"sourceIndexes" : 
-			[
-				7,
-				8
-			]
 		}
 	],
 	"id" : "IDS_Project::@6890427a1f51a3e7e1df",
@@ -121,9 +100,7 @@
 			[
 				0,
 				1,
-				2,
-				7,
-				8
+				2
 			]
 		},
 		{
@@ -182,18 +159,6 @@
 			"backtrace" : 1,
 			"path" : "rate_limiting_tester.py",
 			"sourceGroupIndex" : 2
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 1,
-			"path" : "cmake-build-debug/bandwidth_limiting.bpf.c",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 1,
-			"path" : "cmake-build-debug/rate_limiting.bpf.c",
-			"sourceGroupIndex" : 0
 		}
 	],
 	"type" : "EXECUTABLE"

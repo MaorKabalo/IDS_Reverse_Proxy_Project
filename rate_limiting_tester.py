@@ -12,12 +12,12 @@ def send_hello_world_messages(server_address, server_port):
         print(f"Connected to {server_address}:{server_port}")
 
         # Send 80 "hello world" messages per second
-        for _ in range(2):
+        for _ in range(80):
             message = "hello world" + str(i)
             client_socket.send(message.encode())
             print(f"{i} Sent: {message.encode()}")
             i += 1
-            time.sleep(0.5)
+            time.sleep(0.0125)
 
 
 
