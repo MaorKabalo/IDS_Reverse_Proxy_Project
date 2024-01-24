@@ -10,12 +10,16 @@ set(SOURCE_FILES main.cpp
         SockLimiting.cpp)
 
 set(HEADER_FILES ReverseProxy.h
-        SockLimiting.h
-        Session.h)
+        SockLimiting.h)
 
-set(PYTHON_FILES server.py)
+set(PYTHON_FILES server.py
+        rate_limiting_tester.py)
+
+set(EBPF_FILES cmake-build-debug/bandwidth_limiting.bpf.c
+                cmake-build-debug/rate_limiting.bpf.c)
 
 add_executable(IDS_Project main.cpp
         ${SOURCE_FILES}
         ${HEADER_FILES}
-        ${PYTHON_FILES})
+        ${PYTHON_FILES}
+        ${EBPF_FILES})
