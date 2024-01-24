@@ -1,36 +1,37 @@
-// ReverseProxy.h
-
 #pragma once
 
-#include <boost/asio.hpp>
-#include <memory>
+#include <iostream>
+#include <string>
+#include <thread>
+#include <deque>
+#include <map>
+#include <stdexcept>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <unistd.h>
+#include <arpa/inet.h>
 
+#define ADDRESS "127.0.0.1"
+#define PROXY_PORT 9090
+#define SERVER_PORT 8888
 
-
-class ReverseProxyConnection : public std::enable_shared_from_this<ReverseProxyConnection> {
+class ReverseProxy
+{
 public:
-    ReverseProxyConnection(boost::asio::io_context& io_context, const std::string& server_ip, short server_port, boost::asio::ip::tcp::socket* sock);
-    void Start();
+    ReverseProxy();
+    ~ReverseProxy();
+
+    void startHandleRequests();
 
 private:
-    void StartRead();
-    void ForwardToServer(const std::string& message);
-    void close();
+    void bindAndListen() const;
+    void handleNewClient(int clientSocket);
+    static void forwardToServer(int clientSocket, const std::string& message);
+    static std::string receiveStringFromSocket(int socket);
 
-    boost::asio::ip::tcp::socket* client_socket_;
-    boost::asio::ip::tcp::socket* server_socket_;
-    boost::asio::streambuf input_buffer_;
-    std::string server_ip_;
-    short server_port_;
-};
+    int m_serverSocket;
 
-class ReverseProxy {
-public:
-    ReverseProxy(boost::asio::io_context& io_context, short proxy_port, const std::string& server_ip, short server_port);
-private:
-    void StartAccept();
-
-    boost::asio::ip::tcp::acceptor acceptor_;
-    std::string server_ip_;
-    short server_port_;
+    std::map<int, int> m_clients;
+    static int m_numOfClient;
 };

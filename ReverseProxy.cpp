@@ -1,123 +1,163 @@
-// ReverseProxy.cpp
-
 #include "ReverseProxy.h"
-#include <iostream>
 
-#include "SockLimiting.h"
+#include <algorithm>
+#include <cstring>
 
-ReverseProxyConnection::ReverseProxyConnection(boost::asio::io_context& io_context, const std::string& server_ip, short server_port, boost::asio::ip::tcp::socket* sock)
-    : client_socket_(sock),
-      server_socket_(sock),
-      server_ip_(server_ip),
-server_port_(server_port) {}
+int ReverseProxy::m_numOfClient = 0;
 
-void ReverseProxyConnection::Start() {
-    std::cout << "New connection" << std::endl;
-    StartRead();
-}
-
-void ReverseProxyConnection::StartRead() {
-    try {
-        auto self = shared_from_this();
-        constexpr std::size_t maxBytesToRead = 1024;  // Adjust as needed
-        boost::asio::async_read(
-            (*client_socket_), input_buffer_, boost::asio::transfer_at_least(1),
-            [self, maxBytesToRead](boost::system::error_code ec, std::size_t length) {
-                if (!ec) {
-                    std::istream is(&self->input_buffer_);
-                    std::string message;
-                    message.resize(std::min(length, maxBytesToRead));
-                    is.read(&message[0], static_cast<std::streamsize>(length));
-
-                    std::cout << "Received: " << message;
-
-
-
-                    self->ForwardToServer(message);
-
-                    // Check if the client socket is still open before starting another read
-                    if (self->client_socket_->is_open()) {
-                        self->StartRead();
-                    }
-                } else if (ec != boost::asio::error::operation_aborted) {
-                    std::cout << "Error in StartRead: " << ec.message() << std::endl;
-                }
-            }
-        );
-    } catch (const std::exception& e) {
-        std::cout << "Exception in StartRead: " << e.what() << std::endl;
-    }
-}
-
-
-
-
-
-void ReverseProxyConnection::ForwardToServer(const std::string& message) {
-    try {
-        boost::asio::ip::tcp::resolver resolver(client_socket_->get_executor());
-        auto endpoints = resolver.resolve(server_ip_, std::to_string(server_port_));
-        auto self = shared_from_this();
-        boost::asio::async_connect((*server_socket_), endpoints,
-            [self, message](boost::system::error_code ec, boost::asio::ip::tcp::endpoint) {
-                if (!ec) {
-                    boost::asio::async_write(*(self->server_socket_), boost::asio::buffer(message),
-                        [self](boost::system::error_code ec, std::size_t /*length*/) {
-                            if (!ec) {
-                                std::cout << "\nForwarded message to server" << std::endl;
-                            } else {
-                                std::cout << "Failed to forward message to server: " << ec.message() << std::endl;
-                            }
-                        });
-                } else {
-                    std::cout << "Failed to connect to server: " << ec.message() << std::endl;
-                }
-            });
-    } catch (const std::exception& e) {
-        std::cout << "Exception while forwarding to server: " << e.what() << std::endl;
-    }
-}
-
-void ReverseProxyConnection::close()
+ReverseProxy::ReverseProxy()
 {
-    this->client_socket_->close();
-    this->server_socket_->close();
+    m_serverSocket = socket(AF_INET, SOCK_STREAM, 0); // Use 0 for protocol since TCP is the default
+
+    if (m_serverSocket == -1)
+        throw std::runtime_error(std::string(__func__) + " - socket");
 }
 
-ReverseProxy::ReverseProxy(boost::asio::io_context& io_context, short proxy_port, const std::string& server_ip, short server_port)
-    : acceptor_(io_context, boost::asio::ip::tcp::endpoint(boost::asio::ip::tcp::v4(), proxy_port)),
-      server_ip_(server_ip),
-      server_port_(server_port) {
-    std::cout << "Proxy Initiallized, Listening On Port " << proxy_port << "..." << std::endl;
-    StartAccept();
+ReverseProxy::~ReverseProxy()
+{
+    try
+    {
+        // Freeing resources allocated in the constructor
+        close(m_serverSocket);
+    }
+    catch (...) {}
 }
 
-void ReverseProxy::StartAccept() {   //Function OK
-    acceptor_.async_accept(
-        [this](const boost::system::error_code& ec, boost::asio::ip::tcp::socket socket) {
-            // Check for errors and if the connection limit is reached
-            if (!ec && SockLimiting::add(socket.remote_endpoint().address().to_string())) {
-                // Use shared_ptr to manage the lifetime of socket and ReverseProxyConnection
-                std::cout << "New Client Incoming..." << std::endl;
-                // Get the io_context associated with the socket
-                boost::asio::io_context& io_context1 = static_cast<boost::asio::io_context&>(socket.get_executor().context());
+void ReverseProxy::bindAndListen() const
+{
+    struct sockaddr_in sa = { 0 };
 
-                // Create a ReverseProxyConnection with the accepted socket
-                auto connection = std::make_shared<ReverseProxyConnection>(io_context1, server_ip_, server_port_, &socket);
+    sa.sin_port = htons(PROXY_PORT);
+    sa.sin_family = AF_INET;
+    sa.sin_addr.s_addr = INADDR_ANY;
 
-                // Start the connection
-                connection->Start();
+    if (bind(m_serverSocket, (struct sockaddr*)&sa, sizeof(sa)) == -1)
+        throw std::runtime_error(std::string(__func__) + " - bind");
 
-                // Run the io_context for a limited duration (timeout)
-                io_context1.run_for(std::chrono::milliseconds(60));
+    if (listen(m_serverSocket, SOMAXCONN) == -1)
+        throw std::runtime_error(std::string(__func__) +" - listen");
+
+    std::cout << "Listening on port " << PROXY_PORT << std::endl;
+}
+
+void ReverseProxy::startHandleRequests()
+{
+    this->bindAndListen();
+    std::cout << "Waiting for client connection request" << std::endl;
+
+    while (true)
+    {
+        std::cout << "Waiting for client connection request" << std::endl;
+
+        int client_socket = accept(m_serverSocket, nullptr, nullptr);
+        if (client_socket == -1)
+            throw std::runtime_error(std::string(__func__));
+
+        std::cout << "Client accepted. Server and client can speak" << std::endl;
+
+        m_clients.insert({ client_socket, m_numOfClient++ });
+
+        std::thread client_thread(&ReverseProxy::handleNewClient, this, client_socket);
+        client_thread.detach();
+    }
+}
+
+bool isNumeric(const std::string& str)
+{
+    return std::all_of(str.begin(), str.end(), [](char c) {
+        return std::isdigit(c);
+    });
+}
+
+void ReverseProxy::handleNewClient(const int clientSocket)
+{
+    try
+    {
+        while (true)
+        {
+            std::string m = receiveStringFromSocket(clientSocket);  //getting request
+            if (m.empty()) { throw std::runtime_error("Client exits the program"); }
+            std::cout << m << std::endl;
+            forwardToServer(clientSocket, m);
+        }
+
+        // Closing the socket (in the level of the TCP protocol)
+        m_clients.erase(clientSocket);
+        close(clientSocket);
+    }
+    catch (const std::exception& e)
+    {
+        m_clients.erase(clientSocket);
+        close(clientSocket);
+        std::cerr << "Error handling client: " << e.what() << std::endl;
+    }
+    catch (...)
+    {
+        m_clients.erase(clientSocket);
+        close(clientSocket);
+        std::cerr << "Unknown error handling client." << std::endl;
+    }
+}
+
+std::string ReverseProxy::receiveStringFromSocket(const int socket)
+{
+    std::string result;
+    char buffer[1024];
+    int bytes_received;
+
+    do {
+        bytes_received = recv(socket, buffer, sizeof(buffer), 0);
+        if (bytes_received > 0) {
+            result += std::string(buffer, bytes_received);
+        }
+        else if (bytes_received == 0) {
+            break;
+        }
+        else if (bytes_received == -1) {
+            if (errno == EWOULDBLOCK) {
+                continue;
             }
+            else {
+                std::cerr << "Error receiving data: " << strerror(errno) << std::endl;
+            }
+            break;
+        }
+    } while (bytes_received == sizeof(buffer));
 
-            // Start the next asynchronous accept operation
-            StartAccept();
-        });
+    return result;
 }
 
+void ReverseProxy::forwardToServer(int clientSocket, const std::string& message)
+{
+    // You may need to replace "SERVER_ADDRESS" and "SERVER_PORT" with your actual server's address and port
 
+    // Create a socket to connect to the server
+    int serverSocket = socket(AF_INET, SOCK_STREAM, 0);
+    if (serverSocket == -1)
+    {
+        throw std::runtime_error("Failed to create server socket");
+    }
 
+    sockaddr_in serverAddr{};
+    serverAddr.sin_family = AF_INET;
+    serverAddr.sin_port = htons(SERVER_PORT);
+    if (inet_pton(AF_INET, ADDRESS, &serverAddr.sin_addr) <= 0)
+    {
+        throw std::runtime_error("Invalid server address");
+    }
 
+    // Connect to the server
+    if (connect(serverSocket, reinterpret_cast<struct sockaddr*>(&serverAddr), sizeof(serverAddr)) == -1)
+    {
+        throw std::runtime_error("Failed to connect to the server");
+    }
 
+    // Send the message to the server
+    if (send(serverSocket, message.c_str(), message.size(), 0) == -1)
+    {
+        throw std::runtime_error("Failed to send message to the server");
+    }
+
+    // Close the connection to the server
+    close(serverSocket);
+}

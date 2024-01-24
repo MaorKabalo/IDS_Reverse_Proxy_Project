@@ -8,17 +8,8 @@
 
 int main()
 {
-    boost::asio::io_context io_context;
-    boost::asio::ip::tcp::socket socket(io_context);
-    ReverseProxy reverse_proxy(io_context, PROXY_PORT, IP, SERVER_PORT);
-    io_context.run();
-    /*while (true)
-    {
-        if(io_context.stopped())
-        {
-            reverse_proxy.StartAccept();
-            io_context.run();
-        }
-    }*/
+    ReverseProxy reverse_proxy;
+    reverse_proxy.startHandleRequests();
+
     return 0;
 }
