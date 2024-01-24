@@ -1,25 +1,37 @@
-#ifndef REVERSE_PROXY_H
-#define REVERSE_PROXY_H
+#pragma once
 
+#include <iostream>
 #include <string>
-#include <boost/asio.hpp>
+#include <thread>
+#include <deque>
+#include <map>
+#include <stdexcept>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <unistd.h>
+#include <arpa/inet.h>
 
-class ReverseProxy {
+#define ADDRESS "127.0.0.1"
+#define PROXY_PORT 9090
+#define SERVER_PORT 8888
+
+class ReverseProxy
+{
 public:
-    ReverseProxy(boost::asio::io_context& io_context, short proxy_port, const std::string& server_ip, short server_port);
+    ReverseProxy();
+    ~ReverseProxy();
+
+    void startHandleRequests();
 
 private:
-    void StartAccept();
-    void StartRead();
-    void ForwardToServer(const std::string& message);
-    //void connect();
-    //void handle_client(std::shared_ptr<boost::asio::ip::tcp::socket> socket);
+    void bindAndListen() const;
+    void handleNewClient(int clientSocket);
+    static void forwardToServer(int clientSocket, const std::string& message);
+    static std::string receiveStringFromSocket(int socket);
 
-    boost::asio::ip::tcp::acceptor acceptor_;
-    boost::asio::ip::tcp::socket socket_;
-    boost::asio::streambuf input_buffer_;
-    std::string server_ip_;
-    short server_port_;
+    int m_serverSocket;
+
+    std::map<int, int> m_clients;
+    static int m_numOfClient;
 };
-
-#endif // REVERSE_PROXY_H

@@ -7,18 +7,15 @@ set(CMAKE_CXX_STANDARD 17)
 
 set(SOURCE_FILES main.cpp
         ReverseProxy.cpp
-        EBPF_Runner.cpp)
+        SockLimiting.cpp)
 
 set(HEADER_FILES ReverseProxy.h
-                 EBPF_Runner.h)
+        SockLimiting.h
+        Session.h)
 
-set(PYTHON_FILES server.py
-        client.py)
-
-set(EBPF_FILES
-        cmake-build-debug/bandwidth_limiting.bpf.c)
+set(PYTHON_FILES server.py)
 
 add_executable(IDS_Project main.cpp
         ${SOURCE_FILES}
         ${HEADER_FILES}
-        ${EBPF_FILES})
+        ${PYTHON_FILES})

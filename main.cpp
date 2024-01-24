@@ -6,19 +6,15 @@
 #define PROXY_PORT 9090
 #define SERVER_PORT 8888
 
+#define IP "127.0.0.1"
+#define PROXY_PORT 9090
+#define SERVER_PORT 8888
+
+
 int main()
 {
-
-    //boost::asio::io_context io_context;
-
-    EBPF_Runner bandwidth_limiter("bandwidth_limiting");
-
-    if(bandwidth_limiter.compileAndRunEBPFProgram()) {
-        bandwidth_limiter.printLogOfProgram();
-    }
-
-    // ReverseProxy reverse_proxy(io_context, PROXY_PORT, IP, SERVER_PORT);
-    // io_context.run();
+    ReverseProxy reverse_proxy;
+    reverse_proxy.startHandleRequests();
 
     return 0;
 }
