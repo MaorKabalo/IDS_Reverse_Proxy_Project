@@ -3,6 +3,7 @@
 #include <algorithm>
 #include <cstring>
 
+std::mutex ReverseProxy::m_mutex;
 int ReverseProxy::m_numOfClient = 0;
 
 ReverseProxy::ReverseProxy()
@@ -73,15 +74,11 @@ void ReverseProxy::initProxyServerSocket() {
 }
 
 
-void ReverseProxy::startHandleRequests()
-{
+void ReverseProxy::startHandleRequests() {
     this->bindAndListen();
     this->initProxyServerSocket();
 
-    //std::cout << "Waiting for client connection request" << std::endl;
-
-    while (true)
-    {
+    while (true) {
         std::cout << "Waiting for client connection request" << std::endl;
 
         int client_socket = accept(m_proxyClientSocket, nullptr, nullptr);
@@ -90,7 +87,10 @@ void ReverseProxy::startHandleRequests()
 
         std::cout << "Client accepted. Server and client can speak" << std::endl;
 
-        m_clients.insert({ client_socket, m_numOfClient++ });
+        {
+            std::lock_guard<std::mutex> lock(m_mutex);
+            m_clients.insert({ client_socket, m_numOfClient++ });
+        }
 
         std::thread client_thread(&ReverseProxy::handleNewClient, this, client_socket);
         client_thread.detach();
@@ -104,34 +104,33 @@ bool isNumeric(const std::string& str)
     });
 }
 
-void ReverseProxy::handleNewClient(const int clientSocket)
-{
-    try
-    {
-        while (true)
-        {
+
+void ReverseProxy::handleNewClient(const int clientSocket) {
+    try {
+        while (true) {
             std::string m = receiveStringFromSocket(clientSocket);  //getting request
             if (m.empty()) { throw std::runtime_error("Client exits the program"); }
             std::cout << m << std::endl;
             forwardToServer(m);
         }
 
-        // Closing the socket (in the level of the TCP protocol)
-        m_clients.erase(clientSocket);
+        {
+            std::lock_guard<std::mutex> lock(m_mutex);
+            // Closing the socket (in the level of the TCP protocol)
+            m_clients.erase(clientSocket);
+        }
         close(clientSocket);
     }
-    catch (const std::exception& e)
-    {
+    catch (const std::exception& e) {
+        std::lock_guard<std::mutex> lock(m_mutex);
         m_clients.erase(clientSocket);
         close(clientSocket);
         std::cerr << "Error handling client: " << e.what() << std::endl;
     }
-    catch (...)
-    {
+    catch (...) {
+        std::lock_guard<std::mutex> lock(m_mutex);
         m_clients.erase(clientSocket);
         close(clientSocket);
-        //close(m_proxyServerSocket);
-        //close(m_proxyClientSocket);
         std::cerr << "Unknown error handling client." << std::endl;
     }
 }

@@ -11,6 +11,7 @@
 #include <netinet/in.h>
 #include <unistd.h>
 #include <arpa/inet.h>
+#include <mutex>
 
 #define ADDRESS "127.0.0.1"
 #define PROXY_PORT 9090
@@ -36,4 +37,6 @@ private:
 
     std::map<int, int> m_clients;
     static int m_numOfClient;
+
+    static std::mutex m_mutex;
 };
