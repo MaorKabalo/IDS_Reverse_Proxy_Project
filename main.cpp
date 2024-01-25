@@ -12,14 +12,15 @@
 int main()
 {
 
-    //EBPF_Runner bandwidth_limiter(EBPF_BANDWIDTH_NAME);
+    EBPF_Runner bandwidth_limiter(EBPF_BANDWIDTH_NAME);
 
-    //if(bandwidth_limiter.compileAndRunEBPFProgram()) {
-    //    ReverseProxy reverse_proxy;
-    //    reverse_proxy.startHandleRequests();
-    //}
-    ReverseProxy reverse_proxy;
-    reverse_proxy.startHandleRequests();
+    if(bandwidth_limiter.compileAndRunEBPFProgram()) {
+        ReverseProxy reverse_proxy;
+        reverse_proxy.startHandleRequests();
+    }
+
+    // ReverseProxy reverse_proxy;
+    // reverse_proxy.startHandleRequests();
 
 
 ;

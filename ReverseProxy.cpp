@@ -48,7 +48,6 @@ void ReverseProxy::bindAndListen() const
 }
 
 void ReverseProxy::initProxyServerSocket() {
-    // You may need to replace "SERVER_ADDRESS" and "SERVER_PORT" with your actual server's address and port
 
     // Create a socket to connect to the server
     m_proxyServerSocket = socket(AF_INET, SOCK_STREAM, 0);
@@ -120,23 +119,19 @@ void ReverseProxy::handleNewClient(const int clientSocket)
         // Closing the socket (in the level of the TCP protocol)
         m_clients.erase(clientSocket);
         close(clientSocket);
-        close(m_proxyServerSocket);
-        close(m_proxyClientSocket);
     }
     catch (const std::exception& e)
     {
         m_clients.erase(clientSocket);
         close(clientSocket);
-        close(m_proxyServerSocket);
-        close(m_proxyClientSocket);
         std::cerr << "Error handling client: " << e.what() << std::endl;
     }
     catch (...)
     {
         m_clients.erase(clientSocket);
         close(clientSocket);
-        close(m_proxyServerSocket);
-        close(m_proxyClientSocket);
+        //close(m_proxyServerSocket);
+        //close(m_proxyClientSocket);
         std::cerr << "Unknown error handling client." << std::endl;
     }
 }
@@ -171,11 +166,9 @@ std::string ReverseProxy::receiveStringFromSocket(const int socket)
 
 void ReverseProxy::forwardToServer(const std::string& message) const
 {
-
     // Send the message to the server
     if (send(m_proxyServerSocket, message.c_str(), message.size(), 0) == -1)
     {
         throw std::runtime_error("Failed to send message to the server");
     }
-
 }
