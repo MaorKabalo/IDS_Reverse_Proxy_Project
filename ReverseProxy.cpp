@@ -7,9 +7,9 @@ int ReverseProxy::m_numOfClient = 0;
 
 ReverseProxy::ReverseProxy()
 {
-    m_serverSocket = socket(AF_INET, SOCK_STREAM, 0); // Use 0 for protocol since TCP is the default
+    m_proxyClientSocket = socket(AF_INET, SOCK_STREAM, 0); // Use 0 for protocol since TCP is the default
 
-    if (m_serverSocket == -1)
+    if (m_proxyClientSocket == -1)
         throw std::runtime_error(std::string(__func__) + " - socket");
 }
 
@@ -18,7 +18,12 @@ ReverseProxy::~ReverseProxy()
     try
     {
         // Freeing resources allocated in the constructor
-        close(m_serverSocket);
+        close(m_proxyServerSocket);
+        for (auto& pair : m_clients) {
+            close(pair.first);
+        }
+        close(m_proxyClientSocket);
+
     }
     catch (...) {}
 }
@@ -31,25 +36,56 @@ void ReverseProxy::bindAndListen() const
     sa.sin_family = AF_INET;
     sa.sin_addr.s_addr = INADDR_ANY;
 
-    if (bind(m_serverSocket, (struct sockaddr*)&sa, sizeof(sa)) == -1)
+    if (bind(m_proxyClientSocket, (struct sockaddr*)&sa, sizeof(sa)) == -1)
         throw std::runtime_error(std::string(__func__) + " - bind");
 
-    if (listen(m_serverSocket, SOMAXCONN) == -1)
+    if (listen(m_proxyClientSocket, SOMAXCONN) == -1)
         throw std::runtime_error(std::string(__func__) +" - listen");
 
+
     std::cout << "Listening on port " << PROXY_PORT << std::endl;
+
 }
+
+void ReverseProxy::initProxyServerSocket() {
+    // You may need to replace "SERVER_ADDRESS" and "SERVER_PORT" with your actual server's address and port
+
+    // Create a socket to connect to the server
+    m_proxyServerSocket = socket(AF_INET, SOCK_STREAM, 0);
+    if (m_proxyServerSocket == -1)
+    {
+        throw std::runtime_error("Failed to create server socket");
+    }
+
+    sockaddr_in serverAddr{};
+    serverAddr.sin_family = AF_INET;
+    serverAddr.sin_port = htons(SERVER_PORT);
+    if (inet_pton(AF_INET, ADDRESS, &serverAddr.sin_addr) <= 0)
+    {
+        throw std::runtime_error("Invalid server address");
+    }
+
+    // Connect to the server
+    if (connect(m_proxyServerSocket, reinterpret_cast<struct sockaddr*>(&serverAddr), sizeof(serverAddr)) == -1)
+    {
+        throw std::runtime_error("Failed to connect to the server");
+    }
+    std::cout << "Established connection to server!" << std::endl;
+}
+
 
 void ReverseProxy::startHandleRequests()
 {
     this->bindAndListen();
-    std::cout << "Waiting for client connection request" << std::endl;
+    this->initProxyServerSocket();
+
+    //std::cout << "Waiting for client connection request" << std::endl;
 
     while (true)
     {
         std::cout << "Waiting for client connection request" << std::endl;
 
-        int client_socket = accept(m_serverSocket, nullptr, nullptr);
+        int client_socket = accept(m_proxyClientSocket, nullptr, nullptr);
         if (client_socket == -1)
             throw std::runtime_error(std::string(__func__));
 
@@ -78,23 +114,29 @@ void ReverseProxy::handleNewClient(const int clientSocket)
             std::string m = receiveStringFromSocket(clientSocket);  //getting request
             if (m.empty()) { throw std::runtime_error("Client exits the program"); }
             std::cout << m << std::endl;
-            forwardToServer(clientSocket, m);
+            forwardToServer(m);
         }
 
         // Closing the socket (in the level of the TCP protocol)
         m_clients.erase(clientSocket);
         close(clientSocket);
+        close(m_proxyServerSocket);
+        close(m_proxyClientSocket);
     }
     catch (const std::exception& e)
     {
         m_clients.erase(clientSocket);
         close(clientSocket);
+        close(m_proxyServerSocket);
+        close(m_proxyClientSocket);
         std::cerr << "Error handling client: " << e.what() << std::endl;
     }
     catch (...)
     {
         m_clients.erase(clientSocket);
         close(clientSocket);
+        close(m_proxyServerSocket);
+        close(m_proxyClientSocket);
         std::cerr << "Unknown error handling client." << std::endl;
     }
 }
@@ -127,37 +169,13 @@ std::string ReverseProxy::receiveStringFromSocket(const int socket)
     return result;
 }
 
-void ReverseProxy::forwardToServer(int clientSocket, const std::string& message)
+void ReverseProxy::forwardToServer(const std::string& message) const
 {
-    // You may need to replace "SERVER_ADDRESS" and "SERVER_PORT" with your actual server's address and port
-
-    // Create a socket to connect to the server
-    int serverSocket = socket(AF_INET, SOCK_STREAM, 0);
-    if (serverSocket == -1)
-    {
-        throw std::runtime_error("Failed to create server socket");
-    }
-
-    sockaddr_in serverAddr{};
-    serverAddr.sin_family = AF_INET;
-    serverAddr.sin_port = htons(SERVER_PORT);
-    if (inet_pton(AF_INET, ADDRESS, &serverAddr.sin_addr) <= 0)
-    {
-        throw std::runtime_error("Invalid server address");
-    }
-
-    // Connect to the server
-    if (connect(serverSocket, reinterpret_cast<struct sockaddr*>(&serverAddr), sizeof(serverAddr)) == -1)
-    {
-        throw std::runtime_error("Failed to connect to the server");
-    }
 
     // Send the message to the server
-    if (send(serverSocket, message.c_str(), message.size(), 0) == -1)
+    if (send(m_proxyServerSocket, message.c_str(), message.size(), 0) == -1)
     {
         throw std::runtime_error("Failed to send message to the server");
     }
 
-    // Close the connection to the server
-    close(serverSocket);
 }

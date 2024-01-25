@@ -11,7 +11,7 @@
 
 class EBPF_Runner {
 public:
-    explicit EBPF_Runner(std::string  ebpfProgramPath); //"program.c.bpf" => "program"
+    explicit EBPF_Runner(std::string ebpfProgramPath); //"program.c.bpf" => "program"
     ~EBPF_Runner();
 
     bool compileAndRunEBPFProgram() const;
@@ -21,8 +21,8 @@ public:
 
 
 private:
-    std::string ebpfProgramPath;
-    std::string interfaceName;
+    std::string ebpfProgramPath_;
+    std::string interfaceName_;
 
     int compileEBPFProgram() const;
     int loadEBPFProgram() const;

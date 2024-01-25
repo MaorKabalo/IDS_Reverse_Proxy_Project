@@ -70,6 +70,13 @@ build CMakeFiles/IDS_Project.dir/SockLimiting.cpp.o: CXX_COMPILER__IDS_Project_u
   OBJECT_DIR = CMakeFiles/IDS_Project.dir
   OBJECT_FILE_DIR = CMakeFiles/IDS_Project.dir
 
+build CMakeFiles/IDS_Project.dir/EBPF_Runner.cpp.o: CXX_COMPILER__IDS_Project_unscanned_Debug /home/kali/Desktop/haifa-01-proxysaver/EBPF_Runner.cpp || cmake_object_order_depends_target_IDS_Project
+  DEFINES = -DPROJECT_NAME=\"IDS_Project\"
+  DEP_FILE = CMakeFiles/IDS_Project.dir/EBPF_Runner.cpp.o.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/IDS_Project.dir
+  OBJECT_FILE_DIR = CMakeFiles/IDS_Project.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target IDS_Project
@@ -78,7 +85,7 @@ build CMakeFiles/IDS_Project.dir/SockLimiting.cpp.o: CXX_COMPILER__IDS_Project_u
 #############################################
 # Link the executable IDS_Project
 
-build IDS_Project: CXX_EXECUTABLE_LINKER__IDS_Project_Debug CMakeFiles/IDS_Project.dir/main.cpp.o CMakeFiles/IDS_Project.dir/ReverseProxy.cpp.o CMakeFiles/IDS_Project.dir/SockLimiting.cpp.o
+build IDS_Project: CXX_EXECUTABLE_LINKER__IDS_Project_Debug CMakeFiles/IDS_Project.dir/main.cpp.o CMakeFiles/IDS_Project.dir/ReverseProxy.cpp.o CMakeFiles/IDS_Project.dir/SockLimiting.cpp.o CMakeFiles/IDS_Project.dir/EBPF_Runner.cpp.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/IDS_Project.dir
   POST_BUILD = :

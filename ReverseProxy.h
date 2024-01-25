@@ -27,10 +27,12 @@ public:
 private:
     void bindAndListen() const;
     void handleNewClient(int clientSocket);
-    static void forwardToServer(int clientSocket, const std::string& message);
+    void initProxyServerSocket();
+    void forwardToServer(const std::string& message) const;
     static std::string receiveStringFromSocket(int socket);
 
-    int m_serverSocket;
+    int m_proxyClientSocket;
+    int m_proxyServerSocket{};
 
     std::map<int, int> m_clients;
     static int m_numOfClient;
