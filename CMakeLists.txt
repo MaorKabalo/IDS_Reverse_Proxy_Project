@@ -8,11 +8,13 @@ set(CMAKE_CXX_STANDARD 17)
 set(SOURCE_FILES main.cpp
         ReverseProxy.cpp
         SockLimiting.cpp
-        EBPF_Runner.cpp)
+        EBPF_Runner.cpp
+        Port_Scanning_Detector.cpp)
 
 set(HEADER_FILES ReverseProxy.h
         SockLimiting.h
-        EBPF_Runner.h)
+        EBPF_Runner.h
+        Port_Scanning_Detector.h)
 
 set(PYTHON_FILES server.py
         rate_limiting_tester.py)
