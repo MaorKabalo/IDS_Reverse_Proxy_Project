@@ -18,9 +18,26 @@ set(PYTHON_FILES server.py
         rate_limiting_tester.py)
 
 set(EBPF_FILES cmake-build-debug/bandwidth_limiting.bpf.c
-                cmake-build-debug/rate_limiting.bpf.c)
+        cmake-build-debug/rate_limiting.bpf.c)
 
-add_executable(IDS_Project main.cpp
+set(PCAPPLUSPLUS_SOURCE_DIR "/home/kali/Desktop/PcapPlusPlus")
+set(PCAPPLUSPLUS_BINARY_DIR "/home/kali/Desktop/PcapPlusPlus/build")
+
+# Add PcapPlusPlus source code to the project
+add_subdirectory(${PCAPPLUSPLUS_SOURCE_DIR} ${PCAPPLUSPLUS_BINARY_DIR})
+
+# Add PcapPlusPlus include directories to the project
+include_directories(${PCAPPLUSPLUS_SOURCE_DIR}/Common++/header)
+include_directories(${PCAPPLUSPLUS_SOURCE_DIR}/Pcap++/header)
+include_directories(${PCAPPLUSPLUS_SOURCE_DIR}/Packet++/header)
+
+# Link against the library targets
+add_executable(IDS_Project
         ${SOURCE_FILES}
         ${HEADER_FILES}
         ${PYTHON_FILES})
+
+target_link_libraries(IDS_Project Pcap++)
+
+# Add the source directory to include directories
+include_directories(${PROJECT_SOURCE_DIR})
