@@ -38,7 +38,7 @@ private:
     PcapLiveDevice* m_PcapLiveDevice;
     std::vector<uint16_t> m_Ports;
 
-    static std::mutex countPacketMutex;
+    static bool stopCapture;
 
     static void onPacketArrives(RawPacket* packet, PcapLiveDevice* dev, void* cookie);
     void extractPorts();

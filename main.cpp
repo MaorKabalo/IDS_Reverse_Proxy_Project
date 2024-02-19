@@ -15,15 +15,20 @@
 int main()
 {
 
+    //ReverseProxy reverse_proxy;
+    //reverse_proxy.startHandleRequests();
+    //std::thread reverseProxyThread(&ReverseProxy::startHandleRequests, &reverse_proxy);
+
+
+    // Create an instance of Port_Scanning_Detector
     const Port_Scanning_Detector detector(INTERFACE_FOR_PORT_SCANNING);
-
-
-
     detector.ListenForSYNScanAttack();
-    //detector.startListening();
+    //std::thread detectorThread(&Port_Scanning_Detector::ListenForSYNScanAttack, &detector);
 
 
-    std::cout << "HELLO" << std::endl;
+    //reverseProxyThread.detach();
+    //detectorThread.detach();
+
 
     return 0;
 }
