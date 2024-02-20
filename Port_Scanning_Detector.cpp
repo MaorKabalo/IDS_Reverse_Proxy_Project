@@ -3,56 +3,71 @@
 //
 
 #include "Port_Scanning_Detector.h"
-#include <iostream>
-#include <utility>
-#include <thread>
-#include <netinet/in.h>
-#include <chrono>
-#include <exception>
 
+int Port_Scanning_Detector::portsScannedCount = 0;
+std::unordered_set<uint16_t> Port_Scanning_Detector::m_Ports;
+std::chrono::steady_clock::time_point Port_Scanning_Detector::lastPacketTime;
+std::mutex Port_Scanning_Detector::mutex;
 
-int packetCount = 0;
-
+//After learning the attack, it goes by a random ports in nmapDefault.txt
 
 void Port_Scanning_Detector::extractPorts() {
     std::ifstream file(NMAP_PORTS_TXT);
-
-    std::string line;
-    while (std::getline(file, line)) {
-        m_Ports.push_back(std::stoi(line));
+    uint16_t port;
+    while (file >> port) {
+        m_Ports.insert(port);
     }
-
-    file.close();
-
-    std::cout << "Ports Extracted" << std::endl;
 }
 
 void Port_Scanning_Detector::onPacketArrives(RawPacket* packet, PcapLiveDevice* dev, void* cookie) {
+    std::lock_guard<std::mutex> lock(mutex);  // Ensure thread safety
+
     // Parse and process the packet
     Packet parsedPacket(packet);
 
     ProtocolType transportProtocol = parsedPacket.getLayerOfType<TcpLayer>()->getProtocol();
     auto* tcpLayer = parsedPacket.getLayerOfType<TcpLayer>();
 
-    if (transportProtocol == TCP){
+    if (transportProtocol == TCP) {
         uint16_t destPort = ntohs(tcpLayer->getTcpHeader()->portDst);
 
-        //std::cout << destPort << std::endl;
+        if (m_Ports.find(destPort) != m_Ports.end()) {
+            std::cout << destPort << std::endl;
 
-        if(destPort == 8888) {
-            std::cout << "GOT HERE!!!" << std::endl;  //1 message sent, 5 prints
+            // Update the packet count and timestamp for port scanning detection
+            // portsScannedCount++;
+            // lastPacketTime = std::chrono::steady_clock::now();
+            //
+            // // Check for port scanning detection
+            // if (isPortScanningDetected()) {
+            //     std::cout << "Port Scanning detected" << std::endl;
+            //     // Take appropriate action when port scanning is detected
+            // }
         }
     }
-
-
 }
+
+// bool Port_Scanning_Detector::isPortScanningDetected() {
+//     // Check if more than 100 packets have been received within half a second
+//     auto currentTime = std::chrono::steady_clock::now();
+//     auto elapsedTime = std::chrono::duration_cast<std::chrono::milliseconds>(currentTime - lastPacketTime).count();
+//
+//     if (elapsedTime > 500) {
+//         // Reset packetCount if more than half a second has passed
+//         portsScannedCount = 0;
+//         lastPacketTime = currentTime;
+//     }
+//
+//     return (portsScannedCount > 100);
+// }
+
+
 
 
 Port_Scanning_Detector::Port_Scanning_Detector(std::string interfaceName) {
 
-    // std::thread thread(&Port_Scanning_Detector::extractPorts, this);
-    // thread.detach();
-
+    std::thread thread(&Port_Scanning_Detector::extractPorts);
+    thread.detach();
 
     m_InterfaceName = std::move(interfaceName);
 
@@ -99,7 +114,6 @@ void Port_Scanning_Detector::ListenForSYNScanAttack() const {
     std::cout << "Listening on interface: " << m_PcapLiveDevice->getName() << std::endl;
 
 
-
     m_PcapLiveDevice->startCapture(onPacketArrives, nullptr);
     std::this_thread::sleep_for(std::chrono::seconds(100));
 
@@ -109,8 +123,6 @@ void Port_Scanning_Detector::ListenForSYNScanAttack() const {
 
     std::cout << "Press Enter to stop capturing..." << std::endl;
     std::cin.get();
-
-
 
 
     // while (!stopCapture) {

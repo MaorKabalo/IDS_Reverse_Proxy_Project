@@ -17,6 +17,12 @@
 #include <cstdint>
 #include <thread>
 #include <mutex>
+#include <unordered_set>
+#include <utility>
+#include <netinet/in.h>
+#include <chrono>
+#include <exception>
+#include <set>
 
 #define NMAP_PORTS_TXT "nmapDefault.txt"
 
@@ -30,19 +36,23 @@ public:
 
     void ListenForSYNScanAttack() const;
 
-    std::vector<std::string> mMalicousIPs;
+    static std::set<std::string> mMalicousIPs;
 
 private:
 
     std::string m_InterfaceName;
     PcapLiveDevice* m_PcapLiveDevice;
-    std::vector<uint16_t> m_Ports;
 
-    static bool stopCapture;
+    static std::unordered_set<uint16_t> m_Ports;
+    static int portsScannedCount;
+    static std::chrono::steady_clock::time_point lastPacketTime;
+    static std::mutex mutex;
 
     static void onPacketArrives(RawPacket* packet, PcapLiveDevice* dev, void* cookie);
-    void extractPorts();
+    static void extractPorts();
 
+    static bool isPortScanningDetected();
+    static void resetPacketCountPeriodically();
 
 };
 
