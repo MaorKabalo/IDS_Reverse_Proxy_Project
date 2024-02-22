@@ -10,15 +10,17 @@
 int Port_Scanning_Detector::portsScannedCount = 0;
 std::unordered_set<uint16_t> Port_Scanning_Detector::m_Ports;
 std::chrono::steady_clock::time_point Port_Scanning_Detector::lastPacketTime;
-std::mutex Port_Scanning_Detector::mutex;
-std::set<std::string> Port_Scanning_Detector::mMalicousIPs;
+std::unordered_set<std::string> Port_Scanning_Detector::mMalicousIPs;
 
+std::mutex countPortMutex;
+std::mutex mMalicousIPsMutex;
+std::mutex lastPacketTimeMutex;
 
 
 int countPort = 0;
 //After learning the attack, it goes by a random ports in nmapDefault.txt
 
-std::string intToIPv4String(uint32_t ipAddress) {
+std::string Port_Scanning_Detector::intToIPv4String(uint32_t ipAddress) {
     // Use bitwise AND to extract each octet
     uint8_t octet1 = (ipAddress >> 24) & 0xFF;
     uint8_t octet2 = (ipAddress >> 16) & 0xFF;
@@ -31,6 +33,7 @@ std::string intToIPv4String(uint32_t ipAddress) {
 }
 
 
+
 void Port_Scanning_Detector::extractPorts() {
     std::ifstream file(NMAP_PORTS_TXT);
     uint16_t port;
@@ -39,38 +42,63 @@ void Port_Scanning_Detector::extractPorts() {
     }
 }
 
+
+
+
 void Port_Scanning_Detector::onPacketArrives(RawPacket* packet, PcapLiveDevice* dev, void* cookie) {
-
-    //std::lock_guard<std::mutex> lock(mutex);  // Ensure thread safety
-
     // Parse and process the packet
     Packet parsedPacket(packet);
 
     ProtocolType transportProtocol = parsedPacket.getLayerOfType<TcpLayer>()->getProtocol();
     auto* tcpLayer = parsedPacket.getLayerOfType<TcpLayer>();
+    auto* ipLayer = parsedPacket.getLayerOfType<IPv4Layer>();
+
+    uint32_t sourceIP = ipLayer->getIPv4Header()->ipSrc;
 
     if (transportProtocol == TCP) {
-
-        auto* ipLayer = parsedPacket.getLayerOfType<IPv4Layer>();
-
         uint16_t destPort = ntohs(tcpLayer->getTcpHeader()->portDst);
 
-        if (m_Ports.find(destPort) != m_Ports.end()) {
-
-            uint32_t sourceIP = ipLayer->getIPv4Header()->ipSrc;
-            std::cout << "Dest Port: " << destPort << " IP: " << intToIPv4String(sourceIP) << std::endl;
-            countPort++;
+        // Safely increment countPort using a mutex
+        {
+            std::lock_guard<std::mutex> lock(countPortMutex);
+            if (m_Ports.find(destPort) != m_Ports.end()) {
+                countPort++;
+            }
         }
-
 
     }
 
+    auto currentTime = std::chrono::steady_clock::now();
+    auto timeDifference = std::chrono::duration_cast<std::chrono::milliseconds>(currentTime - lastPacketTime).count();
 
+    // Safely check and update malicious IPs using a mutex
+    if (timeDifference > PER_MS) {
+        {
+            std::lock_guard<std::mutex> lock(countPortMutex);
+            if (countPort >= PORT) {
+                std::cout << "Port Scanning Detected!" << std::endl;
+                mMalicousIPs.insert(intToIPv4String(sourceIP));
 
+                // Safely print malicious IPs using a mutex
+                std::lock_guard<std::mutex> ipLock(mMalicousIPsMutex);
+                for (const auto& ip : mMalicousIPs) {
+                    std::cout << "IP: " << ip << std::endl;
+                }
+            }
+        }
 
+        // Safely reset counters and update lastPacketTime using mutexes
+        {
+            std::lock_guard<std::mutex> lock(countPortMutex);
+            countPort = 0;
+        }
+
+        {
+            std::lock_guard<std::mutex> lock(lastPacketTimeMutex);
+            lastPacketTime = currentTime;
+        }
+    }
 }
-
-
 
 
 

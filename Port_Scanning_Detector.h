@@ -36,7 +36,7 @@ public:
 
     void ListenForSYNScanAttack() const;
 
-    static std::set<std::string> mMalicousIPs;
+    static std::unordered_set<std::string> mMalicousIPs;
 
 private:
 
@@ -46,10 +46,10 @@ private:
     static std::unordered_set<uint16_t> m_Ports;
     static int portsScannedCount;
     static std::chrono::steady_clock::time_point lastPacketTime;
-    static std::mutex mutex;
 
     static void onPacketArrives(RawPacket* packet, PcapLiveDevice* dev, void* cookie);
     static void extractPorts();
+    static std::string intToIPv4String(uint32_t ipAddress);
 
 
 };
