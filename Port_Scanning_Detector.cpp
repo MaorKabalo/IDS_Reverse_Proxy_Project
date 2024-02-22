@@ -4,12 +4,32 @@
 
 #include "Port_Scanning_Detector.h"
 
+#define PORT 100
+#define PER_MS 15
+
 int Port_Scanning_Detector::portsScannedCount = 0;
 std::unordered_set<uint16_t> Port_Scanning_Detector::m_Ports;
 std::chrono::steady_clock::time_point Port_Scanning_Detector::lastPacketTime;
 std::mutex Port_Scanning_Detector::mutex;
+std::set<std::string> Port_Scanning_Detector::mMalicousIPs;
 
+
+
+int countPort = 0;
 //After learning the attack, it goes by a random ports in nmapDefault.txt
+
+std::string intToIPv4String(uint32_t ipAddress) {
+    // Use bitwise AND to extract each octet
+    uint8_t octet1 = (ipAddress >> 24) & 0xFF;
+    uint8_t octet2 = (ipAddress >> 16) & 0xFF;
+    uint8_t octet3 = (ipAddress >> 8) & 0xFF;
+    uint8_t octet4 = ipAddress & 0xFF;
+
+    // Create a string representation
+    return std::to_string(octet4) + "." + std::to_string(octet3) + "." +
+           std::to_string(octet2) + "." + std::to_string(octet1);
+}
+
 
 void Port_Scanning_Detector::extractPorts() {
     std::ifstream file(NMAP_PORTS_TXT);
@@ -20,7 +40,8 @@ void Port_Scanning_Detector::extractPorts() {
 }
 
 void Port_Scanning_Detector::onPacketArrives(RawPacket* packet, PcapLiveDevice* dev, void* cookie) {
-    std::lock_guard<std::mutex> lock(mutex);  // Ensure thread safety
+
+    //std::lock_guard<std::mutex> lock(mutex);  // Ensure thread safety
 
     // Parse and process the packet
     Packet parsedPacket(packet);
@@ -29,37 +50,27 @@ void Port_Scanning_Detector::onPacketArrives(RawPacket* packet, PcapLiveDevice* 
     auto* tcpLayer = parsedPacket.getLayerOfType<TcpLayer>();
 
     if (transportProtocol == TCP) {
+
+        auto* ipLayer = parsedPacket.getLayerOfType<IPv4Layer>();
+
         uint16_t destPort = ntohs(tcpLayer->getTcpHeader()->portDst);
 
         if (m_Ports.find(destPort) != m_Ports.end()) {
-            std::cout << destPort << std::endl;
 
-            // Update the packet count and timestamp for port scanning detection
-            // portsScannedCount++;
-            // lastPacketTime = std::chrono::steady_clock::now();
-            //
-            // // Check for port scanning detection
-            // if (isPortScanningDetected()) {
-            //     std::cout << "Port Scanning detected" << std::endl;
-            //     // Take appropriate action when port scanning is detected
-            // }
+            uint32_t sourceIP = ipLayer->getIPv4Header()->ipSrc;
+            std::cout << "Dest Port: " << destPort << " IP: " << intToIPv4String(sourceIP) << std::endl;
+            countPort++;
         }
+
+
     }
+
+
+
+
 }
 
-// bool Port_Scanning_Detector::isPortScanningDetected() {
-//     // Check if more than 100 packets have been received within half a second
-//     auto currentTime = std::chrono::steady_clock::now();
-//     auto elapsedTime = std::chrono::duration_cast<std::chrono::milliseconds>(currentTime - lastPacketTime).count();
-//
-//     if (elapsedTime > 500) {
-//         // Reset packetCount if more than half a second has passed
-//         portsScannedCount = 0;
-//         lastPacketTime = currentTime;
-//     }
-//
-//     return (portsScannedCount > 100);
-// }
+
 
 
 

@@ -51,8 +51,6 @@ private:
     static void onPacketArrives(RawPacket* packet, PcapLiveDevice* dev, void* cookie);
     static void extractPorts();
 
-    static bool isPortScanningDetected();
-    static void resetPacketCountPeriodically();
 
 };
 
