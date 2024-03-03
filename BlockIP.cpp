@@ -4,7 +4,6 @@
 
 #include "BlockIP.h"
 
-
 struct ip_block {
     __uint32_t ip;
     __uint32_t mask;
@@ -14,17 +13,17 @@ bool BlockIP::blockIP(__uint32_t ip) {
     EBPF_Runner runner("IpBlock");
 
     if (!runner.compileAndRunEBPFProgram()) {
-        std::cerr << "Failed to compile and run eBPF program." << std::endl;
-        return false;
+        std::cerr << "\n\nFailed to compile and run eBPF program." << std::endl;
+        return !runner.clean();
     }
 
     struct ip_block block = {ip, 0xFFFFFFFF};
 
     int result = 0;
     std::vector<std::string> commands = {
-        "echo \"" + std::to_string(ip) + "\" > /sys/fs/bpf/ip_block_map",
-        "echo \"insert 0 " + std::to_string(ip) + "\" > /sys/fs/bpf/ip_block_map",
-        "cat /sys/fs/bpf/ip_block_map"
+        "sudo echo \"" + std::to_string(ip) + "\" > /sys/fs/bpf/ip_block_map",
+        "sudo echo \"insert 0 " + std::to_string(ip) + "\" > /sys/fs/bpf/ip_block_map",
+        "sudo cat /sys/fs/bpf/ip_block_map"
     };
 
     for (std::string& str : commands)
@@ -56,6 +55,7 @@ bool BlockIP::blockIP(__uint32_t ip) {
 bool BlockIP::unblockIP(__uint32_t ip) {
     EBPF_Runner runner("IpBlock");
 
+
     if (!runner.compileAndRunEBPFProgram()) {
         std::cerr << "Failed to compile and run eBPF program." << std::endl;
         return false;
@@ -63,9 +63,9 @@ bool BlockIP::unblockIP(__uint32_t ip) {
 
     int result = 0;
     std::vector<std::string> commands = {
-        "echo \"" + std::to_string(ip) + "\" > /sys/fs/bpf/ip_block_map",
-        "echo \"delete 0 " + std::to_string(ip) + "\" > /sys/fs/bpf/ip_block_map",
-        "cat /sys/fs/bpf/ip_block_map"
+        "sudo echo \"" + std::to_string(ip) + "\" > /sys/fs/bpf/ip_block_map",
+        "sudo echo \"delete 0 " + std::to_string(ip) + "\" > /sys/fs/bpf/ip_block_map",
+        "sudo cat /sys/fs/bpf/ip_block_map"
     };
 
     for (std::string& str : commands)

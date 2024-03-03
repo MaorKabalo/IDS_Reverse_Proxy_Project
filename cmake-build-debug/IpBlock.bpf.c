@@ -1,5 +1,12 @@
+#include <bpf/bpf_endian.h>
 #include <linux/bpf.h>
 #include <bpf/bpf_helpers.h>
+#include <linux/if_ether.h>
+#include <linux/ip.h>
+#include <linux/tcp.h>
+#include <linux/types.h>
+
+
 
 struct ip_block {
     __u32 ip;
@@ -15,9 +22,9 @@ struct btf_ip_block_map_def {
 
 struct btf_ip_block_map_def ip_block_map SEC(".maps");
 
-SEC("prog")
-int bpf_prog(struct xdp_md *ctx) {
-    __u32 ip = ctx->data;
+SEC("xdp")
+int IpBlock(struct xdp_md *ctx) {
+    __u32 ip = bpf_get_smp_processor_id(); // Assuming you want to get the current CPU's ID
     struct ip_block *block;
 
     block = bpf_map_lookup_elem(&ip_block_map, &ip);
@@ -28,9 +35,7 @@ int bpf_prog(struct xdp_md *ctx) {
     return XDP_PASS;
 }
 
-SEC("xdp")
-int a_xdp(){
-return XDP_PASS;
-}
 
-char _license[] SEC("license") = "GPL";
+// Specify the license for the BPF program
+char IP_BLOCK_LICENSE[] SEC("license") = "Dual BSD/GPL";
+

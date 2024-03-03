@@ -36,7 +36,7 @@ int EBPF_Runner::compileEBPFProgram() const{
     // Build the command to compile the eBPF program
     //std::string command = "clang -target bpf -D __BPF_TRACING__ -I/usr/include/$(uname -m)-linux-gnu -Wall -O2 -o " + ebpfProgramPath_ + ".bpf.o -c " + ebpfProgramPath_ + ".bpf.c";
 
-    std::string command = "clang -target bpf -D __BPF_TRACING__ -I/usr/include/$(uname -m)-linux-gnu -Wall -O2 -g -o " + ebpfProgramPath_ + ".bpf.o -c " + ebpfProgramPath_ + ".bpf.c";
+    std::string command = "sudo clang -target bpf -D __BPF_TRACING__ -I/usr/include/$(uname -m)-linux-gnu -Wall -O2 -g -o " + ebpfProgramPath_ + ".bpf.o -c " + ebpfProgramPath_ + ".bpf.c";
 
 
     // Execute the command using system()
