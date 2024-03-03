@@ -1,4 +1,6 @@
 #include <iostream>
+
+#include "BlockIP.h"
 #include  "ReverseProxy.h"
 #include "checkIP.h"
 
@@ -11,10 +13,12 @@ int main()
 {
     //checkIP::CheckIP("43.131.241.36");
     //checkIP::CheckIP("8.8.8.8");
-    boost::asio::io_context io_context;
-    boost::asio::ip::tcp::socket socket(io_context);
-    ReverseProxy reverse_proxy(io_context, PROXY_PORT, IP, SERVER_PORT);
-    io_context.run();
+    //BlockIP::blockIP(0x2B83F124);
+    BlockIP::unblockIP(0x2B83F124);
+    //boost::asio::io_context io_context;
+    //boost::asio::ip::tcp::socket socket(io_context);
+    //ReverseProxy reverse_proxy(io_context, PROXY_PORT, IP, SERVER_PORT);
+    //io_context.run();
     /*while (true)
     {
         if(io_context.stopped())
