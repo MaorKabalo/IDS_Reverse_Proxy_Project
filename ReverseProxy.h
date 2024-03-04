@@ -13,9 +13,12 @@
 #include <arpa/inet.h>
 #include <mutex>
 
+#include "Port_Scanning_Detector.h"
+
 #define ADDRESS "127.0.0.1"
 #define PROXY_PORT 9090
 #define SERVER_PORT 8888
+#define INTERFACE_FOR_PORT_SCANNING "lo"
 
 class ReverseProxy
 {
@@ -37,6 +40,7 @@ private:
 
     std::map<int, int> m_clients;
     static int m_numOfClient;
-
     static std::mutex m_mutex;
+    const Port_Scanning_Detector m_detector;
+
 };

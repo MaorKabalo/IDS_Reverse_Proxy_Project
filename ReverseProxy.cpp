@@ -5,13 +5,22 @@
 
 std::mutex ReverseProxy::m_mutex;
 int ReverseProxy::m_numOfClient = 0;
+//const Port_Scanning_Detector ReverseProxy::detector(INTERFACE_FOR_PORT_SCANNING);
 
-ReverseProxy::ReverseProxy()
+ReverseProxy::ReverseProxy() : m_detector(INTERFACE_FOR_PORT_SCANNING)
 {
     m_proxyClientSocket = socket(AF_INET, SOCK_STREAM, 0); // Use 0 for protocol since TCP is the default
 
     if (m_proxyClientSocket == -1)
         throw std::runtime_error(std::string(__func__) + " - socket");
+
+
+    std::thread thread(&Port_Scanning_Detector::ListenForSYNScanAttack, &m_detector);
+    thread.detach();
+
+    //std::thread([this] { m_detector.ListenForSYNScanAttack(); }).detach();
+
+
 }
 
 ReverseProxy::~ReverseProxy()
@@ -24,7 +33,6 @@ ReverseProxy::~ReverseProxy()
             close(pair.first);
         }
         close(m_proxyClientSocket);
-
     }
     catch (...) {}
 }

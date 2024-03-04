@@ -139,7 +139,7 @@ Port_Scanning_Detector::Port_Scanning_Detector(std::string interfaceName) {
         return;
     }
 
-    std::cout << "Port Scanning Prevention Initialized!" << std::endl;
+    //std::cout << "Port Scanning Prevention Initialized!" << std::endl;
 }
 
 Port_Scanning_Detector::~Port_Scanning_Detector() {
@@ -150,17 +150,17 @@ Port_Scanning_Detector::~Port_Scanning_Detector() {
 
 void Port_Scanning_Detector::ListenForSYNScanAttack() const {
 
-    std::cout << "Listening on interface: " << m_PcapLiveDevice->getName() << std::endl;
+    std::cout << "Port Scanner Listening on interface: " << m_PcapLiveDevice->getName() << std::endl;
 
 
     m_PcapLiveDevice->startCapture(onPacketArrives, nullptr);
-    std::this_thread::sleep_for(std::chrono::seconds(100));
+    //std::this_thread::sleep_for(std::chrono::seconds(100));
 
 
 
     // Start capturing with the callback function
 
-    std::cout << "Press Enter to stop capturing..." << std::endl;
+    //std::cout << "Press Enter to stop capturing..." << std::endl;
     std::cin.get();
 
 

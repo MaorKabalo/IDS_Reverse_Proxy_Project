@@ -31,7 +31,7 @@ using namespace pcpp;
 class Port_Scanning_Detector {
 public:
 
-    explicit Port_Scanning_Detector(std::string interfaceName);
+    Port_Scanning_Detector(std::string interfaceName);
     ~Port_Scanning_Detector();
 
     void ListenForSYNScanAttack() const;
