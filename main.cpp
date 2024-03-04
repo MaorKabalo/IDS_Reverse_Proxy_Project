@@ -15,8 +15,16 @@
 int main()
 {
 
-    ReverseProxy reverse_proxy;
-    reverse_proxy.startHandleRequests();
+    EBPF_Runner bandwith_limiter(EBPF_BANDWIDTH_NAME);
+
+
+    if(bandwith_limiter.compileAndRunEBPFProgram()) {
+        ReverseProxy reverse_proxy;
+        reverse_proxy.startHandleRequests();
+    }
+
+
+
     //std::thread reverseProxyThread(&ReverseProxy::startHandleRequests, &reverse_proxy);
 
 

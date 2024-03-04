@@ -13,8 +13,8 @@
 #include <unistd.h>
 #include <math.h>
 
-#define PROXY_PORT 8888
-#define BITS 10000000 //7 mega bits for example
+#define PROXY_PORT 9090
+#define BITS 10000000 //10 mega bits for example
 
 long long MAX_BITS = BITS;
 __u64 SECOND = 1000000000; // second in nano second
