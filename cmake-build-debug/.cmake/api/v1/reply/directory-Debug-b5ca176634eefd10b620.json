@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "/home/kali/Desktop/PcapPlusPlus/build/3rdParty/json",
+		"source" : "/home/kali/Desktop/PcapPlusPlus/3rdParty/json"
+	}
+}

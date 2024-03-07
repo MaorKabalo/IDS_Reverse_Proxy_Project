@@ -6,15 +6,16 @@ add_definitions(-DPROJECT_NAME="IDS_Project")
 set(CMAKE_CXX_STANDARD 17)
 
 set(SOURCE_FILES main.cpp
-        ReverseProxy.cpp
         SockLimiting.cpp
         EBPF_Runner.cpp
-        Port_Scanning_Detector.cpp)
+        Port_Scanning_Detector.cpp
+        ReverseProxy.cpp)
 
-set(HEADER_FILES ReverseProxy.h
+set(HEADER_FILES
         SockLimiting.h
         EBPF_Runner.h
-        Port_Scanning_Detector.h)
+        Port_Scanning_Detector.h
+        ReverseProxy.h)
 
 set(PYTHON_FILES server.py
         rate_limiting_tester.py)

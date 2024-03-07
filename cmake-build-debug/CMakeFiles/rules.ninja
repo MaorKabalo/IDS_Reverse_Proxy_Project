@@ -138,7 +138,7 @@ rule CXX_STATIC_LIBRARY_LINKER__Common.2b.2b_Debug
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S/home/kali/Desktop/haifa-01-proxysaver -B/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug
+  command = /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S/home/kali/project/haifa-01-proxysaver -B/home/kali/project/haifa-01-proxysaver/cmake-build-debug
   description = Re-running CMake...
   generator = 1
 
