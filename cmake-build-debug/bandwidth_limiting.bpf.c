@@ -14,7 +14,7 @@
 #include <math.h>
 
 #define PROXY_PORT 9090
-#define BITS 10000000 //10 mega bits for example
+#define BITS 10000000 //10 Mbps for example
 
 long long MAX_BITS = BITS;
 __u64 SECOND = 1000000000; // second in nano second
@@ -42,14 +42,15 @@ unsigned short get_packet_dest_port(struct xdp_md* ctx) {
     }
 
     ip = (struct iphdr *)(data + sizeof(*eth));
-    if (ip + 1 > data_end) {
+    if (ip + 1 > (struct iphdr*)data_end) {
         return 0;
     }
 
     tcp = data + sizeof(struct ethhdr) + sizeof(struct iphdr);
-    if (tcp + 1 > data_end) {
+    if (tcp + 1 > (struct tcphdr*)data_end) {
         return 0;
     }
+
 
     unsigned short dest_port = bpf_ntohs(tcp->dest);
     return dest_port;

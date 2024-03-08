@@ -13,8 +13,8 @@
 #include <unistd.h>
 #include <math.h>
 
-#define PROXY_PORT 8888
-#define MAX_MESSAGES_PER_SECOND 1 //+3 //1000 MESSAGES_PER_SECOND for example, map allocate needed in the fture
+#define PROXY_PORT 9090
+#define MAX_MESSAGES_PER_SECOND 20 //+3 //1000 MESSAGES_PER_SECOND for example, map allocate needed in the fture
 
 long long messagesCounter = 0;
 __u64 SECOND = 1000000000; // second in nano second
@@ -60,7 +60,7 @@ unsigned short get_packet_dest_port(struct xdp_md* ctx) {
 
 
 SEC("xdp")
-int bandwidth_limiting(struct xdp_md *ctx)
+int rate_limiting(struct xdp_md *ctx)
 {
 
     long port = get_packet_dest_port(ctx);
