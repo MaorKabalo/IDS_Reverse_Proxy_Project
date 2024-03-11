@@ -66,7 +66,7 @@ int bandwidth_limiting(struct xdp_md *ctx)
 
     start_time = end_time;
 
-    if(port != PROXY_PORT || port == 0) //Check traffic for proxy port only
+    if(port != PROXY_PORT) //Check traffic for proxy port only
     {
         return XDP_PASS;
     }
