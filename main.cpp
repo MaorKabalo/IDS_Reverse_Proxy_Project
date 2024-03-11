@@ -24,7 +24,7 @@ int main()
     // }
 
 
-    EBPF_Runner bandwith_limiter(EBPF_BANDWIDTH_NAME);
+    EBPF_Runner bandwith_limiter(EBPF_RATE_LIMITING_NAME);
 
 
     if(bandwith_limiter.compileAndRunEBPFProgram()) {
