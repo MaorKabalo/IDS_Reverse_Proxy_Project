@@ -5,9 +5,14 @@
 #ifndef BLOCKIP_H
 #define BLOCKIP_H
 #include "EBPF_Runner.h"
+//#include "ip_block_map.h"
 #include <iostream>
 #include <string>
 #include <vector>
+#include <cstring>
+#include <linux/bpf.h>
+#include <bpf/bpf.h>
+#include <bpf/libbpf.h>
 
 
 class BlockIP {

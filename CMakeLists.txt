@@ -23,3 +23,11 @@ add_executable(untitled main.cpp
 
 target_link_libraries(untitled ${CURL_LIBRARIES})
 include_directories(${PROJECT_SOURCE_DIR})
+
+find_package(PkgConfig REQUIRED)
+pkg_search_module(LIBBPF REQUIRED libbpf)
+
+include_directories(${LIBBPF_INCLUDE_DIRS})
+link_directories(${LIBBPF_LIBRARY_DIRS})
+
+target_link_libraries(untitled ${LIBBPF_LIBRARIES})

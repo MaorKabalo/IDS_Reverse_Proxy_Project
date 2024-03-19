@@ -107,7 +107,7 @@ build CMakeFiles/untitled.dir/EBPF_Runner.cpp.o: CXX_COMPILER__untitled_unscanne
 
 build untitled: CXX_EXECUTABLE_LINKER__untitled_Debug CMakeFiles/untitled.dir/main.cpp.o CMakeFiles/untitled.dir/ReverseProxy.cpp.o CMakeFiles/untitled.dir/SockLimiting.cpp.o CMakeFiles/untitled.dir/checkIP.cpp.o CMakeFiles/untitled.dir/BlockIP.cpp.o CMakeFiles/untitled.dir/EBPF_Runner.cpp.o | /usr/lib/x86_64-linux-gnu/libcurl.so
   FLAGS = -g
-  LINK_LIBRARIES = /usr/lib/x86_64-linux-gnu/libcurl.so
+  LINK_LIBRARIES = /usr/lib/x86_64-linux-gnu/libcurl.so  -lbpf
   OBJECT_DIR = CMakeFiles/untitled.dir
   POST_BUILD = :
   PRE_LINK = :
