@@ -19,6 +19,8 @@ class BlockIP {
 public:
     static bool blockIP(__uint32_t ip);
     static bool unblockIP(__uint32_t ip);
+private:
+    static int map_id;
 };
 
 
