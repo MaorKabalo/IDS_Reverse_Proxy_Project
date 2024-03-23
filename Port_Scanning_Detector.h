@@ -23,6 +23,7 @@
 #include <chrono>
 #include <exception>
 #include <set>
+#include "IPTools.h"
 
 #define NMAP_PORTS_TXT "nmapDefault.txt"
 
@@ -49,7 +50,6 @@ private:
 
     static void onPacketArrives(RawPacket* packet, PcapLiveDevice* dev, void* cookie);
     static void extractPorts();
-    static std::string intToIPv4String(uint32_t ipAddress);
 
 
 };

@@ -4,6 +4,7 @@
 #define OK 0//IP is fine
 #define MALICIOUS 1//IP is MALICIOUS. need to block it
 #define ERROR 2//error in the proccess of chaking the IP dont accept and dont block
+#include "IPTools.h"
 
 #ifndef CHECKIP_H
 #define CHECKIP_H
@@ -12,7 +13,7 @@
 #include <nlohmann/json.hpp>
 
 
-class checkIP {
+class checkIP : public IPTools{
 
     public:
         static int CheckIP(const std::string &ipAddress);

@@ -20,17 +20,6 @@ std::mutex lastPacketTimeMutex;
 int countPort = 0;
 //After learning the attack, it goes by a random ports in nmapDefault.txt
 
-std::string Port_Scanning_Detector::intToIPv4String(uint32_t ipAddress) {
-    // Use bitwise AND to extract each octet
-    uint8_t octet1 = (ipAddress >> 24) & 0xFF;
-    uint8_t octet2 = (ipAddress >> 16) & 0xFF;
-    uint8_t octet3 = (ipAddress >> 8) & 0xFF;
-    uint8_t octet4 = ipAddress & 0xFF;
-
-    // Create a string representation
-    return std::to_string(octet4) + "." + std::to_string(octet3) + "." +
-           std::to_string(octet2) + "." + std::to_string(octet1);
-}
 
 
 
@@ -77,7 +66,7 @@ void Port_Scanning_Detector::onPacketArrives(RawPacket* packet, PcapLiveDevice* 
             std::lock_guard<std::mutex> lock(countPortMutex);
             if (countPort >= PORT) {
                 std::cout << "Port Scanning Detected!" << std::endl;
-                mMalicousIPs.insert(intToIPv4String(sourceIP));
+                mMalicousIPs.insert(IPTools::intToIPv4String(sourceIP));
 
                 // Safely print malicious IPs using a mutex
                 std::lock_guard<std::mutex> ipLock(mMalicousIPsMutex);

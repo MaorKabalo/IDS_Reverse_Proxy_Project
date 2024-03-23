@@ -13,14 +13,17 @@ set(SOURCE_FILES main.cpp
         EBPF_Runner.cpp
         Port_Scanning_Detector.cpp
         checkIP.cpp
-        BlockIP.cpp)
+        BlockIP.cpp
+        IPTools.cpp)
 
 set(HEADER_FILES ReverseProxy.h
         #SockLimiting.h
         EBPF_Runner.h
         Port_Scanning_Detector.h
         checkIP.h
-        BlockIP.h)
+        BlockIP.h
+        IPTools.h
+)
 
 set(PYTHON_FILES server.py
         rate_limiting_tester.py)

@@ -12,7 +12,10 @@ struct ip_block {
 
 int BlockIP::map_id;
 
-bool BlockIP::blockIP(__uint32_t ip) {
+
+
+
+bool BlockIP::blockIP(const char* ip) {
     EBPF_Runner runner("IpBlock");
 
     map_id = bpf_map_create(BPF_MAP_TYPE_HASH, "my_map", sizeof(__u32), sizeof(struct ip_block), 1024, nullptr);
@@ -29,14 +32,16 @@ bool BlockIP::blockIP(__uint32_t ip) {
         if(result == 1) {return false;}
     }*/
 
+    const __uint32_t ipInt = ReverseIP(IPv4StringToInt(ip));
+
     if (!runner.compileAndRunEBPFProgram()) {
         std::cerr << "Failed to compile and run eBPF program." << std::endl;
         return false;
     }
 
-    struct ip_block block = {ip, 0xFFFFFFFF};
+    struct ip_block block = {ipInt, 0xFFFFFFFF};
 
-    int result = bpf_map_update_elem(map_id, &ip, &block, BPF_ANY);
+    int result = bpf_map_update_elem(map_id, &ipInt, &block, BPF_ANY);
     if (result < 0) {
         std::cerr << "Error: Failed to update BPF map: " << std::strerror(errno) << std::endl;
         return false;
@@ -72,18 +77,20 @@ bool BlockIP::blockIP(__uint32_t ip) {
     // }
 
 
-    std::cout << "IP address " << ip << " is blocked." << std::endl;
+    std::cout << "IP address " << ipInt << " is blocked." << std::endl;
 
     return true;
 }
 
 #include <linux/bpf.h> // Include BPF headers
 
-bool BlockIP::unblockIP(__uint32_t ip) {
+bool BlockIP::unblockIP(const char* ip) {
     // Assuming 'map_fd' contains the file descriptor of the BPF map
 
+
+    const __uint32_t ipInt = ReverseIP(IPv4StringToInt(ip));
     // Prepare the key to delete from the map
-    __u32 key = ip;
+    __u32 key = ipInt;
 
     // Delete the key from the BPF map
     int result = bpf_map_delete_elem(map_id, &key);
@@ -92,7 +99,7 @@ bool BlockIP::unblockIP(__uint32_t ip) {
         return false;
     }
 
-    std::cout << "IP address " << ip << " is unblocked." << std::endl;
+    std::cout << "IP address " << ipInt << " is unblocked." << std::endl;
 
     return true;
 }

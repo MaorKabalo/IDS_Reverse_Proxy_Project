@@ -13,12 +13,14 @@
 #include <linux/bpf.h>
 #include <bpf/bpf.h>
 #include <bpf/libbpf.h>
+#include <cstdint>
 
+#include "IPTools.h"
 
-class BlockIP {
+class BlockIP : public IPTools{
 public:
-    static bool blockIP(__uint32_t ip);
-    static bool unblockIP(__uint32_t ip);
+    static bool blockIP(const char* ip);
+    static bool unblockIP(const char* ip);
 private:
     static int map_id;
 };

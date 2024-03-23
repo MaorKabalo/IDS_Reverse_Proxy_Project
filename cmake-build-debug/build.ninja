@@ -97,6 +97,14 @@ build CMakeFiles/IDS_Project.dir/BlockIP.cpp.o: CXX_COMPILER__IDS_Project_unscan
   OBJECT_DIR = CMakeFiles/IDS_Project.dir
   OBJECT_FILE_DIR = CMakeFiles/IDS_Project.dir
 
+build CMakeFiles/IDS_Project.dir/IPTools.cpp.o: CXX_COMPILER__IDS_Project_unscanned_Debug /home/kali/Desktop/haifa-01-proxysaver/IPTools.cpp || cmake_object_order_depends_target_IDS_Project
+  DEFINES = -DPROJECT_NAME=\"IDS_Project\"
+  DEP_FILE = CMakeFiles/IDS_Project.dir/IPTools.cpp.o.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -I/home/kali/Desktop/PcapPlusPlus/Common++/header -I/home/kali/Desktop/PcapPlusPlus/Pcap++/header -I/home/kali/Desktop/PcapPlusPlus/Packet++/header -I/home/kali/Desktop/haifa-01-proxysaver
+  OBJECT_DIR = CMakeFiles/IDS_Project.dir
+  OBJECT_FILE_DIR = CMakeFiles/IDS_Project.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target IDS_Project
@@ -105,7 +113,7 @@ build CMakeFiles/IDS_Project.dir/BlockIP.cpp.o: CXX_COMPILER__IDS_Project_unscan
 #############################################
 # Link the executable IDS_Project
 
-build IDS_Project: CXX_EXECUTABLE_LINKER__IDS_Project_Debug CMakeFiles/IDS_Project.dir/main.cpp.o CMakeFiles/IDS_Project.dir/ReverseProxy.cpp.o CMakeFiles/IDS_Project.dir/EBPF_Runner.cpp.o CMakeFiles/IDS_Project.dir/Port_Scanning_Detector.cpp.o CMakeFiles/IDS_Project.dir/checkIP.cpp.o CMakeFiles/IDS_Project.dir/BlockIP.cpp.o | /home/kali/Desktop/PcapPlusPlus/build/Pcap++/libPcap++.a /usr/lib/x86_64-linux-gnu/libcurl.so /home/kali/Desktop/PcapPlusPlus/build/Packet++/libPacket++.a /home/kali/Desktop/PcapPlusPlus/build/Common++/libCommon++.a /usr/lib/x86_64-linux-gnu/libpcap.so || /home/kali/Desktop/PcapPlusPlus/build/Common++/libCommon++.a /home/kali/Desktop/PcapPlusPlus/build/Packet++/libPacket++.a /home/kali/Desktop/PcapPlusPlus/build/Pcap++/libPcap++.a
+build IDS_Project: CXX_EXECUTABLE_LINKER__IDS_Project_Debug CMakeFiles/IDS_Project.dir/main.cpp.o CMakeFiles/IDS_Project.dir/ReverseProxy.cpp.o CMakeFiles/IDS_Project.dir/EBPF_Runner.cpp.o CMakeFiles/IDS_Project.dir/Port_Scanning_Detector.cpp.o CMakeFiles/IDS_Project.dir/checkIP.cpp.o CMakeFiles/IDS_Project.dir/BlockIP.cpp.o CMakeFiles/IDS_Project.dir/IPTools.cpp.o | /home/kali/Desktop/PcapPlusPlus/build/Pcap++/libPcap++.a /usr/lib/x86_64-linux-gnu/libcurl.so /home/kali/Desktop/PcapPlusPlus/build/Packet++/libPacket++.a /home/kali/Desktop/PcapPlusPlus/build/Common++/libCommon++.a /usr/lib/x86_64-linux-gnu/libpcap.so || /home/kali/Desktop/PcapPlusPlus/build/Common++/libCommon++.a /home/kali/Desktop/PcapPlusPlus/build/Packet++/libPacket++.a /home/kali/Desktop/PcapPlusPlus/build/Pcap++/libPcap++.a
   FLAGS = -g
   LINK_LIBRARIES = /home/kali/Desktop/PcapPlusPlus/build/Pcap++/libPcap++.a  /usr/lib/x86_64-linux-gnu/libcurl.so  -lbpf  /home/kali/Desktop/PcapPlusPlus/build/Packet++/libPacket++.a  /home/kali/Desktop/PcapPlusPlus/build/Common++/libCommon++.a  /usr/lib/x86_64-linux-gnu/libpcap.so
   OBJECT_DIR = CMakeFiles/IDS_Project.dir

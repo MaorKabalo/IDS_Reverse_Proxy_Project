@@ -6,9 +6,9 @@
 
 #include "checkIP.h"
 #include "BlockIP.h"
+#include "IPTools.h"
 
-
-#define IP "127.0.0.1"
+#define SUS_IP "127.0.0.1"
 #define PROXY_PORT 9090
 #define SERVER_PORT 8888
 
@@ -19,8 +19,10 @@
 int main()
 {
 
+    // ReverseProxy reverse_proxy;
+    // reverse_proxy.startHandleRequests();
 
-    if(BlockIP::blockIP(0x7f000001)) {
+    if(BlockIP::blockIP(SUS_IP)) {
         ReverseProxy reverse_proxy;
         reverse_proxy.startHandleRequests();
     }

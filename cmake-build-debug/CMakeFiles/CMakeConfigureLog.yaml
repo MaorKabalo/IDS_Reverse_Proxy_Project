@@ -3443,3 +3443,213 @@ events:
         1.10.4 (with TPACKET_V3)
       exitCode: 0
 ...
+
+---
+events:
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "/home/kali/Desktop/PcapPlusPlus/cmake/modules/TargetArch.cmake:62 (try_run)"
+      - "/home/kali/Desktop/PcapPlusPlus/CMakeLists.txt:30 (target_architecture)"
+    directories:
+      source: "/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/CMakeFiles/CMakeTmp"
+      binary: "/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/kali/Desktop/PcapPlusPlus/cmake/modules/"
+    buildResult:
+      variable: "compile_result_unused"
+      cached: true
+      stdout: |
+        Change Dir: '/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/ninja/linux/x64/ninja -v cmTC_86f86
+        [1/2] /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_86f86.dir/arch.c.o -c /home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/arch.c
+        FAILED: CMakeFiles/cmTC_86f86.dir/arch.c.o 
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_86f86.dir/arch.c.o -c /home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/arch.c
+        /home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/arch.c:27:6: error: #error cmake_ARCH x86_64
+           27 |     #error cmake_ARCH x86_64
+              |      ^~~~~
+        /home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/arch.c:40:2: error: #error cmake_ARCH unknown
+           40 | #error cmake_ARCH unknown
+              |  ^~~~~
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+    runResult:
+      variable: "run_result_unused"
+      cached: true
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "/home/kali/Desktop/PcapPlusPlus/cmake/modules/FindPCAP.cmake:113 (try_run)"
+      - "/home/kali/Desktop/PcapPlusPlus/CMakeLists.txt:123 (find_package)"
+    directories:
+      source: "/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/CMakeFiles/CMakeTmp"
+      binary: "/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/kali/Desktop/PcapPlusPlus/cmake/modules/"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "COMPILE_RESULT_VAR"
+      cached: true
+      stdout: |
+        Change Dir: '/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/ninja/linux/x64/ninja -v cmTC_c05c0
+        [1/2] /usr/bin/cc   -fPIE -fdiagnostics-color=always -o CMakeFiles/cmTC_c05c0.dir/detect_pcap_version.c.o -c /home/kali/Desktop/PcapPlusPlus/build/detect_pcap_version.c
+        [2/2] : && /usr/bin/cc   CMakeFiles/cmTC_c05c0.dir/detect_pcap_version.c.o -o cmTC_c05c0  /usr/lib/x86_64-linux-gnu/libpcap.so && :
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT_VAR"
+      cached: true
+      stdout: |
+        1.10.4 (with TPACKET_V3)
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "/home/kali/Desktop/PcapPlusPlus/cmake/modules/TargetArch.cmake:62 (try_run)"
+      - "/home/kali/Desktop/PcapPlusPlus/CMakeLists.txt:30 (target_architecture)"
+    directories:
+      source: "/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/CMakeFiles/CMakeTmp"
+      binary: "/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/kali/Desktop/PcapPlusPlus/cmake/modules/"
+    buildResult:
+      variable: "compile_result_unused"
+      cached: true
+      stdout: |
+        Change Dir: '/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/ninja/linux/x64/ninja -v cmTC_39b33
+        [1/2] /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_39b33.dir/arch.c.o -c /home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/arch.c
+        FAILED: CMakeFiles/cmTC_39b33.dir/arch.c.o 
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_39b33.dir/arch.c.o -c /home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/arch.c
+        /home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/arch.c:27:6: error: #error cmake_ARCH x86_64
+           27 |     #error cmake_ARCH x86_64
+              |      ^~~~~
+        /home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/arch.c:40:2: error: #error cmake_ARCH unknown
+           40 | #error cmake_ARCH unknown
+              |  ^~~~~
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+    runResult:
+      variable: "run_result_unused"
+      cached: true
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "/home/kali/Desktop/PcapPlusPlus/cmake/modules/FindPCAP.cmake:113 (try_run)"
+      - "/home/kali/Desktop/PcapPlusPlus/CMakeLists.txt:123 (find_package)"
+    directories:
+      source: "/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/CMakeFiles/CMakeTmp"
+      binary: "/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/kali/Desktop/PcapPlusPlus/cmake/modules/"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "COMPILE_RESULT_VAR"
+      cached: true
+      stdout: |
+        Change Dir: '/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/ninja/linux/x64/ninja -v cmTC_383b9
+        [1/2] /usr/bin/cc   -fPIE -fdiagnostics-color=always -o CMakeFiles/cmTC_383b9.dir/detect_pcap_version.c.o -c /home/kali/Desktop/PcapPlusPlus/build/detect_pcap_version.c
+        [2/2] : && /usr/bin/cc   CMakeFiles/cmTC_383b9.dir/detect_pcap_version.c.o -o cmTC_383b9  /usr/lib/x86_64-linux-gnu/libpcap.so && :
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT_VAR"
+      cached: true
+      stdout: |
+        1.10.4 (with TPACKET_V3)
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "/home/kali/Desktop/PcapPlusPlus/cmake/modules/TargetArch.cmake:62 (try_run)"
+      - "/home/kali/Desktop/PcapPlusPlus/CMakeLists.txt:30 (target_architecture)"
+    directories:
+      source: "/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/CMakeFiles/CMakeTmp"
+      binary: "/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/kali/Desktop/PcapPlusPlus/cmake/modules/"
+    buildResult:
+      variable: "compile_result_unused"
+      cached: true
+      stdout: |
+        Change Dir: '/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/ninja/linux/x64/ninja -v cmTC_649f2
+        [1/2] /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_649f2.dir/arch.c.o -c /home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/arch.c
+        FAILED: CMakeFiles/cmTC_649f2.dir/arch.c.o 
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_649f2.dir/arch.c.o -c /home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/arch.c
+        /home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/arch.c:27:6: error: #error cmake_ARCH x86_64
+           27 |     #error cmake_ARCH x86_64
+              |      ^~~~~
+        /home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/arch.c:40:2: error: #error cmake_ARCH unknown
+           40 | #error cmake_ARCH unknown
+              |  ^~~~~
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+    runResult:
+      variable: "run_result_unused"
+      cached: true
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "/home/kali/Desktop/PcapPlusPlus/cmake/modules/FindPCAP.cmake:113 (try_run)"
+      - "/home/kali/Desktop/PcapPlusPlus/CMakeLists.txt:123 (find_package)"
+    directories:
+      source: "/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/CMakeFiles/CMakeTmp"
+      binary: "/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/kali/Desktop/PcapPlusPlus/cmake/modules/"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "COMPILE_RESULT_VAR"
+      cached: true
+      stdout: |
+        Change Dir: '/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/ninja/linux/x64/ninja -v cmTC_dd2ba
+        [1/2] /usr/bin/cc   -fPIE -fdiagnostics-color=always -o CMakeFiles/cmTC_dd2ba.dir/detect_pcap_version.c.o -c /home/kali/Desktop/PcapPlusPlus/build/detect_pcap_version.c
+        [2/2] : && /usr/bin/cc   CMakeFiles/cmTC_dd2ba.dir/detect_pcap_version.c.o -o cmTC_dd2ba  /usr/lib/x86_64-linux-gnu/libpcap.so && :
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_RESULT_VAR"
+      cached: true
+      stdout: |
+        1.10.4 (with TPACKET_V3)
+      exitCode: 0
+...
