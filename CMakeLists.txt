@@ -3,26 +3,31 @@ project(IDS_Project)
 
 add_definitions(-DPROJECT_NAME="IDS_Project")
 
-add_definitions(-DPROJECT_NAME="untitled")
+#add_definitions(-DPROJECT_NAME="untitled")
 
 set(CMAKE_CXX_STANDARD 17)
 
 set(SOURCE_FILES main.cpp
         ReverseProxy.cpp
-        SockLimiting.cpp
+        #SockLimiting.cpp
         EBPF_Runner.cpp
-        Port_Scanning_Detector.cpp)
+        Port_Scanning_Detector.cpp
+        checkIP.cpp
+        BlockIP.cpp)
 
 set(HEADER_FILES ReverseProxy.h
-        SockLimiting.h
+        #SockLimiting.h
         EBPF_Runner.h
-        Port_Scanning_Detector.h)
+        Port_Scanning_Detector.h
+        checkIP.h
+        BlockIP.h)
 
 set(PYTHON_FILES server.py
         rate_limiting_tester.py)
 
 set(EBPF_FILES cmake-build-debug/bandwidth_limiting.bpf.c
         cmake-build-debug/rate_limiting.bpf.c)
+
 
 set(PCAPPLUSPLUS_SOURCE_DIR "/home/kali/Desktop/PcapPlusPlus")
 set(PCAPPLUSPLUS_BINARY_DIR "/home/kali/Desktop/PcapPlusPlus/build")
@@ -45,3 +50,15 @@ target_link_libraries(IDS_Project Pcap++)
 
 # Add the source directory to include directories
 include_directories(${PROJECT_SOURCE_DIR})
+
+#Include CURL
+find_package(CURL REQUIRED)
+include_directories(${CURL_INCLUDE_DIRS})
+target_link_libraries(IDS_Project ${CURL_LIBRARIES})
+
+#Include Libbpf
+find_package(PkgConfig REQUIRED)
+pkg_search_module(LIBBPF REQUIRED libbpf)
+include_directories(${LIBBPF_INCLUDE_DIRS})
+link_directories(${LIBBPF_LIBRARY_DIRS})
+target_link_libraries(IDS_Project ${LIBBPF_LIBRARIES})

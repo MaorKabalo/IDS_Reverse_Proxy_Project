@@ -34,7 +34,10 @@ bool EBPF_Runner::compileAndRunEBPFProgram() const {
 
 int EBPF_Runner::compileEBPFProgram() const{
     // Build the command to compile the eBPF program
-    std::string command = "clang -target bpf -D __BPF_TRACING__ -I/usr/include/$(uname -m)-linux-gnu -Wall -O2 -o " + ebpfProgramPath_ + ".bpf.o -c " + ebpfProgramPath_ + ".bpf.c";
+    //std::string command = "clang -target bpf -D __BPF_TRACING__ -I/usr/include/$(uname -m)-linux-gnu -Wall -O2 -o " + ebpfProgramPath_ + ".bpf.o -c " + ebpfProgramPath_ + ".bpf.c";
+
+    std::string command = "clang -target bpf -D __BPF_TRACING__ -I/usr/include/$(uname -m)-linux-gnu -Wall -O2 -g -o " + ebpfProgramPath_ + ".bpf.o -c " + ebpfProgramPath_ + ".bpf.c";
+
 
     // Execute the command using system()
     int result = system(command.c_str());
@@ -74,6 +77,12 @@ bool EBPF_Runner::clean() const
         "sudo rm vmlinux.h",
         "sudo rm " + std::string(PROJECT_NAME)
     };
+
+    /*vector<std::string> commands = { "sudo ip link set dev lo xdp off", "sudo rm -f /sys/fs/bpf/" + ebpfProgramPath_,
+     "sudo rm " + ebpfProgramPath_ + ".bpf.o",
+     "sudo rm -f /sys/fs/bpf/ip", "sudo rm -rf /sys/fs/bpf/tc",
+     "sudo rm -f /sys/fs/bpf/xdp", "sudo rm vmlinux.h" ,
+     "sudo rm " + std::string(PROJECT_NAME) };*/
 
     for (std::string& str : commands)
     {

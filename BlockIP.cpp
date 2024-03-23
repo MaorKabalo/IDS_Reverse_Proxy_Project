@@ -34,7 +34,6 @@ bool BlockIP::blockIP(__uint32_t ip) {
         return false;
     }
 
-
     struct ip_block block = {ip, 0xFFFFFFFF};
 
     int result = bpf_map_update_elem(map_id, &ip, &block, BPF_ANY);
@@ -43,6 +42,7 @@ bool BlockIP::blockIP(__uint32_t ip) {
         return false;
     }
 
+    //runner.printLogOfProgram();
 
     // int result = 0;
     // std::vector<std::string> commands = {

@@ -4,6 +4,9 @@
 #include "EBPF_Runner.h"
 #include "Port_Scanning_Detector.h"
 
+#include "checkIP.h"
+#include "BlockIP.h"
+
 
 #define IP "127.0.0.1"
 #define PROXY_PORT 9090
@@ -16,6 +19,15 @@
 int main()
 {
 
+
+    if(BlockIP::blockIP(0x7f000001)) {
+        ReverseProxy reverse_proxy;
+        reverse_proxy.startHandleRequests();
+    }
+
+
+
+
     // EBPF_Runner rate_limiter(EBPF_RATE_LIMITING_NAME);
     //
     // if(rate_limiter.compileAndRunEBPFProgram()) {
@@ -24,13 +36,17 @@ int main()
     // }
 
 
-    EBPF_Runner bandwith_limiter(EBPF_RATE_LIMITING_NAME);
+    // EBPF_Runner bandwith_limiter(EBPF_RATE_LIMITING_NAME);
+    //
+    //
+    // if(bandwith_limiter.compileAndRunEBPFProgram()) {
+    //     ReverseProxy reverse_proxy;
+    //     reverse_proxy.startHandleRequests();
+    // }
 
+    //checkIP::CheckIP("43.131.241.36");
 
-    if(bandwith_limiter.compileAndRunEBPFProgram()) {
-        ReverseProxy reverse_proxy;
-        reverse_proxy.startHandleRequests();
-    }
+    // BlockIP::blockIP(0x2b83f124);
 
 
 
