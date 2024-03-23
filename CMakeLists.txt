@@ -3,6 +3,8 @@ project(IDS_Project)
 
 add_definitions(-DPROJECT_NAME="IDS_Project")
 
+add_definitions(-DPROJECT_NAME="untitled")
+
 set(CMAKE_CXX_STANDARD 17)
 
 set(SOURCE_FILES main.cpp
