@@ -1,3 +1,0 @@
-/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/CMakeFiles/untitled.dir
-/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/CMakeFiles/rebuild_cache.dir
