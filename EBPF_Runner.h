@@ -7,7 +7,6 @@
 
 #include <iostream>
 #include <string>
-#include <bpf/libbpf.h>
 
 
 class EBPF_Runner {
