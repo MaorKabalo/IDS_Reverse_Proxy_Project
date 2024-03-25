@@ -16,11 +16,12 @@ struct ip_block {
 struct btf_ip_block_map_def {
     __uint(type, BPF_MAP_TYPE_HASH);
     __uint(max_entries, 1024);
+    __uint(pinning, LIBBPF_PIN_BY_NAME);
     __type(key, __u32);
     __type(value, struct ip_block);
-};
+} ip_block_map SEC(".maps");
 
-struct btf_ip_block_map_def ip_block_map SEC(".maps");
+//struct btf_ip_block_map_def ip_block_map SEC(".maps");
 
 
 SEC("xdp")
@@ -65,14 +66,11 @@ int IpBlock(struct xdp_md *ctx) {
 
     block = bpf_map_lookup_elem(&ip_block_map, &ip);
 
-    if(block == NULL)
+    if(block)
     {
-        bpf_printk("NULLLLLLL");
+        bpf_printk("%u", block->ip);
     }
 
-    bpf_printk("%d", ip);
-
-    //bpf_printk("%u", block->ip);
 
     if (block && (ip & block->mask) == block->ip) {
 
