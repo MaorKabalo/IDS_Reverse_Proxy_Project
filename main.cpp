@@ -22,10 +22,9 @@ int main()
     // ReverseProxy reverse_proxy;
     // reverse_proxy.startHandleRequests();
 
-    if(BlockIP::blockIP(SUS_IP)) {
-        ReverseProxy reverse_proxy;
-        reverse_proxy.startHandleRequests();
-    }
+    //BlockIP::blockIP(SUS_IP);
+    ReverseProxy reverse_proxy;
+    reverse_proxy.startHandleRequests();
 
 
 

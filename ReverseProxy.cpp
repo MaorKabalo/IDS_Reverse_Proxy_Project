@@ -3,6 +3,8 @@
 #include <algorithm>
 #include <cstring>
 
+#include "BlockIP.h"
+
 std::mutex ReverseProxy::m_mutex;
 int ReverseProxy::m_numOfClient = 0;
 //const Port_Scanning_Detector ReverseProxy::detector(INTERFACE_FOR_PORT_SCANNING);
@@ -92,16 +94,27 @@ void ReverseProxy::startHandleRequests() {
         int client_socket = accept(m_proxyClientSocket, nullptr, nullptr);
         if (client_socket == -1)
             throw std::runtime_error(std::string(__func__));
-
-        std::cout << "Client accepted. Server and client can speak" << std::endl;
-
-        {
-            std::lock_guard<std::mutex> lock(m_mutex);
-            m_clients.insert({ client_socket, m_numOfClient++ });
+        char ipAdress[11];
+        ReverseProxy::get_socket_ip(client_socket, ipAdress);
+        std::cout<<ipAdress<<std::endl;
+        if(checkIP::CheckIP(ipAdress)==MALICIOUS) {
+            BlockIP::blockIP(ipAdress);
         }
+        else if(!SockLimiting::add(std::string(ipAdress)))
+        {
+            close(client_socket);
+            std::cout<<"max socket"<<std::endl;
+        }else {
+            std::cout << "Client accepted. Server and client can speak" << std::endl;
 
-        std::thread client_thread(&ReverseProxy::handleNewClient, this, client_socket);
-        client_thread.detach();
+            {
+                std::lock_guard<std::mutex> lock(m_mutex);
+                m_clients.insert({ client_socket, m_numOfClient++ });
+            }
+
+            std::thread client_thread(&ReverseProxy::handleNewClient, this, client_socket);
+            client_thread.detach();
+        }
     }
 }
 
@@ -116,7 +129,7 @@ bool isNumeric(const std::string& str)
 void ReverseProxy::handleNewClient(const int clientSocket) {
     try {
         while (true) {
-            std::string m = receiveStringFromSocket(clientSocket);  //getting request
+            std::string m = receiveStringFromSocket(clientSocket, this->m_clients);  //getting request
             if (m.empty()) { throw std::runtime_error("Client exits the program"); }
             std::cout << m << std::endl;
             forwardToServer(m);
@@ -143,18 +156,30 @@ void ReverseProxy::handleNewClient(const int clientSocket) {
     }
 }
 
-std::string ReverseProxy::receiveStringFromSocket(const int socket)
+std::string ReverseProxy::receiveStringFromSocket(const int socket, std::map<int,int>& c)
 {
     std::string result;
     char buffer[1024];
     int bytes_received;
+    std::chrono::steady_clock::time_point last_packet_time;
 
     do {
         bytes_received = recv(socket, buffer, sizeof(buffer), 0);
         if (bytes_received > 0) {
             result += std::string(buffer, bytes_received);
+            last_packet_time = std::chrono::steady_clock::now();
         }
         else if (bytes_received == 0) {
+            auto now = std::chrono::steady_clock::now();
+            auto time_diff = std::chrono::duration_cast<std::chrono::microseconds>(now - last_packet_time).count();
+            if(time_diff>=MAX_TIME_MS)
+            {
+                std::lock_guard<std::mutex> lock(m_mutex);
+                c.erase(socket);
+                close(socket);
+                throw std::runtime_error("time out");
+            }
+
             break;
         }
         else if (bytes_received == -1) {
@@ -179,3 +204,18 @@ void ReverseProxy::forwardToServer(const std::string& message) const
         throw std::runtime_error("Failed to send message to the server");
     }
 }
+
+int ReverseProxy::get_socket_ip(int sockfd, char* ip) {
+    struct sockaddr_in addr;
+    socklen_t len = sizeof(addr);
+    if (getsockname(sockfd, (struct sockaddr*)&addr, &len) < 0) {
+        perror("getsockname");
+        return -1;
+    }
+    if (inet_ntop(AF_INET, &addr.sin_addr, ip, INET_ADDRSTRLEN) == NULL) {
+        perror("inet_ntop");
+        return -1;
+    }
+    return 0;
+}
+

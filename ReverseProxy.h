@@ -12,6 +12,8 @@
 #include <unistd.h>
 #include <arpa/inet.h>
 #include <mutex>
+#include "SockLimiting.h"
+#include "checkIP.h"
 
 #include "Port_Scanning_Detector.h"
 
@@ -19,6 +21,7 @@
 #define PROXY_PORT 9090
 #define SERVER_PORT 8888
 #define INTERFACE_FOR_PORT_SCANNING "lo"
+#define MAX_TIME_MS 1800000//half an hour
 
 class ReverseProxy
 {
@@ -33,7 +36,8 @@ private:
     void handleNewClient(int clientSocket);
     void initProxyServerSocket();
     void forwardToServer(const std::string& message) const;
-    static std::string receiveStringFromSocket(int socket);
+    static std::string receiveStringFromSocket(int socket, std::map<int,int>& c);
+    int get_socket_ip(int sockfd, char* ip);
 
     int m_proxyClientSocket;
     int m_proxyServerSocket{};

@@ -39,7 +39,7 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = /home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/
+cmake_ninja_workdir = /home/kali/CLionProjects/haifa-01-proxysaver/cmake-build-debug/
 # =============================================================================
 # Object build statements for EXECUTABLE target IDS_Project
 
@@ -49,59 +49,67 @@ cmake_ninja_workdir = /home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/
 
 build cmake_object_order_depends_target_IDS_Project: phony || cmake_object_order_depends_target_Common++ cmake_object_order_depends_target_Packet++ cmake_object_order_depends_target_Pcap++
 
-build CMakeFiles/IDS_Project.dir/main.cpp.o: CXX_COMPILER__IDS_Project_unscanned_Debug /home/kali/Desktop/haifa-01-proxysaver/main.cpp || cmake_object_order_depends_target_IDS_Project
+build CMakeFiles/IDS_Project.dir/main.cpp.o: CXX_COMPILER__IDS_Project_unscanned_Debug /home/kali/CLionProjects/haifa-01-proxysaver/main.cpp || cmake_object_order_depends_target_IDS_Project
   DEFINES = -DPROJECT_NAME=\"IDS_Project\"
   DEP_FILE = CMakeFiles/IDS_Project.dir/main.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -I/home/kali/Desktop/PcapPlusPlus/Common++/header -I/home/kali/Desktop/PcapPlusPlus/Pcap++/header -I/home/kali/Desktop/PcapPlusPlus/Packet++/header -I/home/kali/Desktop/haifa-01-proxysaver
+  INCLUDES = -I/home/kali/Desktop/PcapPlusPlus/Common++/header -I/home/kali/Desktop/PcapPlusPlus/Pcap++/header -I/home/kali/Desktop/PcapPlusPlus/Packet++/header -I/home/kali/CLionProjects/haifa-01-proxysaver
   OBJECT_DIR = CMakeFiles/IDS_Project.dir
   OBJECT_FILE_DIR = CMakeFiles/IDS_Project.dir
 
-build CMakeFiles/IDS_Project.dir/ReverseProxy.cpp.o: CXX_COMPILER__IDS_Project_unscanned_Debug /home/kali/Desktop/haifa-01-proxysaver/ReverseProxy.cpp || cmake_object_order_depends_target_IDS_Project
+build CMakeFiles/IDS_Project.dir/ReverseProxy.cpp.o: CXX_COMPILER__IDS_Project_unscanned_Debug /home/kali/CLionProjects/haifa-01-proxysaver/ReverseProxy.cpp || cmake_object_order_depends_target_IDS_Project
   DEFINES = -DPROJECT_NAME=\"IDS_Project\"
   DEP_FILE = CMakeFiles/IDS_Project.dir/ReverseProxy.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -I/home/kali/Desktop/PcapPlusPlus/Common++/header -I/home/kali/Desktop/PcapPlusPlus/Pcap++/header -I/home/kali/Desktop/PcapPlusPlus/Packet++/header -I/home/kali/Desktop/haifa-01-proxysaver
+  INCLUDES = -I/home/kali/Desktop/PcapPlusPlus/Common++/header -I/home/kali/Desktop/PcapPlusPlus/Pcap++/header -I/home/kali/Desktop/PcapPlusPlus/Packet++/header -I/home/kali/CLionProjects/haifa-01-proxysaver
   OBJECT_DIR = CMakeFiles/IDS_Project.dir
   OBJECT_FILE_DIR = CMakeFiles/IDS_Project.dir
 
-build CMakeFiles/IDS_Project.dir/EBPF_Runner.cpp.o: CXX_COMPILER__IDS_Project_unscanned_Debug /home/kali/Desktop/haifa-01-proxysaver/EBPF_Runner.cpp || cmake_object_order_depends_target_IDS_Project
+build CMakeFiles/IDS_Project.dir/SockLimiting.cpp.o: CXX_COMPILER__IDS_Project_unscanned_Debug /home/kali/CLionProjects/haifa-01-proxysaver/SockLimiting.cpp || cmake_object_order_depends_target_IDS_Project
+  DEFINES = -DPROJECT_NAME=\"IDS_Project\"
+  DEP_FILE = CMakeFiles/IDS_Project.dir/SockLimiting.cpp.o.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -I/home/kali/Desktop/PcapPlusPlus/Common++/header -I/home/kali/Desktop/PcapPlusPlus/Pcap++/header -I/home/kali/Desktop/PcapPlusPlus/Packet++/header -I/home/kali/CLionProjects/haifa-01-proxysaver
+  OBJECT_DIR = CMakeFiles/IDS_Project.dir
+  OBJECT_FILE_DIR = CMakeFiles/IDS_Project.dir
+
+build CMakeFiles/IDS_Project.dir/EBPF_Runner.cpp.o: CXX_COMPILER__IDS_Project_unscanned_Debug /home/kali/CLionProjects/haifa-01-proxysaver/EBPF_Runner.cpp || cmake_object_order_depends_target_IDS_Project
   DEFINES = -DPROJECT_NAME=\"IDS_Project\"
   DEP_FILE = CMakeFiles/IDS_Project.dir/EBPF_Runner.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -I/home/kali/Desktop/PcapPlusPlus/Common++/header -I/home/kali/Desktop/PcapPlusPlus/Pcap++/header -I/home/kali/Desktop/PcapPlusPlus/Packet++/header -I/home/kali/Desktop/haifa-01-proxysaver
+  INCLUDES = -I/home/kali/Desktop/PcapPlusPlus/Common++/header -I/home/kali/Desktop/PcapPlusPlus/Pcap++/header -I/home/kali/Desktop/PcapPlusPlus/Packet++/header -I/home/kali/CLionProjects/haifa-01-proxysaver
   OBJECT_DIR = CMakeFiles/IDS_Project.dir
   OBJECT_FILE_DIR = CMakeFiles/IDS_Project.dir
 
-build CMakeFiles/IDS_Project.dir/Port_Scanning_Detector.cpp.o: CXX_COMPILER__IDS_Project_unscanned_Debug /home/kali/Desktop/haifa-01-proxysaver/Port_Scanning_Detector.cpp || cmake_object_order_depends_target_IDS_Project
+build CMakeFiles/IDS_Project.dir/Port_Scanning_Detector.cpp.o: CXX_COMPILER__IDS_Project_unscanned_Debug /home/kali/CLionProjects/haifa-01-proxysaver/Port_Scanning_Detector.cpp || cmake_object_order_depends_target_IDS_Project
   DEFINES = -DPROJECT_NAME=\"IDS_Project\"
   DEP_FILE = CMakeFiles/IDS_Project.dir/Port_Scanning_Detector.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -I/home/kali/Desktop/PcapPlusPlus/Common++/header -I/home/kali/Desktop/PcapPlusPlus/Pcap++/header -I/home/kali/Desktop/PcapPlusPlus/Packet++/header -I/home/kali/Desktop/haifa-01-proxysaver
+  INCLUDES = -I/home/kali/Desktop/PcapPlusPlus/Common++/header -I/home/kali/Desktop/PcapPlusPlus/Pcap++/header -I/home/kali/Desktop/PcapPlusPlus/Packet++/header -I/home/kali/CLionProjects/haifa-01-proxysaver
   OBJECT_DIR = CMakeFiles/IDS_Project.dir
   OBJECT_FILE_DIR = CMakeFiles/IDS_Project.dir
 
-build CMakeFiles/IDS_Project.dir/checkIP.cpp.o: CXX_COMPILER__IDS_Project_unscanned_Debug /home/kali/Desktop/haifa-01-proxysaver/checkIP.cpp || cmake_object_order_depends_target_IDS_Project
+build CMakeFiles/IDS_Project.dir/checkIP.cpp.o: CXX_COMPILER__IDS_Project_unscanned_Debug /home/kali/CLionProjects/haifa-01-proxysaver/checkIP.cpp || cmake_object_order_depends_target_IDS_Project
   DEFINES = -DPROJECT_NAME=\"IDS_Project\"
   DEP_FILE = CMakeFiles/IDS_Project.dir/checkIP.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -I/home/kali/Desktop/PcapPlusPlus/Common++/header -I/home/kali/Desktop/PcapPlusPlus/Pcap++/header -I/home/kali/Desktop/PcapPlusPlus/Packet++/header -I/home/kali/Desktop/haifa-01-proxysaver
+  INCLUDES = -I/home/kali/Desktop/PcapPlusPlus/Common++/header -I/home/kali/Desktop/PcapPlusPlus/Pcap++/header -I/home/kali/Desktop/PcapPlusPlus/Packet++/header -I/home/kali/CLionProjects/haifa-01-proxysaver
   OBJECT_DIR = CMakeFiles/IDS_Project.dir
   OBJECT_FILE_DIR = CMakeFiles/IDS_Project.dir
 
-build CMakeFiles/IDS_Project.dir/BlockIP.cpp.o: CXX_COMPILER__IDS_Project_unscanned_Debug /home/kali/Desktop/haifa-01-proxysaver/BlockIP.cpp || cmake_object_order_depends_target_IDS_Project
+build CMakeFiles/IDS_Project.dir/BlockIP.cpp.o: CXX_COMPILER__IDS_Project_unscanned_Debug /home/kali/CLionProjects/haifa-01-proxysaver/BlockIP.cpp || cmake_object_order_depends_target_IDS_Project
   DEFINES = -DPROJECT_NAME=\"IDS_Project\"
   DEP_FILE = CMakeFiles/IDS_Project.dir/BlockIP.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -I/home/kali/Desktop/PcapPlusPlus/Common++/header -I/home/kali/Desktop/PcapPlusPlus/Pcap++/header -I/home/kali/Desktop/PcapPlusPlus/Packet++/header -I/home/kali/Desktop/haifa-01-proxysaver
+  INCLUDES = -I/home/kali/Desktop/PcapPlusPlus/Common++/header -I/home/kali/Desktop/PcapPlusPlus/Pcap++/header -I/home/kali/Desktop/PcapPlusPlus/Packet++/header -I/home/kali/CLionProjects/haifa-01-proxysaver
   OBJECT_DIR = CMakeFiles/IDS_Project.dir
   OBJECT_FILE_DIR = CMakeFiles/IDS_Project.dir
 
-build CMakeFiles/IDS_Project.dir/IPTools.cpp.o: CXX_COMPILER__IDS_Project_unscanned_Debug /home/kali/Desktop/haifa-01-proxysaver/IPTools.cpp || cmake_object_order_depends_target_IDS_Project
+build CMakeFiles/IDS_Project.dir/IPTools.cpp.o: CXX_COMPILER__IDS_Project_unscanned_Debug /home/kali/CLionProjects/haifa-01-proxysaver/IPTools.cpp || cmake_object_order_depends_target_IDS_Project
   DEFINES = -DPROJECT_NAME=\"IDS_Project\"
   DEP_FILE = CMakeFiles/IDS_Project.dir/IPTools.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -I/home/kali/Desktop/PcapPlusPlus/Common++/header -I/home/kali/Desktop/PcapPlusPlus/Pcap++/header -I/home/kali/Desktop/PcapPlusPlus/Packet++/header -I/home/kali/Desktop/haifa-01-proxysaver
+  INCLUDES = -I/home/kali/Desktop/PcapPlusPlus/Common++/header -I/home/kali/Desktop/PcapPlusPlus/Pcap++/header -I/home/kali/Desktop/PcapPlusPlus/Packet++/header -I/home/kali/CLionProjects/haifa-01-proxysaver
   OBJECT_DIR = CMakeFiles/IDS_Project.dir
   OBJECT_FILE_DIR = CMakeFiles/IDS_Project.dir
 
@@ -113,7 +121,7 @@ build CMakeFiles/IDS_Project.dir/IPTools.cpp.o: CXX_COMPILER__IDS_Project_unscan
 #############################################
 # Link the executable IDS_Project
 
-build IDS_Project: CXX_EXECUTABLE_LINKER__IDS_Project_Debug CMakeFiles/IDS_Project.dir/main.cpp.o CMakeFiles/IDS_Project.dir/ReverseProxy.cpp.o CMakeFiles/IDS_Project.dir/EBPF_Runner.cpp.o CMakeFiles/IDS_Project.dir/Port_Scanning_Detector.cpp.o CMakeFiles/IDS_Project.dir/checkIP.cpp.o CMakeFiles/IDS_Project.dir/BlockIP.cpp.o CMakeFiles/IDS_Project.dir/IPTools.cpp.o | /home/kali/Desktop/PcapPlusPlus/build/Pcap++/libPcap++.a /usr/lib/x86_64-linux-gnu/libcurl.so /home/kali/Desktop/PcapPlusPlus/build/Packet++/libPacket++.a /home/kali/Desktop/PcapPlusPlus/build/Common++/libCommon++.a /usr/lib/x86_64-linux-gnu/libpcap.so || /home/kali/Desktop/PcapPlusPlus/build/Common++/libCommon++.a /home/kali/Desktop/PcapPlusPlus/build/Packet++/libPacket++.a /home/kali/Desktop/PcapPlusPlus/build/Pcap++/libPcap++.a
+build IDS_Project: CXX_EXECUTABLE_LINKER__IDS_Project_Debug CMakeFiles/IDS_Project.dir/main.cpp.o CMakeFiles/IDS_Project.dir/ReverseProxy.cpp.o CMakeFiles/IDS_Project.dir/SockLimiting.cpp.o CMakeFiles/IDS_Project.dir/EBPF_Runner.cpp.o CMakeFiles/IDS_Project.dir/Port_Scanning_Detector.cpp.o CMakeFiles/IDS_Project.dir/checkIP.cpp.o CMakeFiles/IDS_Project.dir/BlockIP.cpp.o CMakeFiles/IDS_Project.dir/IPTools.cpp.o | /home/kali/Desktop/PcapPlusPlus/build/Pcap++/libPcap++.a /usr/lib/x86_64-linux-gnu/libcurl.so /home/kali/Desktop/PcapPlusPlus/build/Packet++/libPacket++.a /home/kali/Desktop/PcapPlusPlus/build/Common++/libCommon++.a /usr/lib/x86_64-linux-gnu/libpcap.so || /home/kali/Desktop/PcapPlusPlus/build/Common++/libCommon++.a /home/kali/Desktop/PcapPlusPlus/build/Packet++/libPacket++.a /home/kali/Desktop/PcapPlusPlus/build/Pcap++/libPcap++.a
   FLAGS = -g
   LINK_LIBRARIES = /home/kali/Desktop/PcapPlusPlus/build/Pcap++/libPcap++.a  /usr/lib/x86_64-linux-gnu/libcurl.so  -lbpf  /home/kali/Desktop/PcapPlusPlus/build/Packet++/libPacket++.a  /home/kali/Desktop/PcapPlusPlus/build/Common++/libCommon++.a  /usr/lib/x86_64-linux-gnu/libpcap.so
   OBJECT_DIR = CMakeFiles/IDS_Project.dir
@@ -127,7 +135,7 @@ build IDS_Project: CXX_EXECUTABLE_LINKER__IDS_Project_Debug CMakeFiles/IDS_Proje
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug && /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cd /home/kali/CLionProjects/haifa-01-proxysaver/cmake-build-debug && /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -138,7 +146,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug && /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S/home/kali/Desktop/haifa-01-proxysaver -B/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug
+  COMMAND = cd /home/kali/CLionProjects/haifa-01-proxysaver/cmake-build-debug && /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S/home/kali/CLionProjects/haifa-01-proxysaver -B/home/kali/CLionProjects/haifa-01-proxysaver/cmake-build-debug
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -147,7 +155,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# /home/kali/Desktop/haifa-01-proxysaver/CMakeLists.txt
+# /home/kali/CLionProjects/haifa-01-proxysaver/CMakeLists.txt
 # =============================================================================
 
 
@@ -172,7 +180,7 @@ build /home/kali/Desktop/PcapPlusPlus/build/edit_cache: phony /home/kali/Desktop
 # Utility command for rebuild_cache
 
 build /home/kali/Desktop/PcapPlusPlus/build/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/kali/Desktop/PcapPlusPlus/build && /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S/home/kali/Desktop/haifa-01-proxysaver -B/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug
+  COMMAND = cd /home/kali/Desktop/PcapPlusPlus/build && /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S/home/kali/CLionProjects/haifa-01-proxysaver -B/home/kali/CLionProjects/haifa-01-proxysaver/cmake-build-debug
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -207,7 +215,7 @@ build /home/kali/Desktop/PcapPlusPlus/build/3rdParty/edit_cache: phony /home/kal
 # Utility command for rebuild_cache
 
 build /home/kali/Desktop/PcapPlusPlus/build/3rdParty/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/kali/Desktop/PcapPlusPlus/build/3rdParty && /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S/home/kali/Desktop/haifa-01-proxysaver -B/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug
+  COMMAND = cd /home/kali/Desktop/PcapPlusPlus/build/3rdParty && /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S/home/kali/CLionProjects/haifa-01-proxysaver -B/home/kali/CLionProjects/haifa-01-proxysaver/cmake-build-debug
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -235,7 +243,7 @@ build /home/kali/Desktop/PcapPlusPlus/build/3rdParty/EndianPortable/edit_cache: 
 # Utility command for rebuild_cache
 
 build /home/kali/Desktop/PcapPlusPlus/build/3rdParty/EndianPortable/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/kali/Desktop/PcapPlusPlus/build/3rdParty/EndianPortable && /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S/home/kali/Desktop/haifa-01-proxysaver -B/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug
+  COMMAND = cd /home/kali/Desktop/PcapPlusPlus/build/3rdParty/EndianPortable && /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S/home/kali/CLionProjects/haifa-01-proxysaver -B/home/kali/CLionProjects/haifa-01-proxysaver/cmake-build-debug
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -263,7 +271,7 @@ build /home/kali/Desktop/PcapPlusPlus/build/3rdParty/Getopt-for-Visual-Studio/ed
 # Utility command for rebuild_cache
 
 build /home/kali/Desktop/PcapPlusPlus/build/3rdParty/Getopt-for-Visual-Studio/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/kali/Desktop/PcapPlusPlus/build/3rdParty/Getopt-for-Visual-Studio && /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S/home/kali/Desktop/haifa-01-proxysaver -B/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug
+  COMMAND = cd /home/kali/Desktop/PcapPlusPlus/build/3rdParty/Getopt-for-Visual-Studio && /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S/home/kali/CLionProjects/haifa-01-proxysaver -B/home/kali/CLionProjects/haifa-01-proxysaver/cmake-build-debug
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -315,7 +323,7 @@ build /home/kali/Desktop/PcapPlusPlus/build/3rdParty/hash-library/edit_cache: ph
 # Utility command for rebuild_cache
 
 build /home/kali/Desktop/PcapPlusPlus/build/3rdParty/hash-library/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/kali/Desktop/PcapPlusPlus/build/3rdParty/hash-library && /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S/home/kali/Desktop/haifa-01-proxysaver -B/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug
+  COMMAND = cd /home/kali/Desktop/PcapPlusPlus/build/3rdParty/hash-library && /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S/home/kali/CLionProjects/haifa-01-proxysaver -B/home/kali/CLionProjects/haifa-01-proxysaver/cmake-build-debug
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -343,7 +351,7 @@ build /home/kali/Desktop/PcapPlusPlus/build/3rdParty/json/edit_cache: phony /hom
 # Utility command for rebuild_cache
 
 build /home/kali/Desktop/PcapPlusPlus/build/3rdParty/json/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/kali/Desktop/PcapPlusPlus/build/3rdParty/json && /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S/home/kali/Desktop/haifa-01-proxysaver -B/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug
+  COMMAND = cd /home/kali/Desktop/PcapPlusPlus/build/3rdParty/json && /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S/home/kali/CLionProjects/haifa-01-proxysaver -B/home/kali/CLionProjects/haifa-01-proxysaver/cmake-build-debug
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -491,7 +499,7 @@ build /home/kali/Desktop/PcapPlusPlus/build/3rdParty/LightPcapNg/edit_cache: pho
 # Utility command for rebuild_cache
 
 build /home/kali/Desktop/PcapPlusPlus/build/3rdParty/LightPcapNg/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/kali/Desktop/PcapPlusPlus/build/3rdParty/LightPcapNg && /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S/home/kali/Desktop/haifa-01-proxysaver -B/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug
+  COMMAND = cd /home/kali/Desktop/PcapPlusPlus/build/3rdParty/LightPcapNg && /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S/home/kali/CLionProjects/haifa-01-proxysaver -B/home/kali/CLionProjects/haifa-01-proxysaver/cmake-build-debug
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -552,7 +560,7 @@ build /home/kali/Desktop/PcapPlusPlus/build/3rdParty/MemPlumber/MemPlumber/edit_
 # Utility command for rebuild_cache
 
 build /home/kali/Desktop/PcapPlusPlus/build/3rdParty/MemPlumber/MemPlumber/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/kali/Desktop/PcapPlusPlus/build/3rdParty/MemPlumber/MemPlumber && /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S/home/kali/Desktop/haifa-01-proxysaver -B/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug
+  COMMAND = cd /home/kali/Desktop/PcapPlusPlus/build/3rdParty/MemPlumber/MemPlumber && /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S/home/kali/CLionProjects/haifa-01-proxysaver -B/home/kali/CLionProjects/haifa-01-proxysaver/cmake-build-debug
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -1093,7 +1101,7 @@ build /home/kali/Desktop/PcapPlusPlus/build/Packet++/edit_cache: phony /home/kal
 # Utility command for rebuild_cache
 
 build /home/kali/Desktop/PcapPlusPlus/build/Packet++/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/kali/Desktop/PcapPlusPlus/build/Packet++ && /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S/home/kali/Desktop/haifa-01-proxysaver -B/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug
+  COMMAND = cd /home/kali/Desktop/PcapPlusPlus/build/Packet++ && /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S/home/kali/CLionProjects/haifa-01-proxysaver -B/home/kali/CLionProjects/haifa-01-proxysaver/cmake-build-debug
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -1210,7 +1218,7 @@ build /home/kali/Desktop/PcapPlusPlus/build/Pcap++/edit_cache: phony /home/kali/
 # Utility command for rebuild_cache
 
 build /home/kali/Desktop/PcapPlusPlus/build/Pcap++/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/kali/Desktop/PcapPlusPlus/build/Pcap++ && /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S/home/kali/Desktop/haifa-01-proxysaver -B/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug
+  COMMAND = cd /home/kali/Desktop/PcapPlusPlus/build/Pcap++ && /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S/home/kali/CLionProjects/haifa-01-proxysaver -B/home/kali/CLionProjects/haifa-01-proxysaver/cmake-build-debug
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -1335,7 +1343,7 @@ build /home/kali/Desktop/PcapPlusPlus/build/Common++/edit_cache: phony /home/kal
 # Utility command for rebuild_cache
 
 build /home/kali/Desktop/PcapPlusPlus/build/Common++/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/kali/Desktop/PcapPlusPlus/build/Common++ && /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S/home/kali/Desktop/haifa-01-proxysaver -B/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug
+  COMMAND = cd /home/kali/Desktop/PcapPlusPlus/build/Common++ && /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S/home/kali/CLionProjects/haifa-01-proxysaver -B/home/kali/CLionProjects/haifa-01-proxysaver/cmake-build-debug
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -1369,6 +1377,13 @@ build uninstall: phony /home/kali/Desktop/PcapPlusPlus/build/uninstall
 
 # =============================================================================
 # Folder targets.
+
+# =============================================================================
+
+#############################################
+# Folder: /home/kali/CLionProjects/haifa-01-proxysaver/cmake-build-debug
+
+build all: phony IDS_Project /home/kali/Desktop/PcapPlusPlus/build/all
 
 # =============================================================================
 
@@ -1448,27 +1463,20 @@ build /home/kali/Desktop/PcapPlusPlus/build/Packet++/all: phony /home/kali/Deskt
 build /home/kali/Desktop/PcapPlusPlus/build/Pcap++/all: phony /home/kali/Desktop/PcapPlusPlus/build/Pcap++/libPcap++.a
 
 # =============================================================================
-
-#############################################
-# Folder: /home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug
-
-build all: phony IDS_Project /home/kali/Desktop/PcapPlusPlus/build/all
-
-# =============================================================================
 # Built-in targets
 
 
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCInformation.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCXXInformation.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeDependentOption.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeGenericSystem.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeInitializeConfigs.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakePackageConfigHelpers.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakePushCheckState.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInformation.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInitialize.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CheckCSourceCompiles.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CheckCXXSourceCompiles.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CheckFunctionExists.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CheckIncludeFile.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CheckLibraryExists.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CheckSymbolExists.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/GNU-C.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/GNU-CXX.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/GNU.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindBacktrace.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindCURL.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindPackageHandleStandardArgs.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindPackageMessage.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindPkgConfig.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindThreads.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/GNUInstallDirs.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-GNU-C.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-GNU-CXX.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-GNU.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-Initialize.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/UnixPaths.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/SelectLibraryConfigurations.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/WriteBasicConfigVersionFile.cmake /home/kali/Desktop/PcapPlusPlus/3rdParty/CMakeLists.txt /home/kali/Desktop/PcapPlusPlus/3rdParty/EndianPortable/CMakeLists.txt /home/kali/Desktop/PcapPlusPlus/3rdParty/Getopt-for-Visual-Studio/CMakeLists.txt /home/kali/Desktop/PcapPlusPlus/3rdParty/LightPcapNg/CMakeLists.txt /home/kali/Desktop/PcapPlusPlus/3rdParty/MemPlumber/MemPlumber/CMakeLists.txt /home/kali/Desktop/PcapPlusPlus/3rdParty/hash-library/CMakeLists.txt /home/kali/Desktop/PcapPlusPlus/3rdParty/json/CMakeLists.txt /home/kali/Desktop/PcapPlusPlus/CMakeLists.txt /home/kali/Desktop/PcapPlusPlus/Common++/CMakeLists.txt /home/kali/Desktop/PcapPlusPlus/Packet++/CMakeLists.txt /home/kali/Desktop/PcapPlusPlus/Pcap++/CMakeLists.txt /home/kali/Desktop/PcapPlusPlus/build/detect_pcap_version.c /home/kali/Desktop/PcapPlusPlus/cmake/PcapPlusPlusUninstall.cmake.in /home/kali/Desktop/PcapPlusPlus/cmake/modules/FindPCAP.cmake /home/kali/Desktop/PcapPlusPlus/cmake/modules/PcapPlusPlusUtils.cmake /home/kali/Desktop/PcapPlusPlus/cmake/modules/TargetArch.cmake /home/kali/Desktop/haifa-01-proxysaver/CMakeLists.txt CMakeCache.txt CMakeFiles/3.28.1/CMakeCCompiler.cmake CMakeFiles/3.28.1/CMakeCXXCompiler.cmake CMakeFiles/3.28.1/CMakeSystem.cmake arch.c
+build build.ninja: RERUN_CMAKE | /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCInformation.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCXXInformation.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeDependentOption.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeGenericSystem.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeInitializeConfigs.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakePackageConfigHelpers.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakePushCheckState.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInformation.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInitialize.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CheckCSourceCompiles.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CheckCXXSourceCompiles.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CheckFunctionExists.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CheckIncludeFile.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CheckLibraryExists.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CheckSymbolExists.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/GNU-C.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/GNU-CXX.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/GNU.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindBacktrace.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindCURL.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindPackageHandleStandardArgs.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindPackageMessage.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindPkgConfig.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindThreads.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/GNUInstallDirs.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-GNU-C.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-GNU-CXX.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-GNU.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-Initialize.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/UnixPaths.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/SelectLibraryConfigurations.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/WriteBasicConfigVersionFile.cmake /home/kali/CLionProjects/haifa-01-proxysaver/CMakeLists.txt /home/kali/Desktop/PcapPlusPlus/3rdParty/CMakeLists.txt /home/kali/Desktop/PcapPlusPlus/3rdParty/EndianPortable/CMakeLists.txt /home/kali/Desktop/PcapPlusPlus/3rdParty/Getopt-for-Visual-Studio/CMakeLists.txt /home/kali/Desktop/PcapPlusPlus/3rdParty/LightPcapNg/CMakeLists.txt /home/kali/Desktop/PcapPlusPlus/3rdParty/MemPlumber/MemPlumber/CMakeLists.txt /home/kali/Desktop/PcapPlusPlus/3rdParty/hash-library/CMakeLists.txt /home/kali/Desktop/PcapPlusPlus/3rdParty/json/CMakeLists.txt /home/kali/Desktop/PcapPlusPlus/CMakeLists.txt /home/kali/Desktop/PcapPlusPlus/Common++/CMakeLists.txt /home/kali/Desktop/PcapPlusPlus/Packet++/CMakeLists.txt /home/kali/Desktop/PcapPlusPlus/Pcap++/CMakeLists.txt /home/kali/Desktop/PcapPlusPlus/build/detect_pcap_version.c /home/kali/Desktop/PcapPlusPlus/cmake/PcapPlusPlusUninstall.cmake.in /home/kali/Desktop/PcapPlusPlus/cmake/modules/FindPCAP.cmake /home/kali/Desktop/PcapPlusPlus/cmake/modules/PcapPlusPlusUtils.cmake /home/kali/Desktop/PcapPlusPlus/cmake/modules/TargetArch.cmake CMakeCache.txt CMakeFiles/3.28.1/CMakeCCompiler.cmake CMakeFiles/3.28.1/CMakeCXXCompiler.cmake CMakeFiles/3.28.1/CMakeSystem.cmake arch.c
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCInformation.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCXXInformation.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeDependentOption.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeGenericSystem.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeInitializeConfigs.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakePackageConfigHelpers.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakePushCheckState.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInformation.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInitialize.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CheckCSourceCompiles.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CheckCXXSourceCompiles.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CheckFunctionExists.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CheckIncludeFile.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CheckLibraryExists.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CheckSymbolExists.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/GNU-C.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/GNU-CXX.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/GNU.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindBacktrace.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindCURL.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindPackageHandleStandardArgs.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindPackageMessage.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindPkgConfig.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindThreads.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/GNUInstallDirs.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-GNU-C.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-GNU-CXX.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-GNU.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-Initialize.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/UnixPaths.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/SelectLibraryConfigurations.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/WriteBasicConfigVersionFile.cmake /home/kali/Desktop/PcapPlusPlus/3rdParty/CMakeLists.txt /home/kali/Desktop/PcapPlusPlus/3rdParty/EndianPortable/CMakeLists.txt /home/kali/Desktop/PcapPlusPlus/3rdParty/Getopt-for-Visual-Studio/CMakeLists.txt /home/kali/Desktop/PcapPlusPlus/3rdParty/LightPcapNg/CMakeLists.txt /home/kali/Desktop/PcapPlusPlus/3rdParty/MemPlumber/MemPlumber/CMakeLists.txt /home/kali/Desktop/PcapPlusPlus/3rdParty/hash-library/CMakeLists.txt /home/kali/Desktop/PcapPlusPlus/3rdParty/json/CMakeLists.txt /home/kali/Desktop/PcapPlusPlus/CMakeLists.txt /home/kali/Desktop/PcapPlusPlus/Common++/CMakeLists.txt /home/kali/Desktop/PcapPlusPlus/Packet++/CMakeLists.txt /home/kali/Desktop/PcapPlusPlus/Pcap++/CMakeLists.txt /home/kali/Desktop/PcapPlusPlus/build/detect_pcap_version.c /home/kali/Desktop/PcapPlusPlus/cmake/PcapPlusPlusUninstall.cmake.in /home/kali/Desktop/PcapPlusPlus/cmake/modules/FindPCAP.cmake /home/kali/Desktop/PcapPlusPlus/cmake/modules/PcapPlusPlusUtils.cmake /home/kali/Desktop/PcapPlusPlus/cmake/modules/TargetArch.cmake /home/kali/Desktop/haifa-01-proxysaver/CMakeLists.txt CMakeCache.txt CMakeFiles/3.28.1/CMakeCCompiler.cmake CMakeFiles/3.28.1/CMakeCXXCompiler.cmake CMakeFiles/3.28.1/CMakeSystem.cmake arch.c: phony
+build /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCInformation.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCXXInformation.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeDependentOption.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeGenericSystem.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeInitializeConfigs.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakePackageConfigHelpers.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakePushCheckState.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInformation.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInitialize.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CheckCSourceCompiles.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CheckCXXSourceCompiles.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CheckFunctionExists.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CheckIncludeFile.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CheckLibraryExists.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CheckSymbolExists.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/GNU-C.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/GNU-CXX.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/GNU.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindBacktrace.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindCURL.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindPackageHandleStandardArgs.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindPackageMessage.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindPkgConfig.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindThreads.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/GNUInstallDirs.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-GNU-C.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-GNU-CXX.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-GNU.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-Initialize.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/UnixPaths.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/SelectLibraryConfigurations.cmake /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/WriteBasicConfigVersionFile.cmake /home/kali/CLionProjects/haifa-01-proxysaver/CMakeLists.txt /home/kali/Desktop/PcapPlusPlus/3rdParty/CMakeLists.txt /home/kali/Desktop/PcapPlusPlus/3rdParty/EndianPortable/CMakeLists.txt /home/kali/Desktop/PcapPlusPlus/3rdParty/Getopt-for-Visual-Studio/CMakeLists.txt /home/kali/Desktop/PcapPlusPlus/3rdParty/LightPcapNg/CMakeLists.txt /home/kali/Desktop/PcapPlusPlus/3rdParty/MemPlumber/MemPlumber/CMakeLists.txt /home/kali/Desktop/PcapPlusPlus/3rdParty/hash-library/CMakeLists.txt /home/kali/Desktop/PcapPlusPlus/3rdParty/json/CMakeLists.txt /home/kali/Desktop/PcapPlusPlus/CMakeLists.txt /home/kali/Desktop/PcapPlusPlus/Common++/CMakeLists.txt /home/kali/Desktop/PcapPlusPlus/Packet++/CMakeLists.txt /home/kali/Desktop/PcapPlusPlus/Pcap++/CMakeLists.txt /home/kali/Desktop/PcapPlusPlus/build/detect_pcap_version.c /home/kali/Desktop/PcapPlusPlus/cmake/PcapPlusPlusUninstall.cmake.in /home/kali/Desktop/PcapPlusPlus/cmake/modules/FindPCAP.cmake /home/kali/Desktop/PcapPlusPlus/cmake/modules/PcapPlusPlusUtils.cmake /home/kali/Desktop/PcapPlusPlus/cmake/modules/TargetArch.cmake CMakeCache.txt CMakeFiles/3.28.1/CMakeCCompiler.cmake CMakeFiles/3.28.1/CMakeCXXCompiler.cmake CMakeFiles/3.28.1/CMakeSystem.cmake arch.c: phony
 
 
 #############################################

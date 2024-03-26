@@ -9,7 +9,7 @@ set(CMAKE_CXX_STANDARD 17)
 
 set(SOURCE_FILES main.cpp
         ReverseProxy.cpp
-        #SockLimiting.cpp
+        SockLimiting.cpp
         EBPF_Runner.cpp
         Port_Scanning_Detector.cpp
         checkIP.cpp
@@ -17,7 +17,7 @@ set(SOURCE_FILES main.cpp
         IPTools.cpp)
 
 set(HEADER_FILES ReverseProxy.h
-        #SockLimiting.h
+        SockLimiting.h
         EBPF_Runner.h
         Port_Scanning_Detector.h
         checkIP.h

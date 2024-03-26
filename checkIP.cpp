@@ -41,6 +41,8 @@ int checkIP::CheckIP(const std::string &ipAddress)
         if (http_code == 200)
         {
             nlohmann::json response_json = nlohmann::json::parse(response_string);
+            if(!response_json["data"]["isPublic"])
+                return OK;//if the ip isnt public
             bool isWhitelisted = response_json["data"]["isWhitelisted"];
             //std::cout<<response_json["data"]["isWhitelisted"]<<std::endl;
             return isWhitelisted?OK:MALICIOUS;

@@ -10,7 +10,7 @@
 #define CHECKIP_H
 #include <string>
 #include <curl/curl.h>
-#include <nlohmann/json.hpp>
+#include <json.hpp>
 
 
 class checkIP : public IPTools{
