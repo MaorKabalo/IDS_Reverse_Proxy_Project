@@ -11,25 +11,30 @@ struct ip_block {
 };
 
 int BlockIP::map_id;
+bool BlockIP::isActive = false;
 
 
 
 
 bool BlockIP::blockIP(const char* ip) {
 
-    EBPF_Runner runner("IpBlock");
-
-    // map_id = bpf_map_create(BPF_MAP_TYPE_HASH, "my_map", sizeof(__u32), sizeof(struct ip_block), 1024, nullptr);
-    // if (map_id < 0) {
-    //     std::cerr << "Failed to create BPF map: " << std::strerror(errno) << std::endl;
-    //     return false;
-    // }
-
     const __uint32_t ipInt = ReverseIP(IPv4StringToInt(ip));
 
-    if (!runner.compileAndRunEBPFProgram()) {
-        std::cerr << "Failed to compile and run eBPF program." << std::endl;
-        return false;
+    if(!isActive) {
+        EBPF_Runner runner("IpBlock");
+        isActive = true;
+
+        // map_id = bpf_map_create(BPF_MAP_TYPE_HASH, "my_map", sizeof(__u32), sizeof(struct ip_block), 1024, nullptr);
+        // if (map_id < 0) {
+        //     std::cerr << "Failed to create BPF map: " << std::strerror(errno) << std::endl;
+        //     return false;
+        // }
+
+
+        if (!runner.compileAndRunEBPFProgram()) {
+            std::cerr << "Failed to compile and run eBPF program." << std::endl;
+            return false;
+        }
     }
 
     map_id = bpf_obj_get("/sys/fs/bpf/tc/globals/ip_block_map");

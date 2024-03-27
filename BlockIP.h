@@ -23,6 +23,7 @@ public:
     static bool unblockIP(const char* ip);
 private:
     static int map_id;
+    static bool isActive;
 };
 
 
