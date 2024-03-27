@@ -12,19 +12,19 @@
 #define PROXY_PORT 9090
 #define SERVER_PORT 8888
 
-#define EBPF_BANDWIDTH_NAME "bandwidth_limiting"
+#define EBPF_BANDWIDTH_NAME "bandwidth_limit"
 #define EBPF_RATE_LIMITING_NAME "rate_limiting"
 
 
 int main()
 {
 
-    // ReverseProxy reverse_proxy;
-    // reverse_proxy.startHandleRequests();
-
-    //BlockIP::blockIP(SUS_IP);
     ReverseProxy reverse_proxy;
     reverse_proxy.startHandleRequests();
+
+    //BlockIP::blockIP(SUS_IP);
+    // ReverseProxy reverse_proxy;
+    // reverse_proxy.startHandleRequests();
 
 
 
@@ -37,7 +37,7 @@ int main()
     // }
 
 
-    // EBPF_Runner bandwith_limiter(EBPF_RATE_LIMITING_NAME);
+    // EBPF_Runner bandwith_limiter(EBPF_BANDWIDTH_NAME);
     //
     //
     // if(bandwith_limiter.compileAndRunEBPFProgram()) {

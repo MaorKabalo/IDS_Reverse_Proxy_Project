@@ -4,6 +4,8 @@
 
 #include "Port_Scanning_Detector.h"
 
+#include "BlockIP.h"
+
 #define PORT 100
 #define PER_MS 15
 
@@ -66,13 +68,17 @@ void Port_Scanning_Detector::onPacketArrives(RawPacket* packet, PcapLiveDevice* 
             std::lock_guard<std::mutex> lock(countPortMutex);
             if (countPort >= PORT) {
                 std::cout << "Port Scanning Detected!" << std::endl;
-                mMalicousIPs.insert(IPTools::intToIPv4String(sourceIP));
 
-                // Safely print malicious IPs using a mutex
-                std::lock_guard<std::mutex> ipLock(mMalicousIPsMutex);
-                for (const auto& ip : mMalicousIPs) {
-                    std::cout << "IP: " << ip << std::endl;
-                }
+                BlockIP::blockIP(IPTools::intToIPv4String(sourceIP).c_str());
+
+
+                // mMalicousIPs.insert(IPTools::intToIPv4String(sourceIP));
+                //
+                // // Safely print malicious IPs using a mutex
+                // std::lock_guard<std::mutex> ipLock(mMalicousIPsMutex);
+                // for (const auto& ip : mMalicousIPs) {
+                //     std::cout << "IP: " << ip << std::endl;
+                // }
             }
         }
 

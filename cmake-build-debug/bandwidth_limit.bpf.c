@@ -59,7 +59,7 @@ unsigned short get_packet_dest_port(struct xdp_md* ctx) {
 
 
 SEC("xdp")
-int bandwidth_limiting(struct xdp_md *ctx)
+int bandwidth_limit(struct xdp_md *ctx)
 {
 
     long port = get_packet_dest_port(ctx);
@@ -104,4 +104,4 @@ int bandwidth_limiting(struct xdp_md *ctx)
 }
 
 
-char BANDWIDTH_LIMITING_LICENSE[] SEC("license") = "Dual BSD/GPL";
+char BANDWIDTH_LIMIT_LICENSE[] SEC("license") = "Dual BSD/GPL";
