@@ -37,7 +37,7 @@ private:
     void initProxyServerSocket();
     void forwardToServer(const std::string& message) const;
     static std::string receiveStringFromSocket(int socket, std::map<int,int>& c);
-    int get_socket_ip(int sockfd, char* ip);
+    static int get_socket_ip(int sockfd, char* ip);
 
     int m_proxyClientSocket;
     int m_proxyServerSocket{};

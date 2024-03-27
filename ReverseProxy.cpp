@@ -138,18 +138,27 @@ void ReverseProxy::handleNewClient(const int clientSocket) {
         {
             std::lock_guard<std::mutex> lock(m_mutex);
             // Closing the socket (in the level of the TCP protocol)
+            char ipAdress[11];
+            get_socket_ip(clientSocket, ipAdress);
+            SockLimiting::remove(ipAdress);
             m_clients.erase(clientSocket);
         }
         close(clientSocket);
     }
     catch (const std::exception& e) {
         std::lock_guard<std::mutex> lock(m_mutex);
+        char ipAdress[11];
+        get_socket_ip(clientSocket, ipAdress);
+        SockLimiting::remove(ipAdress);
         m_clients.erase(clientSocket);
         close(clientSocket);
         std::cerr << "Error handling client: " << e.what() << std::endl;
     }
     catch (...) {
         std::lock_guard<std::mutex> lock(m_mutex);
+        char ipAdress[11];
+        get_socket_ip(clientSocket, ipAdress);
+        SockLimiting::remove(ipAdress);
         m_clients.erase(clientSocket);
         close(clientSocket);
         std::cerr << "Unknown error handling client." << std::endl;
@@ -175,6 +184,9 @@ std::string ReverseProxy::receiveStringFromSocket(const int socket, std::map<int
             if(time_diff>=MAX_TIME_MS)
             {
                 std::lock_guard<std::mutex> lock(m_mutex);
+                char ipAdress[11];
+                ReverseProxy::get_socket_ip(socket, ipAdress);
+                SockLimiting::remove(ipAdress);
                 c.erase(socket);
                 close(socket);
                 throw std::runtime_error("time out");

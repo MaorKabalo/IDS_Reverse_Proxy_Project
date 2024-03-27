@@ -44,7 +44,6 @@ int checkIP::CheckIP(const std::string &ipAddress)
             if(!response_json["data"]["isPublic"])
                 return OK;//if the ip isnt public
             bool isWhitelisted = response_json["data"]["isWhitelisted"];
-            //std::cout<<response_json["data"]["isWhitelisted"]<<std::endl;
             return isWhitelisted?OK:MALICIOUS;
         }
     }

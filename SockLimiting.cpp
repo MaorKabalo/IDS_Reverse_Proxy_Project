@@ -24,3 +24,6 @@ bool SockLimiting::isMaxSock()
     return _count == MAX_SOCK;
 }
 
+void SockLimiting::remove(std::string ip) {
+    _countPerSock.erase(ip);
+}
