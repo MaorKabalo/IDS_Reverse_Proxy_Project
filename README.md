@@ -69,13 +69,3 @@ eBPF is a powerful and efficient way to perform packet filtering and network tra
     sudo bpftool prog load ids_program.o /sys/fs/bpf/ids_prog
     sudo bpftool prog attach /sys/fs/bpf/ids_prog msg_verdict
     ```
-
-
-## Contributing
-
-We welcome contributions! Please read our [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
