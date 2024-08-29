@@ -1,0 +1,346 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.27"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "/home/kali/Desktop/PcapPlusPlus/build",
+					"childIndexes" : 
+					[
+						2,
+						9,
+						10,
+						11
+					],
+					"jsonFile" : "directory-Debug-a9044fbd790f67552f31.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "/home/kali/Desktop/PcapPlusPlus",
+					"targetIndexes" : 
+					[
+						7
+					]
+				},
+				{
+					"build" : "/home/kali/Desktop/PcapPlusPlus/build/3rdParty",
+					"childIndexes" : 
+					[
+						3,
+						4,
+						5,
+						6,
+						7,
+						8
+					],
+					"jsonFile" : "directory-Debug-9eb6bc0191f9611b8d41.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "/home/kali/Desktop/PcapPlusPlus/3rdParty"
+				},
+				{
+					"build" : "/home/kali/Desktop/PcapPlusPlus/build/3rdParty/EndianPortable",
+					"jsonFile" : "directory-Debug-9ddffc0bba4f9dc61394.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 1,
+					"source" : "/home/kali/Desktop/PcapPlusPlus/3rdParty/EndianPortable"
+				},
+				{
+					"build" : "/home/kali/Desktop/PcapPlusPlus/build/3rdParty/Getopt-for-Visual-Studio",
+					"jsonFile" : "directory-Debug-238bbe753e64a9579020.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 1,
+					"source" : "/home/kali/Desktop/PcapPlusPlus/3rdParty/Getopt-for-Visual-Studio"
+				},
+				{
+					"build" : "/home/kali/Desktop/PcapPlusPlus/build/3rdParty/hash-library",
+					"jsonFile" : "directory-Debug-326268b4780d71f4434b.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 2,
+					"source" : "/home/kali/Desktop/PcapPlusPlus/3rdParty/hash-library",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "/home/kali/Desktop/PcapPlusPlus/build/3rdParty/json",
+					"jsonFile" : "directory-Debug-b5ca176634eefd10b620.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 1,
+					"source" : "/home/kali/Desktop/PcapPlusPlus/3rdParty/json"
+				},
+				{
+					"build" : "/home/kali/Desktop/PcapPlusPlus/build/3rdParty/LightPcapNg",
+					"jsonFile" : "directory-Debug-4f962cd221cb9c438061.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.6"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 3,
+					"source" : "/home/kali/Desktop/PcapPlusPlus/3rdParty/LightPcapNg",
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"build" : "/home/kali/Desktop/PcapPlusPlus/build/3rdParty/MemPlumber/MemPlumber",
+					"jsonFile" : "directory-Debug-5f0e7cd66b21388138ce.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 4,
+					"source" : "/home/kali/Desktop/PcapPlusPlus/3rdParty/MemPlumber/MemPlumber",
+					"targetIndexes" : 
+					[
+						6
+					]
+				},
+				{
+					"build" : "/home/kali/Desktop/PcapPlusPlus/build/Packet++",
+					"jsonFile" : "directory-Debug-076d334209e8053ad5d5.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "/home/kali/Desktop/PcapPlusPlus/Packet++",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "/home/kali/Desktop/PcapPlusPlus/build/Pcap++",
+					"jsonFile" : "directory-Debug-f1184a0af0c56ab06391.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "/home/kali/Desktop/PcapPlusPlus/Pcap++",
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"build" : "/home/kali/Desktop/PcapPlusPlus/build/Common++",
+					"jsonFile" : "directory-Debug-41509d324da32231a7b0.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "/home/kali/Desktop/PcapPlusPlus/Common++",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "IDS_Project",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"childIndexes" : 
+					[
+						2,
+						3,
+						4
+					],
+					"directoryIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4,
+						6,
+						9,
+						10,
+						11
+					],
+					"name" : "PcapPlusPlus",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0,
+						2,
+						3,
+						7
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						5
+					],
+					"name" : "hash-library",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						7
+					],
+					"name" : "light_pcapng",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						8
+					],
+					"name" : "memplumber",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						6
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 11,
+					"id" : "Common++::@2ab24e8306d67616ed8b",
+					"jsonFile" : "target-Common++-Debug-34aa6744957376041b09.json",
+					"name" : "Common++",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "IDS_Project::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-IDS_Project-Debug-d503875c7c19690d1d3d.json",
+					"name" : "IDS_Project",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 9,
+					"id" : "Packet++::@5d308129c41ba934be31",
+					"jsonFile" : "target-Packet++-Debug-4cd4e1f6173b249d2df6.json",
+					"name" : "Packet++",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 10,
+					"id" : "Pcap++::@c5ff60ba1bd2ca2b0dd5",
+					"jsonFile" : "target-Pcap++-Debug-46d43d1e07b57e4beb5f.json",
+					"name" : "Pcap++",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "hash-library::@4fffd61a4bcb0e8dbb45",
+					"jsonFile" : "target-hash-library-Debug-56263a5ea49ac8df982e.json",
+					"name" : "hash-library",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "light_pcapng::@770dc29f25636c36f9c2",
+					"jsonFile" : "target-light_pcapng-Debug-86a317dc36a85df44b83.json",
+					"name" : "light_pcapng",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "memplumber::@e32d8ddac455da44eb82",
+					"jsonFile" : "target-memplumber-Debug-3ea12046b56c7147d7b1.json",
+					"name" : "memplumber",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "uninstall::@b850f7abaf72431fcebe",
+					"jsonFile" : "target-uninstall-Debug-f9760728f4e0682e5a1c.json",
+					"name" : "uninstall",
+					"projectIndex" : 1
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/kali/Desktop/IDS_Project/IDS_Reverse_Proxy_Project/cmake-build-debug",
+		"source" : "/home/kali/Desktop/IDS_Project/IDS_Reverse_Proxy_Project"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}
