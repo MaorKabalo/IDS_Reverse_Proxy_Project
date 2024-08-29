@@ -13,7 +13,7 @@
 #include <arpa/inet.h>
 #include <mutex>
 #include "SockLimiting.h"
-#include "checkIP.h"
+#include "IPTools/checkIP.h"
 
 #include "Port_Scanning_Detector.h"
 

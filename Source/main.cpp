@@ -4,9 +4,9 @@
 #include "EBPF_Runner.h"
 #include "Port_Scanning_Detector.h"
 
-#include "checkIP.h"
-#include "BlockIP.h"
-#include "IPTools.h"
+#include "IPTools/checkIP.h"
+#include "IPTools/BlockIP.h"
+#include "IPTools/IPTools.h"
 
 #define SUS_IP "127.0.0.1"
 #define PROXY_PORT 9090

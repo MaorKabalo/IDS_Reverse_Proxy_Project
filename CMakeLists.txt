@@ -7,26 +7,26 @@ add_definitions(-DPROJECT_NAME="IDS_Project")
 
 set(CMAKE_CXX_STANDARD 17)
 
-set(SOURCE_FILES main.cpp
-        ReverseProxy.cpp
-        SockLimiting.cpp
-        EBPF_Runner.cpp
-        Port_Scanning_Detector.cpp
-        checkIP.cpp
-        BlockIP.cpp
-        IPTools.cpp)
+set(SOURCE_FILES Source/main.cpp
+        Source/ReverseProxy.cpp
+        Source/SockLimiting.cpp
+        Source/EBPF_Runner.cpp
+        Source/Port_Scanning_Detector.cpp
+        Source/checkIP.cpp
+        Source/BlockIP.cpp
+        Source/IPTools.cpp)
 
-set(HEADER_FILES ReverseProxy.h
-        SockLimiting.h
-        EBPF_Runner.h
-        Port_Scanning_Detector.h
-        checkIP.h
-        BlockIP.h
-        IPTools.h
+set(HEADER_FILES Headers/ReverseProxy.h
+        Headers/SockLimiting.h
+        Headers/EBPF_Runner.h
+        Headers/Port_Scanning_Detector.h
+        Headers/IPTools/checkIP.h
+        Headers/IPTools/BlockIP.h
+        Headers/IPTools/IPTools.h
 )
 
-set(PYTHON_FILES server.py
-        rate_limiting_tester.py)
+set(PYTHON_FILES Python/server.py
+        Python/rate_limiting_tester.py)
 
 set(EBPF_FILES cmake-build-debug/bandwidth_limiting.bpf.c
         cmake-build-debug/rate_limiting.bpf.c)
@@ -53,6 +53,7 @@ target_link_libraries(IDS_Project Pcap++)
 
 # Add the source directory to include directories
 include_directories(${PROJECT_SOURCE_DIR})
+include_directories(${PROJECT_SOURCE_DIR}/Headers)
 
 #Include CURL
 find_package(CURL REQUIRED)

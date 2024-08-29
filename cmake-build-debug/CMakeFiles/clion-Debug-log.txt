@@ -1,4 +1,4 @@
-/home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/ninja/linux/x64/ninja -G Ninja -S /home/kali/Desktop/haifa-01-proxysaver -B /home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug
+/home/kali/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/home/kali/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64/ninja -G Ninja -DPython_EXECUTABLE=/usr/bin/python3.11 -DPython3_EXECUTABLE=/usr/bin/python3.11 -S /home/kali/Desktop/IDS_Project/IDS_Reverse_Proxy_Project -B /home/kali/Desktop/IDS_Project/IDS_Reverse_Proxy_Project/cmake-build-debug
 -- The C compiler identification is GNU 13.2.0
 -- The CXX compiler identification is GNU 13.2.0
 -- Detecting C compiler ABI info
@@ -19,10 +19,10 @@
 -- Looking for pcap_setdirection - found
 -- Looking for pcap_lib_version
 -- Looking for pcap_lib_version - found
--- Found PCAP: /usr/lib/x86_64-linux-gnu/libpcap.so (found version "1.10.4 (with TPACKET_V3)") 
+-- Found PCAP: /usr/lib/x86_64-linux-gnu/libpcap.so (found version "1.10.4 (with TPACKET_V3)")
 -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
 -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
--- Found Threads: TRUE  
+-- Found Threads: TRUE
 CMake Deprecation Warning at /home/kali/Desktop/PcapPlusPlus/3rdParty/MemPlumber/MemPlumber/CMakeLists.txt:1 (cmake_minimum_required):
   Compatibility with CMake < 3.5 will be removed from a future version of
   CMake.
@@ -34,10 +34,17 @@ CMake Deprecation Warning at /home/kali/Desktop/PcapPlusPlus/3rdParty/MemPlumber
 -- Looking for backtrace
 -- Looking for backtrace - found
 -- backtrace facility detected in default set of libraries
--- Found Backtrace: /usr/include  
--- Found CURL: /usr/lib/x86_64-linux-gnu/libcurl.so (found version "8.5.0")  
--- Found PkgConfig: /usr/bin/pkg-config (found version "1.8.1") 
+-- Found Backtrace: /usr/include
+-- Found CURL: /usr/lib/x86_64-linux-gnu/libcurl.so (found version "8.5.0")
+-- Found PkgConfig: /usr/bin/pkg-config (found version "1.8.1")
 -- Checking for one of the modules 'libbpf'
--- Configuring done (4.8s)
--- Generating done (0.1s)
--- Build files have been written to: /home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug
+-- Configuring done (13.1s)
+-- Generating done (0.2s)
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    Python3_EXECUTABLE
+    Python_EXECUTABLE
+
+
+-- Build files have been written to: /home/kali/Desktop/IDS_Project/IDS_Reverse_Proxy_Project/cmake-build-debug

@@ -1,9 +1,9 @@
-#include "IPTools.h"
+
 #include <cstring>
 
 #include <cstring> // For strtok
 #include <cstdlib> // For atoi
-#include "IPTools.h"
+#include "IPTools/IPTools.h"
 
 uint32_t IPTools::IPv4StringToInt(const char* ipAddress) {
     char* ipAddressCopy = strdup(ipAddress); // Make a copy

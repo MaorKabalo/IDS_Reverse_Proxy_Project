@@ -3,7 +3,7 @@
 #include <algorithm>
 #include <cstring>
 
-#include "BlockIP.h"
+#include "IPTools/BlockIP.h"
 
 std::mutex ReverseProxy::m_mutex;
 int ReverseProxy::m_numOfClient = 0;

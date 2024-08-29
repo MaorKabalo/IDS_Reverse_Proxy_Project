@@ -4,16 +4,16 @@ events:
   -
     kind: "message-v1"
     backtrace:
-      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeDetermineSystem.cmake:233 (message)"
+      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.29/Modules/CMakeDetermineSystem.cmake:205 (message)"
       - "CMakeLists.txt:2 (project)"
     message: |
       The system is: Linux - 6.6.9-amd64 - x86_64
   -
     kind: "message-v1"
     backtrace:
-      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
-      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
-      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.29/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.29/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.29/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
       - "CMakeLists.txt:2 (project)"
     message: |
       Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
@@ -28,14 +28,14 @@ events:
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
       
       The C compiler identification is GNU, found in:
-        /home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/CMakeFiles/3.28.1/CompilerIdC/a.out
+        /home/kali/Desktop/IDS_Project/IDS_Reverse_Proxy_Project/cmake-build-debug/CMakeFiles/3.29.6/CompilerIdC/a.out
       
   -
     kind: "message-v1"
     backtrace:
-      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
-      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
-      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.29/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.29/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.29/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
       - "CMakeLists.txt:2 (project)"
     message: |
       Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
@@ -50,19 +50,19 @@ events:
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
       
       The CXX compiler identification is GNU, found in:
-        /home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/CMakeFiles/3.28.1/CompilerIdCXX/a.out
+        /home/kali/Desktop/IDS_Project/IDS_Reverse_Proxy_Project/cmake-build-debug/CMakeFiles/3.29.6/CompilerIdCXX/a.out
       
   -
     kind: "try_compile-v1"
     backtrace:
-      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
-      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:67 (try_compile)"
+      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.29/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "CMakeLists.txt:2 (project)"
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-XTaI0j"
-      binary: "/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-XTaI0j"
+      source: "/home/kali/Desktop/IDS_Project/IDS_Reverse_Proxy_Project/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-fBz5ah"
+      binary: "/home/kali/Desktop/IDS_Project/IDS_Reverse_Proxy_Project/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-fBz5ah"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -71,10 +71,10 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-XTaI0j'
+        Change Dir: '/home/kali/Desktop/IDS_Project/IDS_Reverse_Proxy_Project/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-fBz5ah'
         
-        Run Build Command(s): /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/ninja/linux/x64/ninja -v cmTC_d6921
-        [1/2] /usr/bin/cc   -fdiagnostics-color=always   -v -o CMakeFiles/cmTC_d6921.dir/CMakeCCompilerABI.c.o -c /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCCompilerABI.c
+        Run Build Command(s): /home/kali/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64/ninja -v cmTC_382cd
+        [1/2] /usr/bin/cc   -fdiagnostics-color=always   -v -o CMakeFiles/cmTC_382cd.dir/CMakeCCompilerABI.c.o -c /home/kali/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.29/Modules/CMakeCCompilerABI.c
         Using built-in specs.
         COLLECT_GCC=/usr/bin/cc
         OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
@@ -84,8 +84,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 13.2.0 (Debian 13.2.0-7) 
-        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_d6921.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_d6921.dir/'
-         /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 -quiet -v -imultiarch x86_64-linux-gnu /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_d6921.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fdiagnostics-color=always -fasynchronous-unwind-tables -o /tmp/ccIWkqsM.s
+        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_382cd.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_382cd.dir/'
+         /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 -quiet -v -imultiarch x86_64-linux-gnu /home/kali/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.29/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_382cd.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fdiagnostics-color=always -fasynchronous-unwind-tables -o /tmp/ccTjUMMb.s
         GNU C17 (Debian 13.2.0-7) version 13.2.0 (x86_64-linux-gnu)
         	compiled by GNU C version 13.2.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.26-GMP
         
@@ -102,13 +102,13 @@ events:
          /usr/include
         End of search list.
         Compiler executable checksum: 703503d3cc8534b91d53f31f2f813204
-        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_d6921.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_d6921.dir/'
-         as -v --64 -o CMakeFiles/cmTC_d6921.dir/CMakeCCompilerABI.c.o /tmp/ccIWkqsM.s
+        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_382cd.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_382cd.dir/'
+         as -v --64 -o CMakeFiles/cmTC_382cd.dir/CMakeCCompilerABI.c.o /tmp/ccTjUMMb.s
         GNU assembler version 2.42 (x86_64-linux-gnu) using BFD version (GNU Binutils for Debian) 2.42
         COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_d6921.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_d6921.dir/CMakeCCompilerABI.c.'
-        [2/2] : && /usr/bin/cc  -v CMakeFiles/cmTC_d6921.dir/CMakeCCompilerABI.c.o -o cmTC_d6921   && :
+        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_382cd.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_382cd.dir/CMakeCCompilerABI.c.'
+        [2/2] : && /usr/bin/cc  -v -Wl,-v CMakeFiles/cmTC_382cd.dir/CMakeCCompilerABI.c.o -o cmTC_382cd   && :
         Using built-in specs.
         COLLECT_GCC=/usr/bin/cc
         COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper
@@ -121,16 +121,19 @@ events:
         gcc version 13.2.0 (Debian 13.2.0-7) 
         COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_d6921' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_d6921.'
-         /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccdXKjOU.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_d6921 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_d6921.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_d6921' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_d6921.'
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_382cd' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_382cd.'
+         /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccVifxmf.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_382cd /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. -v CMakeFiles/cmTC_382cd.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
+        collect2 version 13.2.0
+        /usr/bin/ld -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccVifxmf.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_382cd /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. -v CMakeFiles/cmTC_382cd.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
+        GNU ld (GNU Binutils for Debian) 2.42
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_382cd' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_382cd.'
         
       exitCode: 0
   -
     kind: "message-v1"
     backtrace:
-      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:127 (message)"
-      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:137 (message)"
+      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.29/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "CMakeLists.txt:2 (project)"
     message: |
       Parsed C implicit include dir info: rv=done
@@ -151,16 +154,17 @@ events:
   -
     kind: "message-v1"
     backtrace:
-      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:159 (message)"
-      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:173 (message)"
+      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.29/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "CMakeLists.txt:2 (project)"
     message: |
       Parsed C implicit link information:
-        link line regex: [^( *|.*[/\\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
-        ignore line: [Change Dir: '/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-XTaI0j']
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?))("|,| |$)]
+        ignore line: [Change Dir: '/home/kali/Desktop/IDS_Project/IDS_Reverse_Proxy_Project/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-fBz5ah']
         ignore line: []
-        ignore line: [Run Build Command(s): /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/ninja/linux/x64/ninja -v cmTC_d6921]
-        ignore line: [[1/2] /usr/bin/cc   -fdiagnostics-color=always   -v -o CMakeFiles/cmTC_d6921.dir/CMakeCCompilerABI.c.o -c /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCCompilerABI.c]
+        ignore line: [Run Build Command(s): /home/kali/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64/ninja -v cmTC_382cd]
+        ignore line: [[1/2] /usr/bin/cc   -fdiagnostics-color=always   -v -o CMakeFiles/cmTC_382cd.dir/CMakeCCompilerABI.c.o -c /home/kali/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.29/Modules/CMakeCCompilerABI.c]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/cc]
         ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
@@ -170,8 +174,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 13.2.0 (Debian 13.2.0-7) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_d6921.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_d6921.dir/']
-        ignore line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 -quiet -v -imultiarch x86_64-linux-gnu /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_d6921.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fdiagnostics-color=always -fasynchronous-unwind-tables -o /tmp/ccIWkqsM.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_382cd.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_382cd.dir/']
+        ignore line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 -quiet -v -imultiarch x86_64-linux-gnu /home/kali/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.29/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_382cd.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fdiagnostics-color=always -fasynchronous-unwind-tables -o /tmp/ccTjUMMb.s]
         ignore line: [GNU C17 (Debian 13.2.0-7) version 13.2.0 (x86_64-linux-gnu)]
         ignore line: [	compiled by GNU C version 13.2.0  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version isl-0.26-GMP]
         ignore line: []
@@ -188,13 +192,13 @@ events:
         ignore line: [ /usr/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: 703503d3cc8534b91d53f31f2f813204]
-        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_d6921.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_d6921.dir/']
-        ignore line: [ as -v --64 -o CMakeFiles/cmTC_d6921.dir/CMakeCCompilerABI.c.o /tmp/ccIWkqsM.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_382cd.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_382cd.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_382cd.dir/CMakeCCompilerABI.c.o /tmp/ccTjUMMb.s]
         ignore line: [GNU assembler version 2.42 (x86_64-linux-gnu) using BFD version (GNU Binutils for Debian) 2.42]
         ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_d6921.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_d6921.dir/CMakeCCompilerABI.c.']
-        ignore line: [[2/2] : && /usr/bin/cc  -v CMakeFiles/cmTC_d6921.dir/CMakeCCompilerABI.c.o -o cmTC_d6921   && :]
+        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_382cd.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_382cd.dir/CMakeCCompilerABI.c.']
+        ignore line: [[2/2] : && /usr/bin/cc  -v -Wl -v CMakeFiles/cmTC_382cd.dir/CMakeCCompilerABI.c.o -o cmTC_382cd   && :]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/cc]
         ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper]
@@ -207,13 +211,13 @@ events:
         ignore line: [gcc version 13.2.0 (Debian 13.2.0-7) ]
         ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_d6921' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_d6921.']
-        link line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccdXKjOU.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_d6921 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_d6921.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_382cd' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_382cd.']
+        link line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccVifxmf.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_382cd /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. -v CMakeFiles/cmTC_382cd.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
           arg [/usr/libexec/gcc/x86_64-linux-gnu/13/collect2] ==> ignore
           arg [-plugin] ==> ignore
           arg [/usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so] ==> ignore
           arg [-plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper] ==> ignore
-          arg [-plugin-opt=-fresolution=/tmp/ccdXKjOU.res] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccVifxmf.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
           arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -229,7 +233,7 @@ events:
           arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
           arg [-pie] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_d6921] ==> ignore
+          arg [cmTC_382cd] ==> ignore
           arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o]
@@ -241,7 +245,8 @@ events:
           arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
           arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
           arg [-L/usr/lib/gcc/x86_64-linux-gnu/13/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../..]
-          arg [CMakeFiles/cmTC_d6921.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [-v] ==> ignore
+          arg [CMakeFiles/cmTC_382cd.dir/CMakeCCompilerABI.c.o] ==> ignore
           arg [-lgcc] ==> lib [gcc]
           arg [--push-state] ==> ignore
           arg [--as-needed] ==> ignore
@@ -255,6 +260,9 @@ events:
           arg [--pop-state] ==> ignore
           arg [/usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
+        ignore line: [collect2 version 13.2.0]
+        ignore line: [/usr/bin/ld -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccVifxmf.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_382cd /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. -v CMakeFiles/cmTC_382cd.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
+        linker tool for 'C': /usr/bin/ld
         collapse obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o] ==> [/usr/lib/x86_64-linux-gnu/Scrt1.o]
         collapse obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o] ==> [/usr/lib/x86_64-linux-gnu/crti.o]
         collapse obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o] ==> [/usr/lib/x86_64-linux-gnu/crtn.o]
@@ -273,28 +281,39 @@ events:
       
       
   -
+    kind: "message-v1"
+    backtrace:
+      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.29/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:210 (cmake_determine_linker_id)"
+      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.29/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Running the C compiler's linker: "/usr/bin/ld" "-v"
+      GNU ld (GNU Binutils for Debian) 2.42
+  -
     kind: "try_compile-v1"
     backtrace:
-      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
-      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:67 (try_compile)"
+      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.29/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "CMakeLists.txt:2 (project)"
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-Jxvz7l"
-      binary: "/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-Jxvz7l"
+      source: "/home/kali/Desktop/IDS_Project/IDS_Reverse_Proxy_Project/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-vGKsOP"
+      binary: "/home/kali/Desktop/IDS_Project/IDS_Reverse_Proxy_Project/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-vGKsOP"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
       CMAKE_EXE_LINKER_FLAGS: ""
     buildResult:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-Jxvz7l'
+        Change Dir: '/home/kali/Desktop/IDS_Project/IDS_Reverse_Proxy_Project/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-vGKsOP'
         
-        Run Build Command(s): /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/ninja/linux/x64/ninja -v cmTC_0baa5
-        [1/2] /usr/bin/c++   -fdiagnostics-color=always   -v -o CMakeFiles/cmTC_0baa5.dir/CMakeCXXCompilerABI.cpp.o -c /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp
+        Run Build Command(s): /home/kali/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64/ninja -v cmTC_b1a4c
+        [1/2] /usr/bin/c++   -fdiagnostics-color=always   -v -o CMakeFiles/cmTC_b1a4c.dir/CMakeCXXCompilerABI.cpp.o -c /home/kali/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.29/Modules/CMakeCXXCompilerABI.cpp
         Using built-in specs.
         COLLECT_GCC=/usr/bin/c++
         OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
@@ -304,8 +323,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 13.2.0 (Debian 13.2.0-7) 
-        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_0baa5.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_0baa5.dir/'
-         /usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_0baa5.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fdiagnostics-color=always -fasynchronous-unwind-tables -o /tmp/ccEyopfm.s
+        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_b1a4c.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_b1a4c.dir/'
+         /usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /home/kali/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.29/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_b1a4c.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fdiagnostics-color=always -fasynchronous-unwind-tables -o /tmp/ccYqjnDP.s
         GNU C++17 (Debian 13.2.0-7) version 13.2.0 (x86_64-linux-gnu)
         	compiled by GNU C version 13.2.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.26-GMP
         
@@ -326,13 +345,13 @@ events:
          /usr/include
         End of search list.
         Compiler executable checksum: f89b6cee94d3d0cc83bead007faf4c3c
-        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_0baa5.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_0baa5.dir/'
-         as -v --64 -o CMakeFiles/cmTC_0baa5.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccEyopfm.s
+        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_b1a4c.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_b1a4c.dir/'
+         as -v --64 -o CMakeFiles/cmTC_b1a4c.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccYqjnDP.s
         GNU assembler version 2.42 (x86_64-linux-gnu) using BFD version (GNU Binutils for Debian) 2.42
         COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_0baa5.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_0baa5.dir/CMakeCXXCompilerABI.cpp.'
-        [2/2] : && /usr/bin/c++  -v CMakeFiles/cmTC_0baa5.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_0baa5   && :
+        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_b1a4c.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_b1a4c.dir/CMakeCXXCompilerABI.cpp.'
+        [2/2] : && /usr/bin/c++  -v -Wl,-v CMakeFiles/cmTC_b1a4c.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_b1a4c   && :
         Using built-in specs.
         COLLECT_GCC=/usr/bin/c++
         COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper
@@ -345,16 +364,19 @@ events:
         gcc version 13.2.0 (Debian 13.2.0-7) 
         COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_0baa5' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_0baa5.'
-         /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccE3kx8t.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_0baa5 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_0baa5.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_0baa5' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_0baa5.'
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_b1a4c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_b1a4c.'
+         /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccnDAOep.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_b1a4c /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. -v CMakeFiles/cmTC_b1a4c.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
+        collect2 version 13.2.0
+        /usr/bin/ld -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccnDAOep.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_b1a4c /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. -v CMakeFiles/cmTC_b1a4c.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
+        GNU ld (GNU Binutils for Debian) 2.42
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_b1a4c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_b1a4c.'
         
       exitCode: 0
   -
     kind: "message-v1"
     backtrace:
-      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:127 (message)"
-      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:137 (message)"
+      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.29/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "CMakeLists.txt:2 (project)"
     message: |
       Parsed CXX implicit include dir info: rv=done
@@ -381,16 +403,17 @@ events:
   -
     kind: "message-v1"
     backtrace:
-      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:159 (message)"
-      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:173 (message)"
+      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.29/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "CMakeLists.txt:2 (project)"
     message: |
       Parsed CXX implicit link information:
-        link line regex: [^( *|.*[/\\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
-        ignore line: [Change Dir: '/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-Jxvz7l']
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?))("|,| |$)]
+        ignore line: [Change Dir: '/home/kali/Desktop/IDS_Project/IDS_Reverse_Proxy_Project/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-vGKsOP']
         ignore line: []
-        ignore line: [Run Build Command(s): /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/ninja/linux/x64/ninja -v cmTC_0baa5]
-        ignore line: [[1/2] /usr/bin/c++   -fdiagnostics-color=always   -v -o CMakeFiles/cmTC_0baa5.dir/CMakeCXXCompilerABI.cpp.o -c /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Run Build Command(s): /home/kali/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64/ninja -v cmTC_b1a4c]
+        ignore line: [[1/2] /usr/bin/c++   -fdiagnostics-color=always   -v -o CMakeFiles/cmTC_b1a4c.dir/CMakeCXXCompilerABI.cpp.o -c /home/kali/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.29/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/c++]
         ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
@@ -400,8 +423,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 13.2.0 (Debian 13.2.0-7) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_0baa5.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_0baa5.dir/']
-        ignore line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_0baa5.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fdiagnostics-color=always -fasynchronous-unwind-tables -o /tmp/ccEyopfm.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_b1a4c.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_b1a4c.dir/']
+        ignore line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /home/kali/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.29/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_b1a4c.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fdiagnostics-color=always -fasynchronous-unwind-tables -o /tmp/ccYqjnDP.s]
         ignore line: [GNU C++17 (Debian 13.2.0-7) version 13.2.0 (x86_64-linux-gnu)]
         ignore line: [	compiled by GNU C version 13.2.0  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version isl-0.26-GMP]
         ignore line: []
@@ -422,13 +445,13 @@ events:
         ignore line: [ /usr/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: f89b6cee94d3d0cc83bead007faf4c3c]
-        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_0baa5.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_0baa5.dir/']
-        ignore line: [ as -v --64 -o CMakeFiles/cmTC_0baa5.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccEyopfm.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_b1a4c.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_b1a4c.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_b1a4c.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccYqjnDP.s]
         ignore line: [GNU assembler version 2.42 (x86_64-linux-gnu) using BFD version (GNU Binutils for Debian) 2.42]
         ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_0baa5.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_0baa5.dir/CMakeCXXCompilerABI.cpp.']
-        ignore line: [[2/2] : && /usr/bin/c++  -v CMakeFiles/cmTC_0baa5.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_0baa5   && :]
+        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_b1a4c.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_b1a4c.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [[2/2] : && /usr/bin/c++  -v -Wl -v CMakeFiles/cmTC_b1a4c.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_b1a4c   && :]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/c++]
         ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper]
@@ -441,13 +464,13 @@ events:
         ignore line: [gcc version 13.2.0 (Debian 13.2.0-7) ]
         ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_0baa5' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_0baa5.']
-        link line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccE3kx8t.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_0baa5 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. CMakeFiles/cmTC_0baa5.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_b1a4c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_b1a4c.']
+        link line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccnDAOep.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_b1a4c /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. -v CMakeFiles/cmTC_b1a4c.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
           arg [/usr/libexec/gcc/x86_64-linux-gnu/13/collect2] ==> ignore
           arg [-plugin] ==> ignore
           arg [/usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so] ==> ignore
           arg [-plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper] ==> ignore
-          arg [-plugin-opt=-fresolution=/tmp/ccE3kx8t.res] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccnDAOep.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -463,7 +486,7 @@ events:
           arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
           arg [-pie] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_0baa5] ==> ignore
+          arg [cmTC_b1a4c] ==> ignore
           arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o]
@@ -475,7 +498,8 @@ events:
           arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
           arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
           arg [-L/usr/lib/gcc/x86_64-linux-gnu/13/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../..]
-          arg [CMakeFiles/cmTC_0baa5.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [-v] ==> ignore
+          arg [CMakeFiles/cmTC_b1a4c.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
           arg [-lstdc++] ==> lib [stdc++]
           arg [-lm] ==> lib [m]
           arg [-lgcc_s] ==> lib [gcc_s]
@@ -485,6 +509,9 @@ events:
           arg [-lgcc] ==> lib [gcc]
           arg [/usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
+        ignore line: [collect2 version 13.2.0]
+        ignore line: [/usr/bin/ld -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccnDAOep.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_b1a4c /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. -v CMakeFiles/cmTC_b1a4c.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
+        linker tool for 'CXX': /usr/bin/ld
         collapse obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o] ==> [/usr/lib/x86_64-linux-gnu/Scrt1.o]
         collapse obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o] ==> [/usr/lib/x86_64-linux-gnu/crti.o]
         collapse obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o] ==> [/usr/lib/x86_64-linux-gnu/crtn.o]
@@ -503,13 +530,23 @@ events:
       
       
   -
+    kind: "message-v1"
+    backtrace:
+      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.29/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:210 (cmake_determine_linker_id)"
+      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.29/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Running the CXX compiler's linker: "/usr/bin/ld" "-v"
+      GNU ld (GNU Binutils for Debian) 2.42
+  -
     kind: "try_run-v1"
     backtrace:
       - "/home/kali/Desktop/PcapPlusPlus/cmake/modules/TargetArch.cmake:62 (try_run)"
       - "/home/kali/Desktop/PcapPlusPlus/CMakeLists.txt:30 (target_architecture)"
     directories:
-      source: "/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/CMakeFiles/CMakeTmp"
-      binary: "/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/CMakeFiles/CMakeTmp"
+      source: "/home/kali/Desktop/IDS_Project/IDS_Reverse_Proxy_Project/cmake-build-debug/CMakeFiles/CMakeTmp"
+      binary: "/home/kali/Desktop/IDS_Project/IDS_Reverse_Proxy_Project/cmake-build-debug/CMakeFiles/CMakeTmp"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -519,16 +556,16 @@ events:
       variable: "compile_result_unused"
       cached: true
       stdout: |
-        Change Dir: '/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/CMakeFiles/CMakeTmp'
+        Change Dir: '/home/kali/Desktop/IDS_Project/IDS_Reverse_Proxy_Project/cmake-build-debug/CMakeFiles/CMakeTmp'
         
-        Run Build Command(s): /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/ninja/linux/x64/ninja -v cmTC_47215
-        [1/2] /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_47215.dir/arch.c.o -c /home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/arch.c
-        FAILED: CMakeFiles/cmTC_47215.dir/arch.c.o 
-        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_47215.dir/arch.c.o -c /home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/arch.c
-        /home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/arch.c:27:6: error: #error cmake_ARCH x86_64
+        Run Build Command(s): /home/kali/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64/ninja -v cmTC_94788
+        [1/2] /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_94788.dir/arch.c.o -c /home/kali/Desktop/IDS_Project/IDS_Reverse_Proxy_Project/cmake-build-debug/arch.c
+        FAILED: CMakeFiles/cmTC_94788.dir/arch.c.o 
+        /usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/cmTC_94788.dir/arch.c.o -c /home/kali/Desktop/IDS_Project/IDS_Reverse_Proxy_Project/cmake-build-debug/arch.c
+        /home/kali/Desktop/IDS_Project/IDS_Reverse_Proxy_Project/cmake-build-debug/arch.c:27:6: error: #error cmake_ARCH x86_64
            27 |     #error cmake_ARCH x86_64
               |      ^~~~~
-        /home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/arch.c:40:2: error: #error cmake_ARCH unknown
+        /home/kali/Desktop/IDS_Project/IDS_Reverse_Proxy_Project/cmake-build-debug/arch.c:40:2: error: #error cmake_ARCH unknown
            40 | #error cmake_ARCH unknown
               |  ^~~~~
         ninja: build stopped: subcommand failed.
@@ -540,15 +577,15 @@ events:
   -
     kind: "try_compile-v1"
     backtrace:
-      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
-      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CheckCXXSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.29/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.29/Modules/CheckCXXSourceCompiles.cmake:52 (cmake_check_source_compiles)"
       - "/home/kali/Desktop/PcapPlusPlus/cmake/modules/FindPCAP.cmake:59 (check_cxx_source_compiles)"
       - "/home/kali/Desktop/PcapPlusPlus/CMakeLists.txt:123 (find_package)"
     checks:
       - "Performing Test PCAP_LINKS_SOLO"
     directories:
-      source: "/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-uDR8FN"
-      binary: "/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-uDR8FN"
+      source: "/home/kali/Desktop/IDS_Project/IDS_Reverse_Proxy_Project/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-I6t0W1"
+      binary: "/home/kali/Desktop/IDS_Project/IDS_Reverse_Proxy_Project/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-I6t0W1"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -559,24 +596,24 @@ events:
       variable: "PCAP_LINKS_SOLO"
       cached: true
       stdout: |
-        Change Dir: '/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-uDR8FN'
+        Change Dir: '/home/kali/Desktop/IDS_Project/IDS_Reverse_Proxy_Project/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-I6t0W1'
         
-        Run Build Command(s): /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/ninja/linux/x64/ninja -v cmTC_b5fc1
-        [1/2] /usr/bin/c++ -DPCAP_LINKS_SOLO  -std=gnu++11 -fPIE -fdiagnostics-color=always -o CMakeFiles/cmTC_b5fc1.dir/src.cxx.o -c /home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-uDR8FN/src.cxx
-        [2/2] : && /usr/bin/c++   CMakeFiles/cmTC_b5fc1.dir/src.cxx.o -o cmTC_b5fc1  /usr/lib/x86_64-linux-gnu/libpcap.so && :
+        Run Build Command(s): /home/kali/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64/ninja -v cmTC_7d286
+        [1/2] /usr/bin/c++ -DPCAP_LINKS_SOLO  -std=gnu++11 -fPIE -fdiagnostics-color=always -o CMakeFiles/cmTC_7d286.dir/src.cxx.o -c /home/kali/Desktop/IDS_Project/IDS_Reverse_Proxy_Project/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-I6t0W1/src.cxx
+        [2/2] : && /usr/bin/c++   CMakeFiles/cmTC_7d286.dir/src.cxx.o -o cmTC_7d286  /usr/lib/x86_64-linux-gnu/libpcap.so && :
         
       exitCode: 0
   -
     kind: "try_compile-v1"
     backtrace:
-      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CheckFunctionExists.cmake:86 (try_compile)"
+      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.29/Modules/CheckFunctionExists.cmake:86 (try_compile)"
       - "/home/kali/Desktop/PcapPlusPlus/cmake/modules/FindPCAP.cmake:83 (check_function_exists)"
       - "/home/kali/Desktop/PcapPlusPlus/CMakeLists.txt:123 (find_package)"
     checks:
       - "Looking for pcap_set_immediate_mode"
     directories:
-      source: "/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-LYAyLN"
-      binary: "/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-LYAyLN"
+      source: "/home/kali/Desktop/IDS_Project/IDS_Reverse_Proxy_Project/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-cjZpHD"
+      binary: "/home/kali/Desktop/IDS_Project/IDS_Reverse_Proxy_Project/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-cjZpHD"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -587,24 +624,24 @@ events:
       variable: "HAVE_PCAP_IMMEDIATE_MODE"
       cached: true
       stdout: |
-        Change Dir: '/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-LYAyLN'
+        Change Dir: '/home/kali/Desktop/IDS_Project/IDS_Reverse_Proxy_Project/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-cjZpHD'
         
-        Run Build Command(s): /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/ninja/linux/x64/ninja -v cmTC_15990
-        [1/2] /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pcap_set_immediate_mode -fPIE -fdiagnostics-color=always -o CMakeFiles/cmTC_15990.dir/CheckFunctionExists.c.o -c /home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-LYAyLN/CheckFunctionExists.c
-        [2/2] : && /usr/bin/cc -DCHECK_FUNCTION_EXISTS=pcap_set_immediate_mode  CMakeFiles/cmTC_15990.dir/CheckFunctionExists.c.o -o cmTC_15990  /usr/lib/x86_64-linux-gnu/libpcap.so && :
+        Run Build Command(s): /home/kali/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64/ninja -v cmTC_af2c6
+        [1/2] /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pcap_set_immediate_mode -fPIE -fdiagnostics-color=always -o CMakeFiles/cmTC_af2c6.dir/CheckFunctionExists.c.o -c /home/kali/Desktop/IDS_Project/IDS_Reverse_Proxy_Project/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-cjZpHD/CheckFunctionExists.c
+        [2/2] : && /usr/bin/cc -DCHECK_FUNCTION_EXISTS=pcap_set_immediate_mode  CMakeFiles/cmTC_af2c6.dir/CheckFunctionExists.c.o -o cmTC_af2c6  /usr/lib/x86_64-linux-gnu/libpcap.so && :
         
       exitCode: 0
   -
     kind: "try_compile-v1"
     backtrace:
-      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CheckFunctionExists.cmake:86 (try_compile)"
+      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.29/Modules/CheckFunctionExists.cmake:86 (try_compile)"
       - "/home/kali/Desktop/PcapPlusPlus/cmake/modules/FindPCAP.cmake:84 (check_function_exists)"
       - "/home/kali/Desktop/PcapPlusPlus/CMakeLists.txt:123 (find_package)"
     checks:
       - "Looking for pcap_setdirection"
     directories:
-      source: "/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-Yi735I"
-      binary: "/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-Yi735I"
+      source: "/home/kali/Desktop/IDS_Project/IDS_Reverse_Proxy_Project/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-NgY55J"
+      binary: "/home/kali/Desktop/IDS_Project/IDS_Reverse_Proxy_Project/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-NgY55J"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -615,24 +652,24 @@ events:
       variable: "HAVE_PCAP_DIRECTION"
       cached: true
       stdout: |
-        Change Dir: '/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-Yi735I'
+        Change Dir: '/home/kali/Desktop/IDS_Project/IDS_Reverse_Proxy_Project/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-NgY55J'
         
-        Run Build Command(s): /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/ninja/linux/x64/ninja -v cmTC_84601
-        [1/2] /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pcap_setdirection -fPIE -fdiagnostics-color=always -o CMakeFiles/cmTC_84601.dir/CheckFunctionExists.c.o -c /home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-Yi735I/CheckFunctionExists.c
-        [2/2] : && /usr/bin/cc -DCHECK_FUNCTION_EXISTS=pcap_setdirection  CMakeFiles/cmTC_84601.dir/CheckFunctionExists.c.o -o cmTC_84601  /usr/lib/x86_64-linux-gnu/libpcap.so && :
+        Run Build Command(s): /home/kali/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64/ninja -v cmTC_dfd21
+        [1/2] /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pcap_setdirection -fPIE -fdiagnostics-color=always -o CMakeFiles/cmTC_dfd21.dir/CheckFunctionExists.c.o -c /home/kali/Desktop/IDS_Project/IDS_Reverse_Proxy_Project/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-NgY55J/CheckFunctionExists.c
+        [2/2] : && /usr/bin/cc -DCHECK_FUNCTION_EXISTS=pcap_setdirection  CMakeFiles/cmTC_dfd21.dir/CheckFunctionExists.c.o -o cmTC_dfd21  /usr/lib/x86_64-linux-gnu/libpcap.so && :
         
       exitCode: 0
   -
     kind: "try_compile-v1"
     backtrace:
-      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CheckFunctionExists.cmake:86 (try_compile)"
+      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.29/Modules/CheckFunctionExists.cmake:86 (try_compile)"
       - "/home/kali/Desktop/PcapPlusPlus/cmake/modules/FindPCAP.cmake:85 (check_function_exists)"
       - "/home/kali/Desktop/PcapPlusPlus/CMakeLists.txt:123 (find_package)"
     checks:
       - "Looking for pcap_lib_version"
     directories:
-      source: "/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-0kWVJa"
-      binary: "/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-0kWVJa"
+      source: "/home/kali/Desktop/IDS_Project/IDS_Reverse_Proxy_Project/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-uNayem"
+      binary: "/home/kali/Desktop/IDS_Project/IDS_Reverse_Proxy_Project/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-uNayem"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -643,11 +680,11 @@ events:
       variable: "HAVE_PCAP_LIB_VERSION"
       cached: true
       stdout: |
-        Change Dir: '/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-0kWVJa'
+        Change Dir: '/home/kali/Desktop/IDS_Project/IDS_Reverse_Proxy_Project/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-uNayem'
         
-        Run Build Command(s): /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/ninja/linux/x64/ninja -v cmTC_e722f
-        [1/2] /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pcap_lib_version -fPIE -fdiagnostics-color=always -o CMakeFiles/cmTC_e722f.dir/CheckFunctionExists.c.o -c /home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-0kWVJa/CheckFunctionExists.c
-        [2/2] : && /usr/bin/cc -DCHECK_FUNCTION_EXISTS=pcap_lib_version  CMakeFiles/cmTC_e722f.dir/CheckFunctionExists.c.o -o cmTC_e722f  /usr/lib/x86_64-linux-gnu/libpcap.so && :
+        Run Build Command(s): /home/kali/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64/ninja -v cmTC_d49fe
+        [1/2] /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pcap_lib_version -fPIE -fdiagnostics-color=always -o CMakeFiles/cmTC_d49fe.dir/CheckFunctionExists.c.o -c /home/kali/Desktop/IDS_Project/IDS_Reverse_Proxy_Project/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-uNayem/CheckFunctionExists.c
+        [2/2] : && /usr/bin/cc -DCHECK_FUNCTION_EXISTS=pcap_lib_version  CMakeFiles/cmTC_d49fe.dir/CheckFunctionExists.c.o -o cmTC_d49fe  /usr/lib/x86_64-linux-gnu/libpcap.so && :
         
       exitCode: 0
   -
@@ -656,8 +693,8 @@ events:
       - "/home/kali/Desktop/PcapPlusPlus/cmake/modules/FindPCAP.cmake:113 (try_run)"
       - "/home/kali/Desktop/PcapPlusPlus/CMakeLists.txt:123 (find_package)"
     directories:
-      source: "/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/CMakeFiles/CMakeTmp"
-      binary: "/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/CMakeFiles/CMakeTmp"
+      source: "/home/kali/Desktop/IDS_Project/IDS_Reverse_Proxy_Project/cmake-build-debug/CMakeFiles/CMakeTmp"
+      binary: "/home/kali/Desktop/IDS_Project/IDS_Reverse_Proxy_Project/cmake-build-debug/CMakeFiles/CMakeTmp"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -668,11 +705,11 @@ events:
       variable: "COMPILE_RESULT_VAR"
       cached: true
       stdout: |
-        Change Dir: '/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/CMakeFiles/CMakeTmp'
+        Change Dir: '/home/kali/Desktop/IDS_Project/IDS_Reverse_Proxy_Project/cmake-build-debug/CMakeFiles/CMakeTmp'
         
-        Run Build Command(s): /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/ninja/linux/x64/ninja -v cmTC_d136b
-        [1/2] /usr/bin/cc   -fPIE -fdiagnostics-color=always -o CMakeFiles/cmTC_d136b.dir/detect_pcap_version.c.o -c /home/kali/Desktop/PcapPlusPlus/build/detect_pcap_version.c
-        [2/2] : && /usr/bin/cc   CMakeFiles/cmTC_d136b.dir/detect_pcap_version.c.o -o cmTC_d136b  /usr/lib/x86_64-linux-gnu/libpcap.so && :
+        Run Build Command(s): /home/kali/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64/ninja -v cmTC_b786c
+        [1/2] /usr/bin/cc   -fPIE -fdiagnostics-color=always -o CMakeFiles/cmTC_b786c.dir/detect_pcap_version.c.o -c /home/kali/Desktop/PcapPlusPlus/build/detect_pcap_version.c
+        [2/2] : && /usr/bin/cc   CMakeFiles/cmTC_b786c.dir/detect_pcap_version.c.o -o cmTC_b786c  /usr/lib/x86_64-linux-gnu/libpcap.so && :
         
       exitCode: 0
     runResult:
@@ -684,16 +721,16 @@ events:
   -
     kind: "try_compile-v1"
     backtrace:
-      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
-      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CheckCSourceCompiles.cmake:52 (cmake_check_source_compiles)"
-      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindThreads.cmake:97 (CHECK_C_SOURCE_COMPILES)"
-      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.29/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.29/Modules/CheckCSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.29/Modules/FindThreads.cmake:97 (CHECK_C_SOURCE_COMPILES)"
+      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.29/Modules/FindThreads.cmake:163 (_threads_check_libc)"
       - "/home/kali/Desktop/PcapPlusPlus/CMakeLists.txt:175 (find_package)"
     checks:
       - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
     directories:
-      source: "/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-bfChbs"
-      binary: "/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-bfChbs"
+      source: "/home/kali/Desktop/IDS_Project/IDS_Reverse_Proxy_Project/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-hjhRzJ"
+      binary: "/home/kali/Desktop/IDS_Project/IDS_Reverse_Proxy_Project/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-hjhRzJ"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -704,25 +741,25 @@ events:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-        Change Dir: '/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-bfChbs'
+        Change Dir: '/home/kali/Desktop/IDS_Project/IDS_Reverse_Proxy_Project/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-hjhRzJ'
         
-        Run Build Command(s): /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/ninja/linux/x64/ninja -v cmTC_8a1ad
-        [1/2] /usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD  -fPIE -fdiagnostics-color=always -o CMakeFiles/cmTC_8a1ad.dir/src.c.o -c /home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-bfChbs/src.c
-        [2/2] : && /usr/bin/cc   CMakeFiles/cmTC_8a1ad.dir/src.c.o -o cmTC_8a1ad   && :
+        Run Build Command(s): /home/kali/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64/ninja -v cmTC_62488
+        [1/2] /usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD  -fPIE -fdiagnostics-color=always -o CMakeFiles/cmTC_62488.dir/src.c.o -c /home/kali/Desktop/IDS_Project/IDS_Reverse_Proxy_Project/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-hjhRzJ/src.c
+        [2/2] : && /usr/bin/cc   CMakeFiles/cmTC_62488.dir/src.c.o -o cmTC_62488   && :
         
       exitCode: 0
   -
     kind: "try_compile-v1"
     backtrace:
-      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CheckSymbolExists.cmake:140 (try_compile)"
-      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/CheckSymbolExists.cmake:66 (__CHECK_SYMBOL_EXISTS_IMPL)"
-      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindBacktrace.cmake:62 (check_symbol_exists)"
+      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.29/Modules/CheckSymbolExists.cmake:140 (try_compile)"
+      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.29/Modules/CheckSymbolExists.cmake:66 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "/home/kali/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/share/cmake-3.29/Modules/FindBacktrace.cmake:62 (check_symbol_exists)"
       - "/home/kali/Desktop/PcapPlusPlus/3rdParty/MemPlumber/MemPlumber/CMakeLists.txt:27 (find_package)"
     checks:
       - "Looking for backtrace"
     directories:
-      source: "/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-XvVrk2"
-      binary: "/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-XvVrk2"
+      source: "/home/kali/Desktop/IDS_Project/IDS_Reverse_Proxy_Project/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-uSNq7n"
+      binary: "/home/kali/Desktop/IDS_Project/IDS_Reverse_Proxy_Project/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-uSNq7n"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_MODULE_PATH: "/home/kali/Desktop/PcapPlusPlus/cmake/modules/"
@@ -731,11 +768,11 @@ events:
       variable: "_Backtrace_SYM_FOUND"
       cached: true
       stdout: |
-        Change Dir: '/home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-XvVrk2'
+        Change Dir: '/home/kali/Desktop/IDS_Project/IDS_Reverse_Proxy_Project/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-uSNq7n'
         
-        Run Build Command(s): /home/kali/.local/share/JetBrains/Toolbox/apps/clion-nova/bin/ninja/linux/x64/ninja -v cmTC_d1795
-        [1/2] /usr/bin/cc   -fPIE -fdiagnostics-color=always -o CMakeFiles/cmTC_d1795.dir/CheckSymbolExists.c.o -c /home/kali/Desktop/haifa-01-proxysaver/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-XvVrk2/CheckSymbolExists.c
-        [2/2] : && /usr/bin/cc  -rdynamic CMakeFiles/cmTC_d1795.dir/CheckSymbolExists.c.o -o cmTC_d1795   && :
+        Run Build Command(s): /home/kali/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64/ninja -v cmTC_13fed
+        [1/2] /usr/bin/cc   -fPIE -fdiagnostics-color=always -o CMakeFiles/cmTC_13fed.dir/CheckSymbolExists.c.o -c /home/kali/Desktop/IDS_Project/IDS_Reverse_Proxy_Project/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-uSNq7n/CheckSymbolExists.c
+        [2/2] : && /usr/bin/cc  -rdynamic CMakeFiles/cmTC_13fed.dir/CheckSymbolExists.c.o -o cmTC_13fed   && :
         
       exitCode: 0
 ...

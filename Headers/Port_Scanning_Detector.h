@@ -23,7 +23,7 @@
 #include <chrono>
 #include <exception>
 #include <set>
-#include "IPTools.h"
+#include "IPTools/IPTools.h"
 
 #define NMAP_PORTS_TXT "nmapDefault.txt"
 
