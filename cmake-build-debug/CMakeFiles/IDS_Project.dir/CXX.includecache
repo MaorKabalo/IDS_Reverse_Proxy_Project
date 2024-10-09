@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../Headers/EBPF_Runner.h
+iostream
+-
+string
+-
+
+/home/kali/Desktop/IDS_Reverse_Proxy_Project/Source/EBPF_Runner.cpp
+EBPF_Runner.h
+/home/kali/Desktop/IDS_Reverse_Proxy_Project/Source/EBPF_Runner.h
+cstdlib
+-
+utility
+-
+vector
+-
+

@@ -70,7 +70,7 @@ bool EBPF_Runner::clean() const
     vector<std::string> commands = {
         "sudo ip link set dev lo xdp off",
         "sudo rm -f /sys/fs/bpf/" + ebpfProgramPath_,
-        "sudo rm " + ebpfProgramPath_ + ".bpf.o",
+        "sudo rm -f " + ebpfProgramPath_ + ".bpf.o",
         "sudo rm -f /sys/fs/bpf/ip",
         "sudo rm -rf /sys/fs/bpf/tc",
         "sudo rm -f /sys/fs/bpf/xdp",
