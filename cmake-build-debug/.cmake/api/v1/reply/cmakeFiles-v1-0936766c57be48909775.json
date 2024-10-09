@@ -1,0 +1,374 @@
+{
+	"inputs" : 
+	[
+		{
+			"path" : "CMakeLists.txt"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "cmake-build-debug/CMakeFiles/3.20.2/CMakeSystem.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/clion-2021.2.4/bin/cmake/linux/share/cmake-3.20/Modules/CMakeSystemSpecificInitialize.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "cmake-build-debug/CMakeFiles/3.20.2/CMakeCCompiler.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "cmake-build-debug/CMakeFiles/3.20.2/CMakeCXXCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/clion-2021.2.4/bin/cmake/linux/share/cmake-3.20/Modules/CMakeSystemSpecificInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/clion-2021.2.4/bin/cmake/linux/share/cmake-3.20/Modules/CMakeGenericSystem.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/clion-2021.2.4/bin/cmake/linux/share/cmake-3.20/Modules/CMakeInitializeConfigs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/clion-2021.2.4/bin/cmake/linux/share/cmake-3.20/Modules/Platform/Linux.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/clion-2021.2.4/bin/cmake/linux/share/cmake-3.20/Modules/Platform/UnixPaths.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/clion-2021.2.4/bin/cmake/linux/share/cmake-3.20/Modules/CMakeFindCodeBlocks.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/clion-2021.2.4/bin/cmake/linux/share/cmake-3.20/Modules/CMakeExtraGeneratorDetermineCompilerMacrosAndIncludeDirs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/clion-2021.2.4/bin/cmake/linux/share/cmake-3.20/Modules/ProcessorCount.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/clion-2021.2.4/bin/cmake/linux/share/cmake-3.20/Modules/CMakeCInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/clion-2021.2.4/bin/cmake/linux/share/cmake-3.20/Modules/CMakeLanguageInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/clion-2021.2.4/bin/cmake/linux/share/cmake-3.20/Modules/Compiler/GNU-C.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/clion-2021.2.4/bin/cmake/linux/share/cmake-3.20/Modules/Compiler/GNU.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/clion-2021.2.4/bin/cmake/linux/share/cmake-3.20/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/clion-2021.2.4/bin/cmake/linux/share/cmake-3.20/Modules/Platform/Linux-GNU-C.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/clion-2021.2.4/bin/cmake/linux/share/cmake-3.20/Modules/Platform/Linux-GNU.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/clion-2021.2.4/bin/cmake/linux/share/cmake-3.20/Modules/CMakeCommonLanguageInclude.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/clion-2021.2.4/bin/cmake/linux/share/cmake-3.20/Modules/CMakeCXXInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/clion-2021.2.4/bin/cmake/linux/share/cmake-3.20/Modules/CMakeLanguageInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/clion-2021.2.4/bin/cmake/linux/share/cmake-3.20/Modules/Compiler/GNU-CXX.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/clion-2021.2.4/bin/cmake/linux/share/cmake-3.20/Modules/Compiler/GNU.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/clion-2021.2.4/bin/cmake/linux/share/cmake-3.20/Modules/Platform/Linux-GNU-CXX.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/clion-2021.2.4/bin/cmake/linux/share/cmake-3.20/Modules/Platform/Linux-GNU.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/clion-2021.2.4/bin/cmake/linux/share/cmake-3.20/Modules/CMakeCommonLanguageInclude.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/clion-2021.2.4/bin/cmake/linux/share/cmake-3.20/Modules/FindCURL.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/clion-2021.2.4/bin/cmake/linux/share/cmake-3.20/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/clion-2021.2.4/bin/cmake/linux/share/cmake-3.20/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/clion-2021.2.4/bin/cmake/linux/share/cmake-3.20/Modules/FindPkgConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/clion-2021.2.4/bin/cmake/linux/share/cmake-3.20/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/clion-2021.2.4/bin/cmake/linux/share/cmake-3.20/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/clion-2021.2.4/bin/cmake/linux/share/cmake-3.20/Modules/SelectLibraryConfigurations.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/clion-2021.2.4/bin/cmake/linux/share/cmake-3.20/Modules/FindPkgConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/clion-2021.2.4/bin/cmake/linux/share/cmake-3.20/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/clion-2021.2.4/bin/cmake/linux/share/cmake-3.20/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/PcapPlusPlus/CMakeLists.txt"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/clion-2021.2.4/bin/cmake/linux/share/cmake-3.20/Modules/CMakeDependentOption.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/clion-2021.2.4/bin/cmake/linux/share/cmake-3.20/Modules/CMakePackageConfigHelpers.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/clion-2021.2.4/bin/cmake/linux/share/cmake-3.20/Modules/WriteBasicConfigVersionFile.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/PcapPlusPlus/cmake/modules/PcapPlusPlusUtils.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/clion-2021.2.4/bin/cmake/linux/share/cmake-3.20/Modules/GNUInstallDirs.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/PcapPlusPlus/cmake/modules/TargetArch.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "cmake-build-debug/arch.c"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/PcapPlusPlus/cmake/modules/FindPCAP.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/clion-2021.2.4/bin/cmake/linux/share/cmake-3.20/Modules/CheckCXXSourceCompiles.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/clion-2021.2.4/bin/cmake/linux/share/cmake-3.20/Modules/Internal/CheckSourceCompiles.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/clion-2021.2.4/bin/cmake/linux/share/cmake-3.20/Modules/CheckFunctionExists.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/PcapPlusPlus/build/detect_pcap_version.c"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/clion-2021.2.4/bin/cmake/linux/share/cmake-3.20/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/clion-2021.2.4/bin/cmake/linux/share/cmake-3.20/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/clion-2021.2.4/bin/cmake/linux/share/cmake-3.20/Modules/FindThreads.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/clion-2021.2.4/bin/cmake/linux/share/cmake-3.20/Modules/CheckLibraryExists.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/clion-2021.2.4/bin/cmake/linux/share/cmake-3.20/Modules/CheckIncludeFile.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/clion-2021.2.4/bin/cmake/linux/share/cmake-3.20/Modules/CheckCSourceCompiles.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/clion-2021.2.4/bin/cmake/linux/share/cmake-3.20/Modules/Internal/CheckSourceCompiles.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/clion-2021.2.4/bin/cmake/linux/share/cmake-3.20/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/clion-2021.2.4/bin/cmake/linux/share/cmake-3.20/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/PcapPlusPlus/cmake/PcapPlusPlusUninstall.cmake.in"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/PcapPlusPlus/3rdParty/CMakeLists.txt"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/PcapPlusPlus/3rdParty/EndianPortable/CMakeLists.txt"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/PcapPlusPlus/3rdParty/Getopt-for-Visual-Studio/CMakeLists.txt"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/PcapPlusPlus/3rdParty/hash-library/CMakeLists.txt"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/PcapPlusPlus/3rdParty/json/CMakeLists.txt"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/PcapPlusPlus/3rdParty/LightPcapNg/CMakeLists.txt"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/PcapPlusPlus/3rdParty/MemPlumber/MemPlumber/CMakeLists.txt"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/clion-2021.2.4/bin/cmake/linux/share/cmake-3.20/Modules/FindBacktrace.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/clion-2021.2.4/bin/cmake/linux/share/cmake-3.20/Modules/CMakePushCheckState.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/clion-2021.2.4/bin/cmake/linux/share/cmake-3.20/Modules/CheckSymbolExists.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/clion-2021.2.4/bin/cmake/linux/share/cmake-3.20/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/clion-2021.2.4/bin/cmake/linux/share/cmake-3.20/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/PcapPlusPlus/Packet++/CMakeLists.txt"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/PcapPlusPlus/Pcap++/CMakeLists.txt"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/kali/Desktop/PcapPlusPlus/Common++/CMakeLists.txt"
+		}
+	],
+	"kind" : "cmakeFiles",
+	"paths" : 
+	{
+		"build" : "/home/kali/Desktop/IDS_Reverse_Proxy_Project/cmake-build-debug",
+		"source" : "/home/kali/Desktop/IDS_Reverse_Proxy_Project"
+	},
+	"version" : 
+	{
+		"major" : 1,
+		"minor" : 0
+	}
+}
