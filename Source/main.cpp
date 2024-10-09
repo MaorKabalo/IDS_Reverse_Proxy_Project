@@ -22,7 +22,7 @@
 
 
 struct each_port {
-    __u32 port;
+    __u32 dummy;
 };
 
 //sudo bpftool map dump name const_nmap_port
@@ -35,8 +35,6 @@ bool add_ports_to_ebpf_array_map() {
         return false;
     }
 
-    __u32 key = 0;
-
     // Open the ports file
     std::ifstream ports_file("nmapDefault.txt");
     if (!ports_file) {
@@ -47,23 +45,24 @@ bool add_ports_to_ebpf_array_map() {
     std::string line;
     while (std::getline(ports_file, line)) {
         __u32 current_port = std::stoi(line);  // Convert string to integer
-        //std::cout << "Adding port: " << current_port << std::endl;
 
-        struct each_port port = {current_port};  // Initialize struct with current_port
+        // Set the value to 0
+        struct each_port port = {0};  // Initialize struct with value 0
 
-        // Update the map with the current key
-        int result = bpf_map_update_elem(map_id, &key, &port, BPF_ANY);
+        // Update the map with the current port as the key
+        int result = bpf_map_update_elem(map_id, &current_port, &port, BPF_ANY);
         if (result < 0) {
-            std::cerr << "Error: Failed to update BPF map at key " << key
+            std::cerr << "Error: Failed to update BPF map at key " << current_port
                       << ": " << std::strerror(errno) << std::endl;
             return false;
         }
 
-        key++;
+        // std::cout << "Adding port: " << current_port << std::endl; // Uncomment if needed
     }
 
     return true;
 }
+
 
 
 

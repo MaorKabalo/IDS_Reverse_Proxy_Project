@@ -24,13 +24,15 @@ struct iphdr* ip = NULL;
 struct tcphdr* tcp = NULL;
 
 
+#define MAX_PORTS_OF_SCAN 1000
+
 struct each_port {
-    __u32 port;
+    __u32 dummy;
 };
 
 struct btf_const_nmap_ports_def {
-    __uint(type, BPF_MAP_TYPE_ARRAY);
-    __uint(max_entries, 1000); // Maximum entries
+    __uint(type, BPF_MAP_TYPE_HASH);
+    __uint(max_entries, MAX_PORTS_OF_SCAN); // Maximum entries
     __uint(pinning, LIBBPF_PIN_BY_NAME);
     __type(key, __u32);       // Key type
     __type(value, struct each_port); // Value type (your struct)
@@ -67,7 +69,14 @@ SEC("xdp")
 int port_scan_dt(struct xdp_md *ctx)
 {
 
-//    long port = get_packet_dest_port(ctx);
+//    __u32 key = 777;                                                     example how to delete
+//    __u32 result = bpf_map_delete_elem(&const_nmap_ports, &key);
+//    if (result < 0) {
+//        bpf_printk("Failed to delete key %u from the hash map\n", key);
+//    }
+
+
+//      long port = get_packet_dest_port(ctx);
 //
 //    if(port != PROXY_PORT) //Check traffic for proxy port only
 //    {
