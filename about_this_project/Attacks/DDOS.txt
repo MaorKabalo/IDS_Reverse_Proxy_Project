@@ -1,0 +1,11 @@
+Rate Limiting:
+Input: Incoming requests.
+Output: Throttled or denied requests.
+Description: Implement rate limiting to restrict the number of requests a single client can make within a specific time frame. This can mitigate DDoS attacks by limiting their effectiveness.
+
+
+DDoS Mitigation:
+Input: Incoming traffic patterns.
+Output: Traffic analysis and filtering.
+Description: Employ traffic analysis algorithms to detect and filter out malicious traffic during a DDoS attack. This can involve identifying patterns, traffic anomalies, or excessive connection attempts.
+

@@ -1,0 +1,10 @@
+Request Parsing and Buffering:
+Input: Client requests.
+Output: Parsed and buffered requests.
+Description: Parse incoming requests to understand their content and intent. Buffering can help absorb Slowloris attacks by holding connections open until they are completed.
+
+
+Connection Pooling and Management:
+Input: Incoming connections.
+Output: Managed and controlled connections.
+Description: Maintain a pool of connections to handle client requests efficiently. This can prevent resource exhaustion attacks like Slowloris.

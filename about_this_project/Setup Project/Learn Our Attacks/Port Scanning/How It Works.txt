@@ -1,0 +1,20 @@
+Port scanning is a technique used to discover open ports on a target computer or network device. It involves sending network requests to various ports (communication endpoints) to determine which ones are open and listening for connections. This helps attackers or administrators identify potential vulnerabilities or services running on a system.
+
+Port scanning works by sending different types of network packets (such as TCP, UDP, or ICMP) to specific ports on a target system. The response received or lack of response helps determine the state of the port:
+
+1. Open Port: If a response is received, the port is considered open, indicating that a service or application is actively listening on that port.
+
+2. Closed Port: If a response is received indicating that the port is closed, it means that there is no service listening on that port.
+
+3. Filtered Port: If no response is received, the port might be filtered by a firewall, which prevents the scanning system from receiving a response. This could indicate an attempt to hide the existence of a service.
+
+Port scanners use different scanning techniques, such as:
+
+- **TCP Connect Scan**: Initiates a full connection to each port to determine if it's open.
+- **TCP SYN (Half-open) Scan**: Sends SYN packets and analyzes the responses to identify open ports.
+- **TCP FIN Scan**: Sends FIN packets to closed ports and observes the response behavior.
+- **UDP Scan**: Sends UDP packets and analyzes responses to identify open UDP ports.
+
+It's important to note that while port scanning can be used for legitimate purposes like network administration and security auditing, it can also be exploited for malicious activities. Unauthorized port scanning can potentially lead to unauthorized access or disruptions.
+
+Keep in mind that understanding and using port scanning responsibly is crucial to maintaining network security and integrity.
